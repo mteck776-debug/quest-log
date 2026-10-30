@@ -3680,11 +3680,11 @@
       "person": "p-default",
       "current": false,
       "status": "active",
-      "progress": 0,
+      "progress": 33,
       "cycles": 0,
       "createdAt": "2026-10-06T03:22:27.616Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-06T03:30:28.739Z",
+      "lastUpdatedAt": "2026-10-30T04:50:38.197Z",
       "reminder": "",
       "dueDate": "2026-10-21",
       "checkIn": {
@@ -3697,7 +3697,7 @@
         {
           "id": "8ba1a7f4-35e9-4584-bbd3-c772cb6aa5d9",
           "text": "Create a list of assets that need fixing and what is needed to fix them",
-          "done": false
+          "done": true
         },
         {
           "id": "845a7946-c9b1-487f-b232-b308aac15605",
