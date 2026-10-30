@@ -1,0 +1,4572 @@
+{
+  "meta": {
+    "createdAt": "2026-09-01T00:00:00.000Z"
+  },
+  "tasks": [
+    {
+      "id": "55d1a62f-0cca-4e02-a748-d8195f8c1839",
+      "title": "JSA Renewal",
+      "description": "Update JSA each year",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "active",
+      "progress": 25,
+      "cycles": 0,
+      "createdAt": "2026-09-01T22:35:08.568Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-06T04:42:14.155Z",
+      "reminder": "Work on other JSAs when possible - next is STS",
+      "dueDate": "2026-11-10",
+      "checkIn": {
+        "cadence": "yearly",
+        "lastCheckIn": "2026-09-01T22:35:08.568Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "1aa24515-95f1-4a3d-a709-1f4e14a54284",
+          "text": "Draft JSA for BBS",
+          "done": true
+        },
+        {
+          "id": "c1c69ab4-b95d-4849-9595-6432c02e7b8e",
+          "text": "Draft JSA for BBS - Approved by Sam",
+          "done": true
+        },
+        {
+          "id": "03dc1654-caf7-4cd0-baae-4140dd067c8b",
+          "text": "Draft JSA for BBS - Approved by Staff",
+          "done": true
+        },
+        {
+          "id": "2c026a0e-3f7e-4f28-b3a1-9688d3cc45a4",
+          "text": "Draft JSA for BBS with any changes from Staff - Approved by Sam",
+          "done": true
+        },
+        {
+          "id": "46b7950f-a892-4957-9123-ecd9402bdc61",
+          "text": "Draft JSA for BBS signed by Staff",
+          "done": true
+        },
+        {
+          "id": "af615484-ce70-43a3-9cfc-0fc248f65803",
+          "text": "Signed BBS JSA uploaded to DM",
+          "done": true
+        },
+        {
+          "id": "818eef06-c512-4f97-954d-5e492fafa68c",
+          "text": "Draft JSA for STS",
+          "done": false
+        },
+        {
+          "id": "27631ea9-fdd4-4fbf-96a5-42f39b661c2f",
+          "text": "Draft JSA for STS - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "39a3882c-486c-4122-9513-6b4ebadc1bea",
+          "text": "Draft JSA for STS - Approved by Staff",
+          "done": false
+        },
+        {
+          "id": "730495e3-ece4-4f49-bdaa-7872ce4a5f38",
+          "text": "Draft JSA for STS with any changes from Staff - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "86df24d1-93cb-43f0-8436-4f9e3c7a297f",
+          "text": "Draft JSA for STS signed by Staff",
+          "done": false
+        },
+        {
+          "id": "fd29fefd-677b-40ae-9bb6-a8ea1483bbc5",
+          "text": "Signed STS JSA uploaded to DM",
+          "done": false
+        },
+        {
+          "id": "64c78d5d-067f-4d54-8c25-ffb149d5d1b8",
+          "text": "Draft JSA for PTS",
+          "done": false
+        },
+        {
+          "id": "9d87d541-f083-4768-aa86-1623fec4a9d8",
+          "text": "Draft JSA for PTS - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "ad3361a7-88e4-42a4-90d5-59d64728978c",
+          "text": "Draft JSA for PTS - Approved by Staff",
+          "done": false
+        },
+        {
+          "id": "cc9dd7b8-c298-4ea4-97a9-2787c38c8f64",
+          "text": "Draft JSA for PTS with any changes from Staff - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "b1d33d2e-3d37-4235-8541-027e92beacdd",
+          "text": "Draft JSA for PTS signed by Staff",
+          "done": false
+        },
+        {
+          "id": "14ef927d-98d5-4bdb-8215-5ce7de1c0215",
+          "text": "Signed PTS JSA uploaded to DM",
+          "done": false
+        },
+        {
+          "id": "38456f45-a8ee-4b3f-bf6c-6d008cfd0e0e",
+          "text": "Draft GTS & BTS for BBS",
+          "done": false
+        },
+        {
+          "id": "1f8bc494-63af-4aa3-b1ec-ce3f3d39d54f",
+          "text": "Draft JSA for GTS & BTS - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "f8e7685e-8cc6-4796-8421-f3314695d43c",
+          "text": "Draft JSA for GTS & BTS - Approved by Staff",
+          "done": false
+        },
+        {
+          "id": "c7621a98-6046-496a-bf4f-d4fddc8098c8",
+          "text": "Draft JSA for GTS & BTS with any changes from Staff - Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "3ec88d29-1b64-4ee4-9626-8a036ffe71fd",
+          "text": "Draft JSA for GTS & BTS signed by Staff",
+          "done": false
+        },
+        {
+          "id": "c09087dc-ffa2-49fd-ae95-68426005916d",
+          "text": "Signed GTS & BTS JSA uploaded to DM",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "a08393b4-41cd-47b5-8187-feae9c3c0efd",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T22:35:08.568Z",
+          "system": true
+        },
+        {
+          "id": "ed3dd662-f07e-4811-93d6-127649931e1a",
+          "text": "Updated JSA sent to BBS for signing",
+          "at": "2026-09-01T22:35:56.611Z",
+          "system": false
+        },
+        {
+          "id": "9def8ac0-70e7-4e60-a9db-3a798875db51",
+          "text": "Check-in cadence set to Yearly.",
+          "at": "2026-09-02T01:38:35.709Z",
+          "system": true
+        },
+        {
+          "id": "b451580e-9a25-4508-a032-791acca6afee",
+          "text": "Due date set to 10 Nov 2026.",
+          "at": "2026-09-02T01:38:53.086Z",
+          "system": true
+        },
+        {
+          "id": "4bf7d4df-1151-497e-bfdb-9375f94871c0",
+          "text": "BBS JSA was completed",
+          "at": "2026-10-06T04:41:39.295Z",
+          "system": false
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "a3899948-31b7-433c-bf0f-581bbcac1938",
+      "title": "Emergency Management Manuals",
+      "description": "Update the Emergency Management Manuels with info provided by Dan and Vlad",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-01T22:36:47.717Z",
+      "completedAt": "2026-09-17T04:06:18.153Z",
+      "lastUpdatedAt": "2026-09-17T04:06:18.153Z",
+      "reminder": "Sent to sam for approval",
+      "dueDate": "2026-09-07",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-09-01T22:36:47.717Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "fe544b43-f12c-4e97-9e58-f2b5eff26ba0",
+          "text": "Add Map For BTS",
+          "done": true
+        },
+        {
+          "id": "36367306-560c-4177-a15d-0f36a28af774",
+          "text": "Add Map for BBS",
+          "done": true
+        },
+        {
+          "id": "ecc19c65-577d-4ac9-b474-9e94fd5ab50b",
+          "text": "Send updated draft back to Sam",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "18eafae5-95f8-45ed-9f9a-64b825775e8e",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T22:36:47.717Z",
+          "system": true
+        },
+        {
+          "id": "217c401d-5e0b-4a97-9f22-95bbd72b10d3",
+          "text": "Added map for BTS",
+          "at": "2026-09-02T01:29:16.668Z",
+          "system": false
+        },
+        {
+          "id": "1df6602a-a1db-4df1-99f5-cd3b4dbd7748",
+          "text": "Sent to sam for approval",
+          "at": "2026-09-09T21:34:33.954Z",
+          "system": false
+        },
+        {
+          "id": "cb2d76d7-0b2a-4aa3-924b-2096f56d2e1e",
+          "text": "Quest completed.",
+          "at": "2026-09-17T04:06:18.153Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "f24f9183-7248-4782-8538-1973bfbf37fd",
+      "title": "Labour Sheet (EAM)",
+      "description": "Go over Jason's paperwork each week and fill in accordingly. This task will change soon",
+      "tier": "minor",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 3,
+      "createdAt": "2026-09-01T22:37:43.047Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-27T23:22:11.128Z",
+      "reminder": "Awaiting Jason for more sheets",
+      "dueDate": "2026-11-06",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-11-05T14:00:00.000Z"
+      },
+      "restingUntil": "2026-11-05T14:00:00.000Z",
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "4bb4dd1c-4d3d-46e0-82e6-4a29632ae640",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T22:37:43.047Z",
+          "system": true
+        },
+        {
+          "id": "5de8d048-0957-4d98-a8c2-bbcdbc15a926",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-09T23:20:57.252Z",
+          "system": true
+        },
+        {
+          "id": "1d8e6c2f-d1b6-4557-af1c-15706d3a8bb3",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-09T23:21:03.402Z",
+          "system": true
+        },
+        {
+          "id": "17c57f5a-e5e9-49a6-91f6-cb1a0f15ed0c",
+          "text": "Due date set to 16 Sept 2026.",
+          "at": "2026-09-09T23:21:11.601Z",
+          "system": true
+        },
+        {
+          "id": "399be181-102a-460e-9bcd-33e82c89751a",
+          "text": "Cycle 1 complete — resting until 23 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-17T04:06:27.723Z",
+          "system": true
+        },
+        {
+          "id": "0e70eed7-b729-4b98-b68e-a3e66d9f1ce9",
+          "text": "Completed  two months worth",
+          "at": "2026-09-27T22:13:36.535Z",
+          "system": false
+        },
+        {
+          "id": "8f64cfed-463b-45f3-b2c7-046896730667",
+          "text": "Cycle 2 complete — resting until 30 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-27T22:13:40.352Z",
+          "system": true
+        },
+        {
+          "id": "b8da70f9-bad8-42ef-a127-6ad91b72e12a",
+          "text": "Due date set to 30 Oct 2026.",
+          "at": "2026-10-01T02:59:26.779Z",
+          "system": true
+        },
+        {
+          "id": "ef11f885-864b-4613-8a4d-0f2b4301f5d7",
+          "text": "Cycle 3 complete — resting until 6 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-10-27T23:22:11.128Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "0e0e0681-9da6-4cef-99ab-41a61382004b",
+      "title": "Induction Sign in QR",
+      "description": "Have my QR sign in system integrated into councils' systems",
+      "tier": "minor",
+      "repeat": false,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-09-01T22:40:01.444Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-26T22:47:54.421Z",
+      "reminder": "Follow up with Sam if she wants me to still do anything for this",
+      "dueDate": "2026-10-29",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "73c8ccda-ae94-47a7-937c-4669d2986fd9",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T22:40:01.444Z",
+          "system": true
+        },
+        {
+          "id": "101ba6e2-0f76-468e-ae7f-30fde5011997",
+          "text": "Due date set to 15 Sept 2026.",
+          "at": "2026-09-09T04:04:44.003Z",
+          "system": true
+        },
+        {
+          "id": "39c7b01d-e796-4721-9c4b-107fd3899376",
+          "text": "Follow up Tuesday the 15th",
+          "at": "2026-09-09T04:05:14.293Z",
+          "system": false
+        },
+        {
+          "id": "3a37fbf6-476d-4ea5-8b46-54bcffb527e0",
+          "text": "This has now gone to business team..... they doing stuff with it now???",
+          "at": "2026-09-22T04:50:39.980Z",
+          "system": false
+        },
+        {
+          "id": "5c15975c-2cd9-423e-b1a9-c126f3c56268",
+          "text": "Due date set to 12 Oct 2026.",
+          "at": "2026-09-22T04:50:48.898Z",
+          "system": true
+        },
+        {
+          "id": "2bbcfa45-9f10-4acc-873b-e23527b2ab44",
+          "text": "Sam let them know what we want and waiitng for them to update us",
+          "at": "2026-10-06T03:56:14.850Z",
+          "system": false
+        },
+        {
+          "id": "4dfff55d-b9d0-4dbc-bfd0-10f57f5ff0cf",
+          "text": "Business team have done wonders - it is operational. Probably out of my hands now",
+          "at": "2026-10-26T22:47:13.853Z",
+          "system": false
+        },
+        {
+          "id": "c2284868-62a4-423a-a9b9-77c00aba41d1",
+          "text": "Due date set to 29 Oct 2026.",
+          "at": "2026-10-26T22:47:54.421Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "1487a75d-bb2d-4435-9384-cf33ff3fff20",
+      "title": "Draft disaster management plan",
+      "description": "This is a future project Sam has sent to me, still to go over",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-09-01T22:46:59.972Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-09-02T00:04:01.635Z",
+      "reminder": "This is a future project Sam has sent to me, still to go over",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "bb08560e-f92c-4fbe-99e3-4ee6e5cdfc57",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T22:46:59.972Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "b542d029-00b6-4d09-97ef-d4a5062d41e9",
+      "title": "Resource Recovery Training Matrix",
+      "description": "Ensure all staff licenses and access are all up to date",
+      "tier": "minor",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 6,
+      "createdAt": "2026-09-01T23:43:01.613Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-28T04:50:09.224Z",
+      "reminder": "",
+      "dueDate": "2026-10-26",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-10-25T14:00:00.000Z"
+      },
+      "restingUntil": "2026-10-25T14:00:00.000Z",
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "fb9772bb-83dd-4227-b4b1-83a955a7141e",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:43:01.613Z",
+          "system": true
+        },
+        {
+          "id": "e5957a0c-edd5-454c-af11-30ef3b897571",
+          "text": "Check-in cadence set to Weekly.",
+          "at": "2026-09-02T01:30:53.203Z",
+          "system": true
+        },
+        {
+          "id": "ecfe45ba-d690-4637-8d46-c363f21de843",
+          "text": "Added staff in Mandalay for yearly reviews",
+          "at": "2026-09-02T01:31:28.453Z",
+          "system": false
+        },
+        {
+          "id": "87751b0a-c47b-46c9-8337-9ceecf9908aa",
+          "text": "Received signed code of conduct from BBS",
+          "at": "2026-09-02T04:22:59.696Z",
+          "system": false
+        },
+        {
+          "id": "a284f0b9-5045-45f9-b522-d613214a235b",
+          "text": "So far all seems alright with the sheet, awaiting Dan to get back to me for licenses for trucks",
+          "at": "2026-09-09T04:03:49.775Z",
+          "system": false
+        },
+        {
+          "id": "856b9279-b747-489c-9896-c828f3c5e93f",
+          "text": "Cycle 1 complete — resting until 21 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-09T04:04:18.117Z",
+          "system": true
+        },
+        {
+          "id": "e7a4cd5d-9e92-4484-b6b8-109d627d5c96",
+          "text": "Cycle 2 complete — resting until 28 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-29T22:52:40.116Z",
+          "system": true
+        },
+        {
+          "id": "5a437aeb-3692-4df3-8ac5-ad232a0a1868",
+          "text": "Cycle 3 complete — resting until 5 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-09-29T22:52:49.560Z",
+          "system": true
+        },
+        {
+          "id": "ad5577c4-e22c-4008-a1a7-68a84327a3ef",
+          "text": "Follow up emails sent out to staff and Dan for updated dates",
+          "at": "2026-10-05T22:10:13.405Z",
+          "system": false
+        },
+        {
+          "id": "c300ac42-1b68-4936-9f9b-38d0e65dcd5e",
+          "text": "Cycle 4 complete — resting until 12 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-05T22:13:56.724Z",
+          "system": true
+        },
+        {
+          "id": "af7c59b3-e902-4638-a59f-c9e1426ad400",
+          "text": "Cycle 5 complete — resting until 19 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-28T04:50:01.280Z",
+          "system": true
+        },
+        {
+          "id": "0fc9ddb8-8865-48f6-b66d-8a66a6999327",
+          "text": "Cycle 6 complete — resting until 26 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-28T04:50:09.224Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "c09e799b-f700-4755-85ac-77612fef4dd0",
+      "title": "Resource Recovery Monthly Report",
+      "description": "A Monthly Report that is sent out a week before the next month for people to update and sent out as a PDF on the second week of the month",
+      "tier": "major",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 2,
+      "createdAt": "2026-09-01T23:44:09.554Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-26T22:48:34.238Z",
+      "reminder": "",
+      "dueDate": "2026-10-30",
+      "checkIn": {
+        "cadence": "monthly",
+        "lastCheckIn": "2026-10-21T14:00:00.000Z"
+      },
+      "restingUntil": "2026-10-21T14:00:00.000Z",
+      "links": [],
+      "subtasks": [
+        {
+          "id": "958660a7-d86a-40ec-b388-3bd71b1c6cab",
+          "text": "Emailed out email for people to make their changes",
+          "done": false
+        },
+        {
+          "id": "178f696b-daef-4d21-9302-beaa0d9d4476",
+          "text": "Get all updates for Operations",
+          "done": false
+        },
+        {
+          "id": "0b1eddb8-0846-4985-880e-b404fe7a025d",
+          "text": "Confirm with Sam if there is anything she wants added",
+          "done": false
+        },
+        {
+          "id": "3984f380-7824-4cc1-a9ca-ecd1f41db2d1",
+          "text": "Add Steve's section",
+          "done": false
+        },
+        {
+          "id": "3fac67c3-23ea-490d-af8a-5b0dd5c882d9",
+          "text": "Email out PDF version on the 2nd week of the month (Complete)",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "da7a74b5-c228-4f95-a644-12827a7af0d2",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:44:09.554Z",
+          "system": true
+        },
+        {
+          "id": "66a2f023-2a37-4be3-af84-728b8a452ce6",
+          "text": "Sam has completed the operations part",
+          "at": "2026-09-01T23:57:23.121Z",
+          "system": false
+        },
+        {
+          "id": "b64095a5-f67b-4c67-a13b-61dcb0c8fe49",
+          "text": "Added Steve's new section as per his email",
+          "at": "2026-09-02T00:35:34.774Z",
+          "system": false
+        },
+        {
+          "id": "9fa2ab70-c17f-412f-804c-14745d26844f",
+          "text": "Had a check over, all looks good",
+          "at": "2026-09-06T22:24:19.310Z",
+          "system": false
+        },
+        {
+          "id": "61bda2c1-86e6-4c25-8f9a-dfb8cc9442cb",
+          "text": "Cycle 1 complete — resting until 7 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-09-07T21:20:11.998Z",
+          "system": true
+        },
+        {
+          "id": "d912873b-5b58-42fd-b687-a2a3cd0df5db",
+          "text": "Due date set to 22 Sept 2026.",
+          "at": "2026-09-21T21:45:39.059Z",
+          "system": true
+        },
+        {
+          "id": "51cc85ec-4158-46bf-b947-25d07908dda7",
+          "text": "Reactivated early — back on the board.",
+          "at": "2026-09-21T21:45:55.147Z",
+          "system": true
+        },
+        {
+          "id": "b0078552-2e0b-4314-846f-d2f098c75e6b",
+          "text": "Emailed for updated for southern, received updates. Need to upload to document once everyone stops editing",
+          "at": "2026-10-06T02:07:37.292Z",
+          "system": false
+        },
+        {
+          "id": "d5c1e0a6-c34e-4e3e-88aa-c3c74e89f609",
+          "text": "Cycle 2 complete — resting until 22 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-13T21:17:41.654Z",
+          "system": true
+        },
+        {
+          "id": "b99c7e5c-8909-495f-9cd9-a93539841cff",
+          "text": "Due date set to 30 Oct 2026.",
+          "at": "2026-10-26T22:48:34.238Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "76b79335-038a-4083-8f96-eb8ddae07e60",
+      "title": "CAPEX Projects",
+      "description": "Check Capex projects to ensure all relevant docs are created",
+      "tier": "minor",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 4,
+      "createdAt": "2026-09-01T23:44:49.127Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-19T21:12:23.686Z",
+      "reminder": "",
+      "dueDate": "2026-11-02",
+      "checkIn": {
+        "cadence": "fortnightly",
+        "lastCheckIn": "2026-11-01T14:00:00.000Z"
+      },
+      "restingUntil": "2026-11-01T14:00:00.000Z",
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "dd16a572-dd06-4c5a-804f-755b0211243f",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:44:49.127Z",
+          "system": true
+        },
+        {
+          "id": "a5f71bc5-c497-4397-b579-6753ed837f81",
+          "text": "Cycle 1 complete — resting until 21 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-07T00:18:29.082Z",
+          "system": true
+        },
+        {
+          "id": "af631350-7531-435d-bafc-39f5a2c4339d",
+          "text": "Fans still not financially complete",
+          "at": "2026-09-07T00:22:19.807Z",
+          "system": false
+        },
+        {
+          "id": "beea5bda-c32b-41e8-a09b-bf940aa375f1",
+          "text": "Cycle 2 complete — resting until 5 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-09-27T22:12:22.501Z",
+          "system": true
+        },
+        {
+          "id": "b37f8e9f-517b-4334-8661-21d96023afab",
+          "text": "Cycle 3 complete — resting until 19 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-05T21:57:20.834Z",
+          "system": true
+        },
+        {
+          "id": "921de63a-c421-400c-abff-6cea74a8f396",
+          "text": "Cycle 4 complete — resting until 2 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-10-19T21:12:23.686Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "cfbafde3-7b82-4954-86b0-e755e8df800e",
+      "title": "Learning EAM",
+      "description": "Await Jason's return to learn EAM",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-01T23:45:27.511Z",
+      "completedAt": "2026-09-22T02:57:16.546Z",
+      "lastUpdatedAt": "2026-09-22T02:57:16.546Z",
+      "reminder": "Kerrie adjusting some workflows",
+      "dueDate": "2026-09-21",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "6756f165-a508-4401-be52-9dcb5e6e1b45",
+          "label": "Work Scheduling",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/OperatingAssets/MaintenanceScheduleWorksheetEnquiry/Index?f=$ASO.WS.MS.LST&h=gU0GcwL6sB&t=1B4D37D2&suite=CES&pagekey=20260909140957"
+        },
+        {
+          "id": "f54b4a06-60da-4734-8ea9-b6cc491aa3ae",
+          "label": "Assets",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/AssetsCore/AssetEnquiry/Index?f=$ASC.ASSET.LST&h=ssPjMLhZrG&t=1B425CC3&suite=CES&pagekey=20260901102740"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "6175fe3f-e0e8-4209-a6c2-21ae996bd241",
+          "text": "Learn EAM",
+          "done": true
+        },
+        {
+          "id": "c9d7c9b7-3fde-4139-b27c-c7479b77471c",
+          "text": "Assign work orders",
+          "done": true
+        },
+        {
+          "id": "8d0072e5-154b-4acb-8b96-5e3017a539ed",
+          "text": "Practice for a few weeks",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "7609a579-9fe6-4cea-8e1f-4b1a051d94c0",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:45:27.511Z",
+          "system": true
+        },
+        {
+          "id": "78d34cc2-61e3-4198-aeb4-76934a763e5e",
+          "text": "There were a few issues with past reports not being set up correct. Kerri was updating then letting me know when available",
+          "at": "2026-09-09T04:08:11.714Z",
+          "system": false
+        },
+        {
+          "id": "2b1195cb-5005-41df-ad81-7099c6cecde5",
+          "text": "Due date set to 15 Sept 2026.",
+          "at": "2026-09-09T04:09:12.675Z",
+          "system": true
+        },
+        {
+          "id": "16b4ffb1-3288-4faa-bd71-747bc80b8f32",
+          "text": "System set to run this sunday, will be assigning on Monday",
+          "at": "2026-09-17T04:05:19.983Z",
+          "system": false
+        },
+        {
+          "id": "f6ed11e2-9b1a-43ab-814e-6a4c26e41586",
+          "text": "Due date set to 21 Sept 2026.",
+          "at": "2026-09-17T04:05:27.266Z",
+          "system": true
+        },
+        {
+          "id": "aaeff02a-e25c-4dcf-b129-b81705740c45",
+          "text": "Quest completed.",
+          "at": "2026-09-22T02:57:16.546Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "dd19fc54-7655-49a6-91c1-8955a55b2402",
+      "title": "Big Bag Monthly Stock Email",
+      "description": "A monthly email for the stock we have for fertiliser bags",
+      "tier": "minor",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 0,
+      "cycles": 2,
+      "createdAt": "2026-09-01T23:46:05.597Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-28T21:03:10.058Z",
+      "reminder": "",
+      "dueDate": "2026-11-27",
+      "checkIn": {
+        "cadence": "monthly",
+        "lastCheckIn": "2026-11-26T14:00:00.000Z"
+      },
+      "restingUntil": "2026-11-26T14:00:00.000Z",
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "3c8e7899-d116-4da3-a5d4-8ec636187815",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:46:05.597Z",
+          "system": true
+        },
+        {
+          "id": "41db9f92-eeb3-4ae0-846c-88c7ec49986c",
+          "text": "Cycle 1 complete — resting until 28 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-09-29T00:13:50.362Z",
+          "system": true
+        },
+        {
+          "id": "dc938fd2-e6b6-434d-a1cd-156b63c4d893",
+          "text": "Cycle 2 complete — resting until 27 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-10-28T21:03:10.058Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "6354b501-d3d0-43a1-98e3-7bffdabb59d7",
+      "title": "Update CRS entries",
+      "description": "Update every day the movements for the MRF",
+      "tier": "minor",
+      "repeat": true,
+      "person": "p-default",
+      "status": "active",
+      "progress": 29,
+      "cycles": 8,
+      "createdAt": "2026-09-01T23:48:22.278Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-27T23:52:58.225Z",
+      "reminder": "",
+      "dueDate": "2026-10-26",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-10-25T14:00:00.000Z"
+      },
+      "restingUntil": "2026-10-25T14:00:00.000Z",
+      "links": [],
+      "subtasks": [
+        {
+          "id": "16eb126b-f86a-48c9-b4e8-6e916fc51450",
+          "text": "Monday",
+          "done": true
+        },
+        {
+          "id": "25d8f0a8-61a6-4638-810d-089bd55326c0",
+          "text": "Tuesday",
+          "done": true
+        },
+        {
+          "id": "586a5b97-ff12-4c72-93c9-82f094a71545",
+          "text": "Wednesday",
+          "done": false
+        },
+        {
+          "id": "4830598e-dde4-4313-8b7a-76e82c0746ee",
+          "text": "Thursday",
+          "done": false
+        },
+        {
+          "id": "6e4790c7-a2e8-4c15-a39a-d66ba7c98d97",
+          "text": "Friday",
+          "done": false
+        },
+        {
+          "id": "ffc50ba8-0558-40a3-a695-493066663f58",
+          "text": "Saturday",
+          "done": false
+        },
+        {
+          "id": "85dc92c5-2339-43c0-a0e3-adb4f2aae45f",
+          "text": "Sunday",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "4f5d3039-bcec-484b-ada7-36b6e778ba43",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:48:22.278Z",
+          "system": true
+        },
+        {
+          "id": "cc58d47e-1b2b-4e85-9136-9a77f3007c3c",
+          "text": "Check-in cadence set to Weekly.",
+          "at": "2026-09-02T00:01:59.743Z",
+          "system": true
+        },
+        {
+          "id": "2cdec593-a837-4e42-a2f8-2ccb86c53dfe",
+          "text": "Due date set to 7 Sept 2026.",
+          "at": "2026-09-02T00:02:05.533Z",
+          "system": true
+        },
+        {
+          "id": "6768c00d-1e04-4b1c-a4d4-763763ae417d",
+          "text": "Due date set to 31 Aug 2026.",
+          "at": "2026-09-02T00:02:16.888Z",
+          "system": true
+        },
+        {
+          "id": "a986c1cf-d72e-4601-8295-ba4a9177f9da",
+          "text": "Cycle 1 complete — resting until 7 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-06T22:17:39.527Z",
+          "system": true
+        },
+        {
+          "id": "347c2844-1385-42a2-94ce-987c19bbf2f3",
+          "text": "Cycle 2 complete — resting until 14 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-21T04:08:01.501Z",
+          "system": true
+        },
+        {
+          "id": "c1be7bd0-94a0-44a5-9d6a-e160c5c95256",
+          "text": "Cycle 3 complete — resting until 21 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-21T04:08:12.707Z",
+          "system": true
+        },
+        {
+          "id": "65ab80b3-2820-46f2-b05d-2255e214f283",
+          "text": "Cycle 4 complete — resting until 28 Sept 2026 (due date rolled forward to match).",
+          "at": "2026-09-27T22:11:29.648Z",
+          "system": true
+        },
+        {
+          "id": "e370d225-bf23-406e-a03f-432a2e7d451c",
+          "text": "Check-in cadence turned off.",
+          "at": "2026-10-01T03:01:01.018Z",
+          "system": true
+        },
+        {
+          "id": "f953e5fd-71cb-4321-a6a3-63c1614327a3",
+          "text": "Check-in cadence set to Weekly.",
+          "at": "2026-10-01T03:01:08.528Z",
+          "system": true
+        },
+        {
+          "id": "0c84ad88-56a7-4471-9a7d-52028a1c4065",
+          "text": "Cycle 5 complete — resting until 5 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-06T22:20:06.999Z",
+          "system": true
+        },
+        {
+          "id": "f30d1868-56b5-49c3-92fe-a8b8466ed174",
+          "text": "Cycle 6 complete — resting until 12 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-06T22:20:22.502Z",
+          "system": true
+        },
+        {
+          "id": "41c1ed3a-9dce-4355-941e-dfccdcd05e6a",
+          "text": "Cycle 7 complete — resting until 19 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-19T21:12:12.563Z",
+          "system": true
+        },
+        {
+          "id": "96636a0b-2ab8-4d1a-8ff2-1aef6e821e49",
+          "text": "Cycle 8 complete — resting until 26 Oct 2026 (due date rolled forward to match).",
+          "at": "2026-10-26T22:48:46.531Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "df769ac4-48a5-4c01-a734-7300f9e2c775",
+      "title": "Gate House Operation Procedure",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-01T23:48:55.016Z",
+      "completedAt": "2026-09-22T02:34:14.847Z",
+      "lastUpdatedAt": "2026-09-22T02:34:14.847Z",
+      "reminder": "Sam has asked me to look and modify the existing procedures for the gate houses",
+      "dueDate": "2026-09-10",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-09-01T23:48:55.016Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "9349d08f-f7a6-4141-bc0e-02cc187581fc",
+          "text": "Fill in areas marked in red and send to Sam",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "bf560c95-dd5f-4af1-9a88-fed53372406a",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:48:55.016Z",
+          "system": true
+        },
+        {
+          "id": "65746039-b5c0-491b-9084-3df1acf3a598",
+          "text": "Pinned as current quest.",
+          "at": "2026-09-02T01:41:14.809Z",
+          "system": true
+        },
+        {
+          "id": "859cf007-70a1-4f7e-9dd4-af6e226620ce",
+          "text": "DM Number is 7935169",
+          "at": "2026-09-08T21:54:11.632Z",
+          "system": false
+        },
+        {
+          "id": "71dd9683-e520-405f-9353-a9603042d407",
+          "text": "Pinned as current quest.",
+          "at": "2026-09-08T21:54:18.150Z",
+          "system": true
+        },
+        {
+          "id": "50f6d1ac-6a6e-40cc-bd92-1e479b85c051",
+          "text": "Asked Dan for photos for examples of loads",
+          "at": "2026-09-08T22:54:29.596Z",
+          "system": false
+        },
+        {
+          "id": "7ece5628-b832-4c87-9da0-f593b71d5845",
+          "text": "Section Recording of transactions  done",
+          "at": "2026-09-08T22:54:39.720Z",
+          "system": false
+        },
+        {
+          "id": "7974af6a-839d-4d63-b18c-39ddee201205",
+          "text": "Section Manual Dockets done",
+          "at": "2026-09-08T22:54:53.311Z",
+          "system": false
+        },
+        {
+          "id": "d810b0a2-080a-4f1c-b4c8-0e1143bc9502",
+          "text": "My parts filled in and sent back to Sam for review",
+          "at": "2026-09-22T02:34:07.649Z",
+          "system": false
+        },
+        {
+          "id": "b2d0119d-bdcb-4e0b-ab98-f69ef7518676",
+          "text": "Quest completed.",
+          "at": "2026-09-22T02:34:14.847Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "514a6727-8822-49df-a4f4-073784d5efe5",
+      "title": "Standard operational procedure - Perforator",
+      "description": "Create a procedure based off the operating manual for the perforator",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "active",
+      "progress": 33,
+      "cycles": 0,
+      "createdAt": "2026-09-01T23:50:23.133Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-27T23:54:50.486Z",
+      "reminder": "Waiting for Vlad's opinion",
+      "dueDate": "2026-10-29",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": "2026-10-06T03:02:37.748Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "eb03b0fd-ed0e-4bcf-8c33-4bc41603c168",
+          "text": "Create Draft",
+          "done": true
+        },
+        {
+          "id": "b05505ea-8ae1-4e16-adbc-61c1b3a1294e",
+          "text": "Send draft to Sam for approval",
+          "done": false
+        },
+        {
+          "id": "235701f0-8596-4d05-a93d-671c5c96a4f0",
+          "text": "Save into DM and update register 5678167",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "15f9cd60-7136-440b-b61b-203c4d797b49",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:50:23.133Z",
+          "system": true
+        },
+        {
+          "id": "76954bf1-daf8-4a8d-bf72-08b3585fcb7a",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-17T04:05:55.346Z",
+          "system": true
+        },
+        {
+          "id": "513dea24-0b6f-4ddc-86ab-6cd08c4e7ca0",
+          "text": "Email sent to Vlad to follow up for procedure",
+          "at": "2026-09-22T02:58:44.059Z",
+          "system": false
+        },
+        {
+          "id": "f4bc1eb9-5947-4d00-90fb-3a8d75157661",
+          "text": "Vlad has sent me procedure. Time to make",
+          "at": "2026-09-27T22:12:04.052Z",
+          "system": false
+        },
+        {
+          "id": "9ef5bb75-2df7-4ced-bcad-fff2281212fd",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-10-06T03:02:37.748Z",
+          "system": true
+        },
+        {
+          "id": "b3be897f-4181-440f-a98a-98c49202fc72",
+          "text": "Need to take better photos, steps are complete. just need photos to match",
+          "at": "2026-10-06T03:02:57.888Z",
+          "system": false
+        },
+        {
+          "id": "14bd7d4e-1bb5-415d-a44f-78ff518d4f45",
+          "text": "Photos have been taken, need to complete",
+          "at": "2026-10-07T04:50:37.769Z",
+          "system": false
+        },
+        {
+          "id": "adc58e50-8b9c-4f6c-a134-b943098b50ce",
+          "text": "Sent draft to Vlad to get his overview",
+          "at": "2026-10-13T21:46:37.575Z",
+          "system": false
+        },
+        {
+          "id": "1dfbe590-9288-464a-8407-0c726b4e34c1",
+          "text": "Due date set to 15 Oct 2026.",
+          "at": "2026-10-14T00:20:16.790Z",
+          "system": true
+        },
+        {
+          "id": "7c95e3ce-b398-46b5-85e2-bf561af91d8b",
+          "text": "Keep annoying Vlad to if he is all good with it",
+          "at": "2026-10-26T22:48:10.914Z",
+          "system": false
+        },
+        {
+          "id": "c6914c8d-2f31-4846-8641-964873da8092",
+          "text": "Due date set to 29 Oct 2026.",
+          "at": "2026-10-27T23:54:37.773Z",
+          "system": true
+        },
+        {
+          "id": "67003fca-dab7-4c6c-85cd-b4210fa8ccfe",
+          "text": "Check-in cadence turned off.",
+          "at": "2026-10-27T23:54:50.486Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "5ed4ffef-4344-4a23-8659-41bbf4d94b84",
+      "title": "Smithfield Map Card",
+      "description": "Create site cards for PTS and STS, these will be used to help people find where everything is",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "status": "active",
+      "progress": 29,
+      "cycles": 0,
+      "createdAt": "2026-09-01T23:51:12.198Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-28T03:20:30.781Z",
+      "reminder": "Waiting on Sam's response",
+      "dueDate": "2026-11-04",
+      "checkIn": {
+        "cadence": "fortnightly",
+        "lastCheckIn": "2026-10-01T03:01:48.907Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "7b5074ed-8809-44ed-8850-1d8ae85efa59",
+          "text": "Created Draft",
+          "done": true
+        },
+        {
+          "id": "bdb0d509-aae7-454a-846a-6a4fd7db7de6",
+          "text": "Draft Approved by Sam",
+          "done": false
+        },
+        {
+          "id": "28f8e8c5-b4d4-4ef9-b7c9-df4464a6c59b",
+          "text": "Draft Approved by Dan",
+          "done": true
+        },
+        {
+          "id": "00e8ccc3-162c-4ebc-9a5a-c285477bedf9",
+          "text": "Transfer station happy with site map",
+          "done": false
+        },
+        {
+          "id": "a2b5fef0-c3ee-4ab8-aadf-4d1b5885c4b2",
+          "text": "Proof of draft requested from council",
+          "done": false
+        },
+        {
+          "id": "70b3538f-903f-412d-8c89-d3bdbbb4709f",
+          "text": "Council draft approved by Sam",
+          "done": false
+        },
+        {
+          "id": "41a6d7a3-315e-47f1-915f-cf89a72da90b",
+          "text": "Prints ordered",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "b4024a66-a851-4062-820f-61b1d21d79ad",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:51:12.198Z",
+          "system": true
+        },
+        {
+          "id": "f22b79c3-fb69-48dc-86f9-4af1bc783959",
+          "text": "PTS cards ordered",
+          "at": "2026-09-01T23:54:41.180Z",
+          "system": false
+        },
+        {
+          "id": "599d16dc-7c09-4726-a45e-ede279302f4b",
+          "text": "Made a basic map, need to aline locations to numbers",
+          "at": "2026-09-02T04:21:18.223Z",
+          "system": false
+        },
+        {
+          "id": "56c75623-b67e-4935-8ae7-a7acaccde626",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-17T04:05:38.792Z",
+          "system": true
+        },
+        {
+          "id": "d7925d9e-e5d7-4b31-8466-e137d54ae003",
+          "text": "Due date set to 12 Oct 2026.",
+          "at": "2026-10-01T03:01:40.386Z",
+          "system": true
+        },
+        {
+          "id": "9fc827bf-d3de-463f-bc84-43025d83b125",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-10-01T03:01:48.907Z",
+          "system": true
+        },
+        {
+          "id": "0c30b021-64e8-44ba-8b7f-1b656696505d",
+          "text": "Sent Draft to Dan to get his opinion before sending to Sam for further approval",
+          "at": "2026-10-27T23:45:14.564Z",
+          "system": false
+        },
+        {
+          "id": "8e27661a-9723-489b-a336-621a5c0e8c64",
+          "text": "Due date set to 4 Nov 2026.",
+          "at": "2026-10-27T23:45:34.147Z",
+          "system": true
+        },
+        {
+          "id": "6894380d-ef10-4022-8599-49638040e5c0",
+          "text": "Dan had a few changes, changes made and sent to Sam for approval",
+          "at": "2026-10-28T03:20:30.781Z",
+          "system": false
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "b5aa46aa-a5f5-4675-9e19-641f5d368d52",
+      "title": "Add Mandalay Users to License Management",
+      "description": "Add all users in Mandalay to the license management spreadsheet with a yearly renewal required",
+      "tier": "minor",
+      "repeat": false,
+      "person": "p-default",
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-01T23:52:35.757Z",
+      "completedAt": "2026-09-02T01:12:49.899Z",
+      "lastUpdatedAt": "2026-09-02T01:12:49.899Z",
+      "reminder": "",
+      "dueDate": "2026-09-10",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-09-01T23:52:35.757Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "03030e9a-d310-4795-ad39-116941fe7af8",
+          "text": "Quest added to the log.",
+          "at": "2026-09-01T23:52:35.757Z",
+          "system": true
+        },
+        {
+          "id": "71a13cb4-6e5a-4068-9c3f-80b1993745fb",
+          "text": "Pinned as current quest.",
+          "at": "2026-09-02T00:59:25.643Z",
+          "system": true
+        },
+        {
+          "id": "1d30f698-1da8-4182-8496-97404aea6d0e",
+          "text": "Added users in the license sheet - note this will have some further updated when groups are established",
+          "at": "2026-09-02T01:12:40.854Z",
+          "system": false
+        },
+        {
+          "id": "6e4ff686-9e31-4227-9c16-b990c275bc93",
+          "text": "Quest completed.",
+          "at": "2026-09-02T01:12:49.899Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "36d172ea-f00a-4890-aefe-26c235041835",
+      "title": "Mandalay API",
+      "description": "Integrate Mandalay's API into council systems if allowed",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-09-02T00:37:28.451Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-14T21:26:47.960Z",
+      "reminder": "Check with Lisa when she comes to talk about their data lake",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "0c7922f0-58c7-445c-8fc8-0ed2f70833ab",
+          "text": "Discuss with Nigal",
+          "done": false
+        },
+        {
+          "id": "a124c74f-3526-4d37-b701-b7fb25aca9b4",
+          "text": "Get limitations from Mandalay",
+          "done": false
+        },
+        {
+          "id": "47ebadcb-a411-475c-ba43-cdb1faf92d20",
+          "text": "Discuss with IT",
+          "done": false
+        },
+        {
+          "id": "409acf26-6344-4df2-b2f4-67296e25ef5e",
+          "text": "Proceed with implementing",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "65804104-1ab8-4b26-bd81-7965a0b79b3b",
+          "text": "Quest added to the log.",
+          "at": "2026-09-02T00:37:28.451Z",
+          "system": true
+        },
+        {
+          "id": "adaea991-0a4b-473f-a5bb-f318f9863187",
+          "text": "Sam Said to ask Nigel where he is at next time he comes to MRF",
+          "at": "2026-09-07T21:50:13.860Z",
+          "system": false
+        },
+        {
+          "id": "b7dfae37-02b2-422f-b0e4-045d905b4813",
+          "text": "Moved from \"Sam\" to \"Mandalay Requests\".",
+          "at": "2026-10-06T04:42:32.451Z",
+          "system": true
+        },
+        {
+          "id": "fefb8f3a-35b0-408a-976b-55e4d2d94745",
+          "text": "Nothing has really changed, just waiting for another department which seems to be wanting to do this",
+          "at": "2026-10-14T21:26:47.960Z",
+          "system": false
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "22674b8a-d48b-4553-b55e-415f02a410c6",
+      "title": "Mandalay User Group",
+      "description": "Create user groups in Mandalay that reflect appropriate access",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "status": "active",
+      "progress": 50,
+      "cycles": 0,
+      "createdAt": "2026-09-02T00:38:45.598Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-29T03:40:26.031Z",
+      "reminder": "Mandalay does not seem to want to assist in creating. Up to me to make",
+      "dueDate": "2026-11-09",
+      "checkIn": {
+        "cadence": "fortnightly",
+        "lastCheckIn": "2026-10-06T03:37:34.850Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "6f4cb2ec-7703-4a06-9d32-e586e0772a6c",
+          "text": "Draft out structure",
+          "done": true
+        },
+        {
+          "id": "b23c4320-7f74-4830-845a-278768fe9e22",
+          "text": "Discuss with Nick",
+          "done": true
+        },
+        {
+          "id": "25757040-3980-46a1-8648-7e873304a919",
+          "text": "Approval from Sam",
+          "done": true
+        },
+        {
+          "id": "9ed9f907-b86e-45d0-a0ca-921ff295ccbf",
+          "text": "Implement",
+          "done": false
+        },
+        {
+          "id": "260207b2-c6a2-4d1f-99c7-940c168e1922",
+          "text": "Test",
+          "done": false
+        },
+        {
+          "id": "c328b950-1637-4a60-a91f-0bebc330f052",
+          "text": "Email Sent to Mandalay to create group for us",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "2c25007c-a8c6-474c-895d-312f0da46658",
+          "text": "Quest added to the log.",
+          "at": "2026-09-02T00:38:45.598Z",
+          "system": true
+        },
+        {
+          "id": "5211d158-d934-4015-a984-ad933fe30a5e",
+          "text": "Email sent out to Sam & Nick to look at group structure",
+          "at": "2026-09-02T02:59:49.429Z",
+          "system": false
+        },
+        {
+          "id": "acf7c28d-bcc5-4f2e-a675-55f2b2b53d57",
+          "text": "Sam has sent out email to try prompt others to respond",
+          "at": "2026-09-08T21:26:52.209Z",
+          "system": false
+        },
+        {
+          "id": "c7a6b563-29fc-4580-8619-eff28b66c336",
+          "text": "Due date set to 29 Sept 2026.",
+          "at": "2026-09-22T02:57:04.794Z",
+          "system": true
+        },
+        {
+          "id": "63b411f2-1d12-4079-9c8e-373668bbfaab",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-22T02:57:24.122Z",
+          "system": true
+        },
+        {
+          "id": "63307dec-dd30-4cf1-9928-455855d29510",
+          "text": "Moved from \"Sam\" to \"Mandalay Requests\".",
+          "at": "2026-09-22T04:49:26.167Z",
+          "system": true
+        },
+        {
+          "id": "6e8b6e93-be9f-43ba-b887-c3f6b9f71f1c",
+          "text": "Email sent to Mandalay to see if they can create the groups for us",
+          "at": "2026-09-22T04:49:52.573Z",
+          "system": false
+        },
+        {
+          "id": "ac31d342-7016-4628-8edf-efe170367b4e",
+          "text": "Trying to figure out how to set up the groups",
+          "at": "2026-09-29T22:53:18.292Z",
+          "system": false
+        },
+        {
+          "id": "f7d693b5-6eb3-49f3-a315-7ec3295d3b72",
+          "text": "Due date set to 12 Oct 2026.",
+          "at": "2026-09-29T22:54:09.599Z",
+          "system": true
+        },
+        {
+          "id": "e31baf05-fce1-4bfa-a9fd-8baa5e19301b",
+          "text": "Still trying to figure out the group limits",
+          "at": "2026-10-06T03:37:28.484Z",
+          "system": false
+        },
+        {
+          "id": "768b909e-50c1-413a-a9b9-92f7ffc74cc9",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-10-06T03:37:34.850Z",
+          "system": true
+        },
+        {
+          "id": "11f7103a-b627-41b1-9ade-44aec233d115",
+          "text": "Due date set to 9 Nov 2026.",
+          "at": "2026-10-29T03:40:26.031Z",
+          "system": true
+        }
+      ],
+      "current": false
+    },
+    {
+      "id": "d7f0bcba-77be-4d39-b42c-2e376f4bd43e",
+      "title": "Request for assist",
+      "description": "Have sent an email to Vlad to let him know I can assist in any way I can",
+      "tier": "major",
+      "repeat": false,
+      "person": "ba1f8074-c459-4230-8e1a-f20aa71b035f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-02T02:46:39.312Z",
+      "completedAt": "2026-09-02T04:23:36.285Z",
+      "lastUpdatedAt": "2026-09-02T04:23:36.285Z",
+      "reminder": "Wait for Vlad's Response",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "cb5bbd07-38cd-4586-8590-53e9edb9d5c0",
+          "text": "Quest added to the log.",
+          "at": "2026-09-02T02:46:39.312Z",
+          "system": true
+        },
+        {
+          "id": "fa0abbff-9b45-42e1-9012-ff6cb0d3ba94",
+          "text": "Vlad does not want assistance at this time",
+          "at": "2026-09-02T04:23:30.221Z",
+          "system": false
+        },
+        {
+          "id": "04847460-dff6-4f06-a138-7fca27a083c3",
+          "text": "Quest completed.",
+          "at": "2026-09-02T04:23:36.285Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "298eb041-96c9-4aa7-b35c-a66b3fe95f17",
+      "title": "Fix CRS tab on monthly report spreadsheet",
+      "description": "It is not retrieving past data correctly on the CRS sheet",
+      "tier": "minor",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-02T03:05:29.927Z",
+      "completedAt": "2026-09-02T03:12:35.861Z",
+      "lastUpdatedAt": "2026-09-02T03:12:35.861Z",
+      "reminder": "Sam wants me to fix the past data generation",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "0341d831-ffe1-4003-936c-816c7e4b816f",
+          "text": "Quest added to the log.",
+          "at": "2026-09-02T03:05:29.927Z",
+          "system": true
+        },
+        {
+          "id": "3c98f528-9fc1-416b-ad80-70dcb8216046",
+          "text": "Pinned as current quest.",
+          "at": "2026-09-02T03:05:40.664Z",
+          "system": true
+        },
+        {
+          "id": "b5bcf7f0-2dfd-4e5b-9eb2-e8870d433f43",
+          "text": "Quest completed.",
+          "at": "2026-09-02T03:12:35.861Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "7b3cf9de-4519-4407-9368-e9e439c4160c",
+      "title": "45103.10 - FW: Council commercial dump application - ELH Construction",
+      "description": "A new Commercial vehicle account to setup please for ELH Construction Pty Ltd – Acc#45103.10 and vehicles to add",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-03T00:40:04.369Z",
+      "completedAt": "2026-09-03T02:03:21.672Z",
+      "lastUpdatedAt": "2026-09-03T02:03:32.621Z",
+      "reminder": "Add client and vehicles",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "17f83ba0-16eb-41d3-b273-46ecbd142d6b",
+          "text": "634AU9",
+          "done": true
+        },
+        {
+          "id": "09c3e21b-b491-4cdd-9563-eead5cf1871a",
+          "text": "RHY29",
+          "done": true
+        },
+        {
+          "id": "049224fa-9413-40f5-a820-b8530f1b15f9",
+          "text": "129JN9",
+          "done": true
+        },
+        {
+          "id": "2bccbec2-0601-46e0-a122-6550ea90939c",
+          "text": "236KZ9",
+          "done": true
+        },
+        {
+          "id": "e3d13c85-4f9a-46c1-8e22-2fc96eda4e76",
+          "text": "635LA7",
+          "done": true
+        },
+        {
+          "id": "cb73e1e7-45c3-446e-85ae-51c04ddc0ab0",
+          "text": "182LF2",
+          "done": true
+        },
+        {
+          "id": "10357881-8e7b-472e-a843-3f46696c09a1",
+          "text": "Commercial vehicle account to setup please for ELH Construction Pty Ltd – Acc#45103.10",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "11e210c7-40e7-4176-b19b-3b5fd524ed8b",
+          "text": "Quest added to the log.",
+          "at": "2026-09-03T00:40:04.369Z",
+          "system": true
+        },
+        {
+          "id": "bcd29b74-477a-4422-9e28-3e17fe3b8e7f",
+          "text": "Quest completed.",
+          "at": "2026-09-03T02:03:21.672Z",
+          "system": true
+        },
+        {
+          "id": "cb37472d-2d48-41be-9742-66ef9cb1eb5a",
+          "text": "Email sent to confirm completion",
+          "at": "2026-09-03T02:03:32.621Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "d47a3c25-f565-4dda-92eb-3a3afbd7ff1e",
+      "title": "Modify vehicle stored weights in Mandalay",
+      "description": "Modify vehicle weights based on Nicks email",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-03T02:04:01.235Z",
+      "completedAt": "2026-09-03T02:11:00.936Z",
+      "lastUpdatedAt": "2026-09-03T02:11:00.936Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "65b1e5ae-4a7b-4a11-96c4-9069580ce127",
+          "text": "Quest added to the log.",
+          "at": "2026-09-03T02:04:01.235Z",
+          "system": true
+        },
+        {
+          "id": "ee08d1a0-465e-448d-870a-e0b169e7fdc6",
+          "text": "Quest completed.",
+          "at": "2026-09-03T02:11:00.936Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "baa9eb50-9714-4eb1-b5d4-85e376b08e51",
+      "title": "45102.10 - FW: Credit Application waste disposal - Cairns Total Commercial Cleaning Services Pty Ltd",
+      "description": "A new Commercial vehicle account to setup please for Cairns Total Commercial Cleaning Services Pty Ltd - Acc#45102.10",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-03T22:20:19.110Z",
+      "completedAt": "2026-09-03T22:35:50.696Z",
+      "lastUpdatedAt": "2026-09-03T22:35:50.696Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "93b23700-e762-4b13-bf29-0b3e51c31a8e",
+          "text": "Quest added to the log.",
+          "at": "2026-09-03T22:20:19.110Z",
+          "system": true
+        },
+        {
+          "id": "e866c06b-016f-42d6-8222-8bb3a00bbd64",
+          "text": "Quest completed.",
+          "at": "2026-09-03T22:35:50.696Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "2e8d63de-56a4-4e86-abe4-adf21dc8d5b7",
+      "title": "JSA - Operating the washbay",
+      "description": "Create a jsa for operating the watercart at portsmith - note it is not called a watercart. get the name right",
+      "tier": "minor",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "active",
+      "progress": 80,
+      "cycles": 0,
+      "createdAt": "2026-09-06T22:53:10.971Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-27T23:54:19.226Z",
+      "reminder": "Waiting for staff to sign and return to me",
+      "dueDate": "2026-10-14",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "c8bf6602-75d4-46ce-a0da-db71b753bd2e",
+          "text": "Draft made",
+          "done": true
+        },
+        {
+          "id": "97f73c91-8aaf-4353-b950-deba1497552d",
+          "text": "Discuss with Transfer station to get opinion and changes on draft",
+          "done": true
+        },
+        {
+          "id": "0a875f53-de60-4751-bca8-c8b722303a73",
+          "text": "Apply changes from transfer station or if no changes, send draft to Sam",
+          "done": true
+        },
+        {
+          "id": "ddb20bac-1c28-42b1-8aab-40655526a753",
+          "text": "If approved by Sam, send copy to transfer station to either sign or make changes",
+          "done": true
+        },
+        {
+          "id": "8eaa2cc6-e14d-4cfb-aebb-f2e044a76bb3",
+          "text": "Once returned signed, add to JSA document in DM",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "f5e9f90e-ece5-459d-8472-ae3c175ca01a",
+          "text": "Quest added to the log.",
+          "at": "2026-09-06T22:53:10.971Z",
+          "system": true
+        },
+        {
+          "id": "08d076c8-c3f5-4440-ad45-d87994885bc0",
+          "text": "This is for the wash bay, not water cart!",
+          "at": "2026-09-09T23:56:00.594Z",
+          "system": false
+        },
+        {
+          "id": "4b845b70-b025-4585-81f1-858b3cb9e6ce",
+          "text": "Due date set to 18 Sept 2026.",
+          "at": "2026-09-10T00:00:53.293Z",
+          "system": true
+        },
+        {
+          "id": "5e76e79d-23d7-48c2-987b-94488e6082bb",
+          "text": "Due date set to 1 Oct 2026.",
+          "at": "2026-09-27T22:13:10.539Z",
+          "system": true
+        },
+        {
+          "id": "ba64e91b-3f6e-4be5-8ac4-d28384e87604",
+          "text": "Meeting scheduled for 2pm today",
+          "at": "2026-10-06T23:51:06.835Z",
+          "system": false
+        },
+        {
+          "id": "5a2713d6-002a-478c-81b2-e0a7aea09a62",
+          "text": "Barry happy with it. Need to refine then send to Sam for approval",
+          "at": "2026-10-07T04:50:59.054Z",
+          "system": false
+        },
+        {
+          "id": "a91e6810-ecc7-4b0a-9fa7-f60a1e97ee8d",
+          "text": "Draft sent to sam for approval",
+          "at": "2026-10-07T05:09:26.023Z",
+          "system": false
+        },
+        {
+          "id": "f2712bcd-6363-4985-809d-207c51ee8686",
+          "text": "Sam happy to be sent to team to review and sign",
+          "at": "2026-10-08T03:10:18.278Z",
+          "system": false
+        },
+        {
+          "id": "42307fa4-4288-46b2-9228-3c319de861b2",
+          "text": "Due date set to 14 Oct 2026.",
+          "at": "2026-10-08T03:10:31.321Z",
+          "system": true
+        },
+        {
+          "id": "2eb5cc93-d558-4633-b40d-e3aff83032ed",
+          "text": "Follow up email sent",
+          "at": "2026-10-14T23:32:20.252Z",
+          "system": false
+        },
+        {
+          "id": "bd4bf017-bf8f-431d-9d62-713ee97ae35d",
+          "text": "Jamie says JSA looks good, just waiting for it to be signed",
+          "at": "2026-10-19T21:42:43.204Z",
+          "system": false
+        },
+        {
+          "id": "c58e9c67-c255-4143-ab80-5fe7b54e3bf8",
+          "text": "Follow up on 4/11 if not back by then",
+          "at": "2026-10-27T23:54:19.226Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "e9848d6b-55f6-4901-ab56-c53ad0847cd5",
+      "title": "southern mandalay Issue",
+      "description": "Example\n488gp7 ambrose construction\n\nWhen he enters no products pop up for him\n\nIf you work it out can you pls call \nKeith – 0415 031 185",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-07T01:07:10.974Z",
+      "completedAt": "2026-09-07T01:07:43.289Z",
+      "lastUpdatedAt": "2026-09-07T01:07:43.289Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "71e23896-bc58-458d-b6a7-7deceb8f6986",
+          "text": "Quest added to the log.",
+          "at": "2026-09-07T01:07:10.974Z",
+          "system": true
+        },
+        {
+          "id": "c1f0d624-18d0-4c4f-a904-47dd68b77e51",
+          "text": "Think I found the issue, it seems to only operate off weighted instead of the small, medium and large.",
+          "at": "2026-09-07T01:07:19.911Z",
+          "system": false
+        },
+        {
+          "id": "957203f4-23ab-4bec-9798-d5ce176d9f79",
+          "text": "Called Keith to comfirm issue solved and tested myself.",
+          "at": "2026-09-07T01:07:39.037Z",
+          "system": false
+        },
+        {
+          "id": "01e04e34-9d31-4674-9b09-b9d482194462",
+          "text": "Quest completed.",
+          "at": "2026-09-07T01:07:43.289Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "b24bded7-9ecd-464c-a1dd-b3e7e9e437e7",
+      "title": "CAPEX Project - xxx - $xxxx",
+      "description": "A capex project for xxxx that has a budget of xxxxx - DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-07T01:09:28.809Z",
+      "completedAt": "2026-09-09T02:35:10.901Z",
+      "lastUpdatedAt": "2026-09-09T02:35:10.901Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-09-07T01:21:47.810Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "10f85c0c-abda-4008-8e9d-539c5017e79e",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "61fd7c33-709e-4f80-8c46-7ea31d6be2ab",
+          "text": "Initiate Project",
+          "done": false
+        },
+        {
+          "id": "8707e888-4d9e-43d4-9230-ad8dd67de278",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": false
+        },
+        {
+          "id": "79878d0f-5493-4cca-8d05-8be41fafd962",
+          "text": "Receive approval from Sam",
+          "done": false
+        },
+        {
+          "id": "f32049e9-374f-4fc6-bb5e-4247bdeff1bf",
+          "text": "Get Cost Estimates",
+          "done": false
+        },
+        {
+          "id": "80abc69f-0a9d-4249-b662-97b9afc20cf9",
+          "text": "Submit Project Scoring",
+          "done": false
+        },
+        {
+          "id": "8cbddb0f-c5f0-4aeb-b83e-ea4a37d2b347",
+          "text": "(If complex project) Submit project Brief register",
+          "done": false
+        },
+        {
+          "id": "f3100809-1221-4954-94bf-c63303758ad3",
+          "text": "Review project planning details",
+          "done": false
+        },
+        {
+          "id": "ed0b0e1b-637f-4244-b961-75bbcba9cc42",
+          "text": "Review project planning details PMU run IPO",
+          "done": false
+        },
+        {
+          "id": "382892af-5fb5-477a-8714-6c68d87b62e4",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": false
+        },
+        {
+          "id": "aec85845-17f6-4bd8-939a-fa16b69231f8",
+          "text": "Submit for PLA approval",
+          "done": false
+        },
+        {
+          "id": "2f735430-e461-4bf7-9c10-9b9c4eebbd05",
+          "text": "Review project and financial details, escalate for approval",
+          "done": false
+        },
+        {
+          "id": "5307cbc5-e572-4ee1-98ae-bfba9de7d9bf",
+          "text": "Review project and financial details",
+          "done": false
+        },
+        {
+          "id": "ce1f17b4-25c6-40bb-a4e0-5db0b488dc84",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "c7baf814-334a-436c-9df3-be00cb470545",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "b5b463f0-ee8f-4c2b-89ae-5ba14e92acac",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "99bd6a82-d8b6-4b83-bf27-7ce6a914e5c5",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "a58e2c3f-f768-4c17-a124-5349844d4c9e",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "5be57632-c60d-4d48-8f1b-73a5d1456c05",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "27365e72-ca45-412d-8670-d861ea7020d4",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "862056a4-ed75-4902-a5e0-de44c1f1141c",
+          "text": "Quest added to the log.",
+          "at": "2026-09-07T01:09:28.809Z",
+          "system": true
+        },
+        {
+          "id": "d0f574df-84a2-4dab-860c-0b708434368c",
+          "text": "Check-in cadence set to Weekly.",
+          "at": "2026-09-07T01:21:47.810Z",
+          "system": true
+        },
+        {
+          "id": "efbbb565-c215-4b33-9d60-fdaa8d7d00f5",
+          "text": "Quest completed.",
+          "at": "2026-09-09T02:35:10.901Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "53b4ee24-30a6-4a8e-a66e-cf5540c5fff2",
+      "title": "PP Audit",
+      "description": "Do a physical audit on all the bins present in the Cairns region utilizing location, description and bin type to check.",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-07T03:32:57.426Z",
+      "completedAt": "2026-09-22T03:00:21.617Z",
+      "lastUpdatedAt": "2026-09-22T03:00:21.617Z",
+      "reminder": "Just had a meeting with Nardia and Sam to discuss what steps to do",
+      "dueDate": "2026-09-18",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-09-07T03:32:57.426Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "e7c4a805-51c7-4e7e-9199-1cfe63fc5761",
+          "label": "SS Maps",
+          "url": "https://ssaprod-internal.cairns.council/connect/analyst/mobile/#/main?mapcfg=%2FAnalyst%2FNamedProjects%2FWaste%20Services"
+        },
+        {
+          "id": "d7a894dd-ab35-4cd2-ad37-92c9073d869e",
+          "label": "Bin Audit App",
+          "url": "https://claude.ai/code/artifact/8baefce0-d8fb-47d1-bae9-2ebc71819cae"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "68ee2e61-857f-4b39-b7ac-d250ed683148",
+          "text": "Initial discussion",
+          "done": true
+        },
+        {
+          "id": "ca8a1fea-1699-4139-842c-1b9c4bc07fed",
+          "text": "Task Allocation",
+          "done": true
+        },
+        {
+          "id": "8009a9c2-2429-4dbb-83ce-d1967cbd713c",
+          "text": "Run Planning",
+          "done": true
+        },
+        {
+          "id": "ea135359-62b9-4ecb-bc08-974d3fe296bc",
+          "text": "City run with sam",
+          "done": true
+        },
+        {
+          "id": "fbd988ff-120e-4ddf-b14f-c0d1af84bea7",
+          "text": "Westcourt",
+          "done": true
+        },
+        {
+          "id": "e0d0a629-8afa-4987-ac5e-09b55244788d",
+          "text": "Redlynch",
+          "done": true
+        },
+        {
+          "id": "0b4593bc-9311-4b2c-ade7-e3cd75c58bdc",
+          "text": "Mooroobool",
+          "done": true
+        },
+        {
+          "id": "b7b4d07e-f28f-4717-8730-f1793ac9cd7d",
+          "text": "Gordonvale",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "b7e2b4ae-52ac-49c2-911b-a8f18d6bcfe3",
+          "text": "Quest added to the log.",
+          "at": "2026-09-07T03:32:57.426Z",
+          "system": true
+        },
+        {
+          "id": "187db5dc-c1e6-4ff1-83e1-d3258956064f",
+          "text": "Nardia has shown me what is required, i will need to utilize the data she has sent and maping from SSQ to find and report on each bin",
+          "at": "2026-09-07T03:33:36.877Z",
+          "system": false
+        },
+        {
+          "id": "8f5af32b-f3a7-4c2f-a263-ef95b101ea87",
+          "text": "Did my first test run, seems to operate easy enough",
+          "at": "2026-09-09T04:00:12.424Z",
+          "system": false
+        },
+        {
+          "id": "9e28c85b-89e6-48f5-ae24-2b72234e638c",
+          "text": "Quest completed.",
+          "at": "2026-09-22T03:00:21.617Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "2522ebb0-9c15-4926-883c-1ad3252a2111",
+      "title": "Paintback JSA/Proceedure/SOP",
+      "description": "Need a procedure done asap for paintback for PTS",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-07T04:22:35.599Z",
+      "completedAt": "2026-09-07T21:06:58.188Z",
+      "lastUpdatedAt": "2026-09-07T21:06:58.188Z",
+      "reminder": "",
+      "dueDate": "2026-09-08",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "bffe93cd-3ab7-40b8-b902-873137c86200",
+          "text": "Send draft to Sam for approval",
+          "done": true
+        },
+        {
+          "id": "bef83afb-bbd1-45bb-a9b1-3b7594318359",
+          "text": "Save into DM and update register 5678167",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "7056804a-55ba-4673-bd1c-781399e03b5f",
+          "text": "Quest added to the log.",
+          "at": "2026-09-07T04:22:35.599Z",
+          "system": true
+        },
+        {
+          "id": "08392dc7-bb33-4a3b-8ccf-cab92eb2eacd",
+          "text": "Pinned as current quest.",
+          "at": "2026-09-07T04:22:43.094Z",
+          "system": true
+        },
+        {
+          "id": "87cc2ae4-6ed9-4308-a2bc-26e7bc90898d",
+          "text": "Quest completed.",
+          "at": "2026-09-07T21:06:58.188Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "54f5f84c-7c92-48cf-a6d8-fb2a9d85f728",
+      "title": "Daily Weighbridge Transaction report for Remondis",
+      "description": "As discussed, to simplify sending the daily transaction report to Remondis, can you please tailor a report to reduce need to adjust data as described in the attached process.",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-09T02:16:10.797Z",
+      "completedAt": "2026-09-09T02:16:55.463Z",
+      "lastUpdatedAt": "2026-09-09T02:16:55.463Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "621b2b40-77b5-44f4-9b8c-235ece24c4f3",
+          "text": "Quest added to the log.",
+          "at": "2026-09-09T02:16:10.797Z",
+          "system": true
+        },
+        {
+          "id": "837c005c-60a6-4c82-832a-a1f711938d27",
+          "text": "Report created",
+          "at": "2026-09-09T02:16:21.131Z",
+          "system": false
+        },
+        {
+          "id": "264da687-9d51-47c9-aac0-b2b4c796ef56",
+          "text": "Email sent to DV to test and confirm, i have tested and it is working. Marking as complete",
+          "at": "2026-09-09T02:16:44.072Z",
+          "system": false
+        },
+        {
+          "id": "1772b4a1-07eb-4e6b-8ee9-12dd5d26c2f7",
+          "text": "Quest completed.",
+          "at": "2026-09-09T02:16:55.463Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "d0f2a397-7886-46da-9c8c-45f8593472f4",
+      "title": "Receipt delay issue",
+      "description": "Investigate and fix the receipt printing delay for each site",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-09T03:56:55.377Z",
+      "completedAt": "2026-09-27T22:10:36.278Z",
+      "lastUpdatedAt": "2026-09-27T22:10:36.278Z",
+      "reminder": "Have emailed Paul to see if he can change values with elevated access",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "2492be76-2c8f-456a-97d7-35c993a6a4cb",
+          "text": "Investigate the Issue",
+          "done": true
+        },
+        {
+          "id": "8879dc90-0d66-4ec6-ae49-bfeeb2273fee",
+          "text": "Contact Mandalay",
+          "done": true
+        },
+        {
+          "id": "b2b83732-10e7-4bc5-b8dc-fd5bf531dc85",
+          "text": "Contact Linkly",
+          "done": true
+        },
+        {
+          "id": "3c82dd1f-6185-4d1d-8c4f-a3b3ed482093",
+          "text": "Contact IT",
+          "done": true
+        },
+        {
+          "id": "b534300d-1579-4a8f-96b0-14a55528f19d",
+          "text": "Resolve Issue",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "3b534533-ac3b-4cde-9364-815b6f262a69",
+          "text": "Quest added to the log.",
+          "at": "2026-09-09T03:56:55.377Z",
+          "system": true
+        },
+        {
+          "id": "26a2e04e-5376-44ad-884f-fbab9f059c92",
+          "text": "Mandalay has been contacted - they are not the problem",
+          "at": "2026-09-09T03:58:10.497Z",
+          "system": false
+        },
+        {
+          "id": "d5b98115-a6dc-44e8-bbc1-ff93fe991a49",
+          "text": "Linkly seems to be the most likely candidate for the issues. They have offered a possible solution",
+          "at": "2026-09-09T03:58:36.612Z",
+          "system": false
+        },
+        {
+          "id": "851eb816-7789-406c-8b76-105ef88c91ad",
+          "text": "To enable AUTODISMISS go the fthe following ocation in the registry editor: HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\CullenSoftwareDesign\\EFTCLIENT\\CLIENT\\AUTODISMISS then set the d-word value to 1.’",
+          "at": "2026-09-09T03:58:45.236Z",
+          "system": false
+        },
+        {
+          "id": "12fcb75c-f33c-4168-b248-346c3e867958",
+          "text": "Contacted IT to assist enabling this",
+          "at": "2026-09-09T03:58:57.386Z",
+          "system": false
+        },
+        {
+          "id": "8b0e2c09-6769-4583-9f0a-380285fdd170",
+          "text": "Mandalay made change to PC, check with PTS to see if it works",
+          "at": "2026-09-17T03:45:55.330Z",
+          "system": false
+        },
+        {
+          "id": "c32bb4ba-50b8-4240-bb71-1074620d925d",
+          "text": "I confirmed with weighbridge staff that a fix was made. They said yes to me but no to dan a few minutes later",
+          "at": "2026-09-22T01:58:05.394Z",
+          "system": false
+        },
+        {
+          "id": "3a54e2c3-5758-4d3f-817b-0772db7cfae9",
+          "text": "Emailed mandalay to do fix to all pc's to test myself",
+          "at": "2026-09-22T01:58:45.313Z",
+          "system": false
+        },
+        {
+          "id": "1ab085d7-2049-4984-8065-a6dfddd29b89",
+          "text": "Resolved at a higher level, while i was away",
+          "at": "2026-09-27T22:10:31.705Z",
+          "system": false
+        },
+        {
+          "id": "b5da326e-2176-4be8-877a-8ac89104feec",
+          "text": "Quest completed.",
+          "at": "2026-09-27T22:10:36.278Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "d0b35e47-e110-4fa4-a4a2-94d74bb7bbd1",
+      "title": "MOU updating for TRC, DSC, MSC, Lotus Glen",
+      "description": "Have confirmed with Steve, we will require MOU documents for: TRC, DSC, MSC, Lotus Glen. The CoEx contract expires on 31 October 2028 – MOUs can expire on the same date.\nYou can utilise the template of TRC, to draft DSC and MSC and Lotus.\nCould you also draft letters to attach to the MOUs, advising the current arrangement has expired and find attached renewal, or something along the lines.\nLet me know if you need any clarification or assistance.",
+      "tier": "major",
+      "repeat": false,
+      "person": "4b4677d2-f00a-4946-a0b6-8a72bd0236fb",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-09T04:07:22.341Z",
+      "completedAt": "2026-10-09T02:46:14.216Z",
+      "lastUpdatedAt": "2026-10-09T02:46:14.216Z",
+      "reminder": "Drafts sent to Sam & Nardia for approval",
+      "dueDate": "2026-10-13",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-10-06T03:01:09.012Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "31acc170-06f1-4cb1-a94a-47331bbea9ef",
+          "text": "TRC",
+          "done": true
+        },
+        {
+          "id": "e2cefd73-9537-42be-9879-a1776ea01917",
+          "text": "DSC",
+          "done": true
+        },
+        {
+          "id": "471a04b0-3ead-4101-95f0-454837376e0e",
+          "text": "MSC",
+          "done": true
+        },
+        {
+          "id": "947d0e90-71df-4781-93ff-fff595416203",
+          "text": "Lotus Glen",
+          "done": true
+        },
+        {
+          "id": "705fa27d-fa4b-4ae7-a906-fdd703531e1d",
+          "text": "Draft Letters made",
+          "done": true
+        },
+        {
+          "id": "a7a95221-a288-43c9-a771-4d7c160b2b26",
+          "text": "All drafts sent to Sam for approval",
+          "done": true
+        },
+        {
+          "id": "17785824-402f-4216-ba94-fbc4ab202ab6",
+          "text": "Await confirmation of okay to send to steve",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "d2aaa255-4565-458b-92cd-4c7744d375c1",
+          "text": "Quest added to the log.",
+          "at": "2026-09-09T04:07:22.341Z",
+          "system": true
+        },
+        {
+          "id": "c43892c0-d845-4a74-8bc3-10dd874f4083",
+          "text": "Drafts sent to sam for approval",
+          "at": "2026-09-29T00:05:20.698Z",
+          "system": false
+        },
+        {
+          "id": "8b993d9c-abc2-48a5-95c4-ec7f055d43fd",
+          "text": "Due date set to 30 Sept 2026.",
+          "at": "2026-09-29T00:06:00.869Z",
+          "system": true
+        },
+        {
+          "id": "e125df22-4527-47b5-8f03-caf9f4c1c8df",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-09-29T00:07:10.899Z",
+          "system": true
+        },
+        {
+          "id": "d8625e90-d70d-473a-9a27-96013916d909",
+          "text": "Sent an email to Nardia to look over",
+          "at": "2026-09-29T03:02:57.649Z",
+          "system": false
+        },
+        {
+          "id": "3adce7c4-e162-4252-81bd-a766f1057b8c",
+          "text": "Have not heard back from Nardia..... might annoy Sam during catch up to see if she want to do",
+          "at": "2026-10-06T03:00:52.190Z",
+          "system": false
+        },
+        {
+          "id": "df48d40a-965f-4239-b121-94609cc667c3",
+          "text": "Due date set to 7 Oct 2026.",
+          "at": "2026-10-06T03:01:01.713Z",
+          "system": true
+        },
+        {
+          "id": "e5b31ffc-918f-4c79-8946-2a0ffd3e2d15",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-10-06T03:01:09.012Z",
+          "system": true
+        },
+        {
+          "id": "d329dfce-988e-4553-b94e-42cd619c7f17",
+          "text": "No dur Nardia didnt answer, she is on A",
+          "at": "2026-10-06T03:08:32.996Z",
+          "system": false
+        },
+        {
+          "id": "34826e32-9cb8-47ff-84a9-1b240c8fe403",
+          "text": "A/L",
+          "at": "2026-10-06T03:08:41.961Z",
+          "system": false
+        },
+        {
+          "id": "c4e52f7b-a9b1-4f63-a4c6-297b21bd317f",
+          "text": "Waiting on Nardia to get back from A/L, feel it is better to be reviewed by her since she did the last revisions.",
+          "at": "2026-10-06T04:45:17.904Z",
+          "system": false
+        },
+        {
+          "id": "f2d92d79-9e11-4d0f-afd5-137fc6f1fcce",
+          "text": "Sam happy with it, just wants to check the lotus glenn one since neither of us know anything aboot it",
+          "at": "2026-10-07T21:08:20.896Z",
+          "system": false
+        },
+        {
+          "id": "4be9cc78-738e-4967-b99a-67e9725dd701",
+          "text": "Due date set to 13 Oct 2026.",
+          "at": "2026-10-07T21:08:32.247Z",
+          "system": true
+        },
+        {
+          "id": "7133a167-e97b-4fe8-b688-461756eabb8c",
+          "text": "Quest completed.",
+          "at": "2026-10-09T02:46:14.216Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "fdb46da2-a552-43a5-93eb-20e559afed79",
+      "title": "CAPEX 601362 - Smithfield Transfer Station Carpark shelter - $60,000.00",
+      "description": "A capex project for Smithfield Transfer Station Carpark shelter that has a budget of $60,000.00- DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "current": false,
+      "status": "active",
+      "progress": 63,
+      "cycles": 0,
+      "createdAt": "2026-09-09T23:31:11.481Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-18T21:51:15.784Z",
+      "reminder": "",
+      "dueDate": "2026-10-06",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": "2026-09-09T23:31:11.481Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "295f817f-edb2-45af-8ba8-3f2384588bf4",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "ebe02f66-5079-4cde-9082-284d1d45c978",
+          "text": "Initiate Project",
+          "done": true
+        },
+        {
+          "id": "567b852c-2c75-4f34-a341-09b9d97a5ea0",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": true
+        },
+        {
+          "id": "9c096abc-431a-466f-b61b-5d95055adb38",
+          "text": "Receive approval from Sam",
+          "done": true
+        },
+        {
+          "id": "c5dc4a24-c233-4f1e-97bf-bc5a4928e9f1",
+          "text": "Get Cost Estimates",
+          "done": true
+        },
+        {
+          "id": "9cbc320b-6988-408e-83f3-5b4d332aed71",
+          "text": "Submit Project Scoring",
+          "done": true
+        },
+        {
+          "id": "ba85a29c-5e7c-4cd7-a7cd-08d47a59ea49",
+          "text": "(If complex project) Submit project Brief register",
+          "done": true
+        },
+        {
+          "id": "e0f811bb-4706-4fec-bc8e-c5531f6d62fd",
+          "text": "Review project planning details",
+          "done": true
+        },
+        {
+          "id": "616885a5-2d91-4b79-af82-7dc7cb40818f",
+          "text": "Review project planning details PMU run IPO",
+          "done": true
+        },
+        {
+          "id": "14104c0a-d483-45c6-b8b0-7a5088c464ef",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": true
+        },
+        {
+          "id": "bac86f9e-618d-466e-81df-6cff13d7430a",
+          "text": "Submit for PLA approval",
+          "done": true
+        },
+        {
+          "id": "1f6c7393-e6ab-459d-aa36-0dfe2c551b51",
+          "text": "Review project and financial details, escalate for approval",
+          "done": true
+        },
+        {
+          "id": "e2d7f238-0cc3-4648-93c0-12d9130555cc",
+          "text": "Review project and financial details",
+          "done": true
+        },
+        {
+          "id": "1b3c2714-544e-482d-a5a7-3eb831ed2fe4",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "47dcb9c7-0cb4-403d-82d5-92f5097f7c2b",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "c4cb54dd-4da2-4201-b411-2e5e4ba3d45e",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "3a35cfa4-6c72-4572-84a7-ae7495157100",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "aed24e94-0d6a-496e-9528-11b4659f55ac",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "1e3de889-d84d-49f1-94f0-ff45cba0843a",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "3186b8c4-add7-413b-8f1a-32f93cfd121a",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "3602805f-41dd-4879-8b9d-17e7b76cfd0b",
+          "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
+          "at": "2026-09-09T23:31:11.481Z",
+          "system": true
+        },
+        {
+          "id": "a21d94f3-b630-4d99-8c2e-81dc664408a6",
+          "text": "Due date set to 15 Sept 2026.",
+          "at": "2026-09-09T23:35:10.446Z",
+          "system": true
+        },
+        {
+          "id": "8a923c64-280f-4e89-91c0-d22e0738bde6",
+          "text": "This project is Shelter for car park",
+          "at": "2026-09-09T23:44:17.028Z",
+          "system": false
+        },
+        {
+          "id": "2e942508-d0d8-40bd-a73c-05281ab8f14a",
+          "text": "Project lead is Leroy - STS",
+          "at": "2026-09-09T23:44:30.611Z",
+          "system": false
+        },
+        {
+          "id": "2b910422-9611-4a37-8ea1-34e6cb359fca",
+          "text": "initial 3 quotes received, reaching back out to suppliers",
+          "at": "2026-09-09T23:44:37.534Z",
+          "system": false
+        },
+        {
+          "id": "0d3b26d8-45f5-4db3-a55c-cf4ddf3dd7e5",
+          "text": "Due date set to 6 Oct 2026.",
+          "at": "2026-09-29T23:58:36.468Z",
+          "system": true
+        },
+        {
+          "id": "c461bc79-95aa-480d-bb0c-7c61b677f11d",
+          "text": "Check-in cadence turned off.",
+          "at": "2026-09-29T23:58:48.415Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "49b386f4-cf5a-4c5b-8a69-3cba8cd0de17",
+      "title": "CAPEX 601361 - Paint Storage Upgrades - $80,000.00",
+      "description": "A capex project for Paint Storage Upgrades that has a budget of $80,000.00 - DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "current": false,
+      "status": "active",
+      "progress": 11,
+      "cycles": 0,
+      "createdAt": "2026-09-09T23:31:46.975Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-09-29T23:59:27.582Z",
+      "reminder": "Barry sourcing quotes for hardstand and bunded containers",
+      "dueDate": "2026-10-06",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": "2026-09-09T23:31:46.975Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "165379b0-e10f-4c2f-a692-08d91ca2f405",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "2e2fd5c3-279f-433d-97ae-fa2993fad283",
+          "text": "Initiate Project",
+          "done": true
+        },
+        {
+          "id": "806edce7-5223-4027-a4d8-1c05e37833e0",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": true
+        },
+        {
+          "id": "2af960d8-87d7-4491-9c55-6705164ace06",
+          "text": "Receive approval from Sam",
+          "done": false
+        },
+        {
+          "id": "6f708afb-e679-4aed-a359-61cd0438e4e1",
+          "text": "Get Cost Estimates",
+          "done": false
+        },
+        {
+          "id": "b781ef6a-c642-4e7c-9a30-abd3e3ea8ec9",
+          "text": "Submit Project Scoring",
+          "done": false
+        },
+        {
+          "id": "bb24b926-fe6b-4c58-b500-f5e91fd39d5a",
+          "text": "(If complex project) Submit project Brief register",
+          "done": false
+        },
+        {
+          "id": "c81dc713-79ac-40d8-879a-b25f6bca6dc9",
+          "text": "Review project planning details",
+          "done": false
+        },
+        {
+          "id": "3679927d-4880-449b-b402-4d90fe3eafb9",
+          "text": "Review project planning details PMU run IPO",
+          "done": false
+        },
+        {
+          "id": "ff2f7c38-3265-4974-8358-d0aee855c20a",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": false
+        },
+        {
+          "id": "51c89538-58d5-4d5e-8b64-377b3826b858",
+          "text": "Submit for PLA approval",
+          "done": false
+        },
+        {
+          "id": "b0d5bfaf-08b5-4b2b-b734-c9aa56bd9ce7",
+          "text": "Review project and financial details, escalate for approval",
+          "done": false
+        },
+        {
+          "id": "a1f8307f-9ba7-426b-9921-0db592742a3e",
+          "text": "Review project and financial details",
+          "done": false
+        },
+        {
+          "id": "b3758750-5482-4a10-8b79-e71511034ed4",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "3752e478-921b-4495-bce5-e921b888eec4",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "1b80a1f9-577d-4334-bd34-a8b7d10238d6",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "615e5978-08f2-422c-8827-86d871567c4a",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "4a52482f-e491-4f6a-9d50-332153c97a40",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "b38b176d-a14d-4f78-86e0-1c7da2313284",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "8b2cfec7-7548-4257-8129-bea0eb6a09ad",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "af774501-fbcc-4d0a-846e-61f3453bdbb3",
+          "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
+          "at": "2026-09-09T23:31:46.975Z",
+          "system": true
+        },
+        {
+          "id": "b0be3fe3-294c-4c45-a1ff-5dbcff066793",
+          "text": "Due date set to 15 Sept 2026.",
+          "at": "2026-09-09T23:35:20.423Z",
+          "system": true
+        },
+        {
+          "id": "9f8823a5-8918-4a2c-a3ae-69d4e048a888",
+          "text": "Project manager is Barry - PTS",
+          "at": "2026-09-09T23:41:44.669Z",
+          "system": false
+        },
+        {
+          "id": "266c9817-8e82-443b-8a65-0f9ec518c4f6",
+          "text": "No quotes have been sourced yet",
+          "at": "2026-09-09T23:41:56.362Z",
+          "system": false
+        },
+        {
+          "id": "b7b1c2c7-ad4e-4660-86cd-20bf85b7db36",
+          "text": "Due date set to 6 Oct 2026.",
+          "at": "2026-09-29T23:59:22.906Z",
+          "system": true
+        },
+        {
+          "id": "44b85965-c9ee-45db-972c-9872ac56e169",
+          "text": "Check-in cadence turned off.",
+          "at": "2026-09-29T23:59:27.582Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "b116b881-c0f9-4766-ba71-11e6d1b28d20",
+      "title": "CAPEX 601358 - Road Network Upgrades - $200,000.00",
+      "description": "A capex project for Road Network Upgrades that has a budget of $200,000.00 - DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "current": false,
+      "status": "active",
+      "progress": 11,
+      "cycles": 0,
+      "createdAt": "2026-09-09T23:32:24.898Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-29T22:08:34.249Z",
+      "reminder": "Jarrod sourcing quotes",
+      "dueDate": "2026-10-06",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": "2026-09-09T23:32:24.898Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "5651cb04-388e-4d37-841b-551312f2458d",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        },
+        {
+          "id": "5f97d565-200f-4ea1-beb7-73acf2978216",
+          "label": "Project",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectMyMaintenance/Index?f=$PRJ.PLM.PC.MNT&h=rnS33NrFMS&t=1B901F92&suite=CES&pagekey=20261030080822"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "5506feac-a3c2-48f4-be75-e8e9c5e87c9f",
+          "text": "Initiate Project",
+          "done": true
+        },
+        {
+          "id": "b2a750c1-f866-4cf2-86c9-21e78fb103a0",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": true
+        },
+        {
+          "id": "bfed683b-3150-4eb1-8574-02febc690401",
+          "text": "Receive approval from Sam",
+          "done": false
+        },
+        {
+          "id": "49cb94af-1b28-40f1-814c-aee3788b8e97",
+          "text": "Get Cost Estimates",
+          "done": false
+        },
+        {
+          "id": "9319c0b8-c39b-4aaa-ae83-f253f7e44c4b",
+          "text": "Submit Project Scoring",
+          "done": false
+        },
+        {
+          "id": "cc2374db-f0fb-4525-a454-2dd43188381d",
+          "text": "(If complex project) Submit project Brief register",
+          "done": false
+        },
+        {
+          "id": "3971aafa-acad-40e8-8e6f-372c56cb098c",
+          "text": "Review project planning details",
+          "done": false
+        },
+        {
+          "id": "898d3c6a-e0a3-4ef1-a111-c76847d3ec2f",
+          "text": "Review project planning details PMU run IPO",
+          "done": false
+        },
+        {
+          "id": "fb80fe16-4862-400e-9151-0da9deaee93a",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": false
+        },
+        {
+          "id": "735f6695-8ffb-45a2-a43b-84405bb1df14",
+          "text": "Submit for PLA approval",
+          "done": false
+        },
+        {
+          "id": "1527d6db-1e4e-4b87-9707-816d4ef1fb94",
+          "text": "Review project and financial details, escalate for approval",
+          "done": false
+        },
+        {
+          "id": "3f82d4e9-972a-4e37-b7ae-efb1e67022dd",
+          "text": "Review project and financial details",
+          "done": false
+        },
+        {
+          "id": "41fd834b-e2ad-441d-bbea-ccdc29ee017a",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "ea5d0c90-cd57-4c2f-8c11-c09fa8adede1",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "2551eb82-d3ad-4565-a5cf-f37f86d2157e",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "30a17e9e-e75d-4a6b-9c88-41d2771d5281",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "b90d66b1-7bae-4d0a-9c30-f9eebff65a60",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "ae3406ca-e06e-4192-92a9-d181ed6cdb92",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "4cea35e2-469a-4323-a411-efa959055233",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "08b52421-d3aa-429c-b6c3-a62e4e47f605",
+          "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
+          "at": "2026-09-09T23:32:24.898Z",
+          "system": true
+        },
+        {
+          "id": "d5df114a-59ae-427d-a555-db9eabd9b68e",
+          "text": "Due date set to 15 Sept 2026.",
+          "at": "2026-09-09T23:35:31.568Z",
+          "system": true
+        },
+        {
+          "id": "f4bbba33-9878-4ce1-8f99-d00a1f004ca5",
+          "text": "This project is a Bridge from metal to green waste",
+          "at": "2026-09-09T23:42:38.911Z",
+          "system": false
+        },
+        {
+          "id": "3ddc6dbb-9f75-4099-b790-acb22e8507b9",
+          "text": "Project lead is Jarrod - STS",
+          "at": "2026-09-09T23:43:05.597Z",
+          "system": false
+        },
+        {
+          "id": "515b0943-8d81-427a-9d04-00546161d70f",
+          "text": "Requested Formosa, works quotes",
+          "at": "2026-09-09T23:43:21.520Z",
+          "system": false
+        },
+        {
+          "id": "575acaf4-c43f-4472-8965-412dc071cd39",
+          "text": "This project is also Concrete from metal to residual",
+          "at": "2026-09-09T23:43:48.351Z",
+          "system": false
+        },
+        {
+          "id": "44ce0d18-d0e3-4c1b-8cf2-bc8c9ab9a5be",
+          "text": "Due date set to 6 Oct 2026.",
+          "at": "2026-09-29T23:58:00.354Z",
+          "system": true
+        },
+        {
+          "id": "e6f5ad80-78a9-4b6d-99ed-068ecf8c5a38",
+          "text": "Check-in cadence turned off.",
+          "at": "2026-09-29T23:59:01.824Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "0998061b-e71c-45b4-847d-b75e641790bc",
+      "title": "Contractor Vehicle",
+      "description": "Can someone please set up 419XFP to bring in waste on behalf of Council at PTS and STS until Dec 26.",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "active",
+      "progress": 50,
+      "cycles": 0,
+      "createdAt": "2026-09-17T03:34:55.424Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-09-17T03:45:28.450Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "042b971b-2152-4e31-8b4a-5d68920679f2",
+          "text": "Added Vehicle to Mandalay",
+          "done": true
+        },
+        {
+          "id": "f1e7bd20-99a9-4eea-b8a0-52e3b701efeb",
+          "text": "Have someone check as im unsure",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "2fd2de7b-577e-4873-bf13-2191c536aff1",
+          "text": "Quest added to the log.",
+          "at": "2026-09-17T03:34:55.424Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "1e2d475a-49c7-472e-b8e3-96fb0806912a",
+      "title": "Infrastructure weights in RORO's",
+      "description": "Do you know if anyone is taking the cage and pallet weights off the bin weights from Smithfield etc? I put them into document #2362383 under the RORO’s additional weight tab but I don’t think anyone has looked at this in quite some time. I have brought this up previously, but I don’t think anything has been done about this. Are you able to look into this for me please?",
+      "tier": "major",
+      "repeat": false,
+      "person": "da2f9d98-6d75-4fed-858c-9cce90823a3a",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-22T02:40:55.557Z",
+      "completedAt": "2026-10-14T00:20:40.519Z",
+      "lastUpdatedAt": "2026-10-14T00:20:40.519Z",
+      "reminder": "Wait to hear back from everyone to what they think of the changes",
+      "dueDate": "2026-10-09",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "e4526f63-bc78-4409-8005-f1e2e6859f5e",
+          "text": "Quest added to the log.",
+          "at": "2026-09-22T02:40:55.557Z",
+          "system": true
+        },
+        {
+          "id": "0a504bea-20a9-4fe5-a42e-b0896cfe66ac",
+          "text": "Due date set to 23 Sept 2026.",
+          "at": "2026-09-22T03:01:39.372Z",
+          "system": true
+        },
+        {
+          "id": "16031fa6-f4bd-47e6-b04c-d2897f7f4b95",
+          "text": "Put on hold as i got sick :(",
+          "at": "2026-09-27T22:14:01.472Z",
+          "system": false
+        },
+        {
+          "id": "488ce7d7-4fef-4722-a626-245e637e65e2",
+          "text": "Due date set to 30 Sept 2026.",
+          "at": "2026-09-27T22:14:27.370Z",
+          "system": true
+        },
+        {
+          "id": "a01217b3-36f4-4d60-bc2e-be7f10cf2362",
+          "text": "Sent out another email to set up another meeting",
+          "at": "2026-10-05T21:57:03.074Z",
+          "system": false
+        },
+        {
+          "id": "4b447cc9-baf6-4724-9007-4bea0f2d202f",
+          "text": "Due date set to 7 Oct 2026.",
+          "at": "2026-10-05T21:57:13.987Z",
+          "system": true
+        },
+        {
+          "id": "0cb740cf-7684-4f29-a8c6-3da1802b6832",
+          "text": "Moved from \"Sam\" to \"Dan\".",
+          "at": "2026-10-06T02:50:39.944Z",
+          "system": true
+        },
+        {
+          "id": "394bd057-40b4-4592-970f-3a2ad94ee0af",
+          "text": "Scheduled for Friday 1pm",
+          "at": "2026-10-07T22:54:53.109Z",
+          "system": false
+        },
+        {
+          "id": "cac85d94-6102-4b49-84de-02dff4d01ec7",
+          "text": "Due date set to 9 Oct 2026.",
+          "at": "2026-10-07T22:54:59.318Z",
+          "system": true
+        },
+        {
+          "id": "0572468e-8e1f-4216-818d-78d69b7a046f",
+          "text": "Emailed Leanne as we have no idea who is updating the document and only option is Leanne. If she is updating we are aiming to just add some more columns to auto look up the date, location and minus the weights out of the weight in",
+          "at": "2026-10-09T03:42:21.399Z",
+          "system": false
+        },
+        {
+          "id": "a50ebeaf-c140-4788-af7f-f29874fc16d5",
+          "text": "Added a auto calculating column to the spreadsheet for each location. Sent it out for everyone to reveiew",
+          "at": "2026-10-12T22:39:35.013Z",
+          "system": false
+        },
+        {
+          "id": "52f2912d-9d2b-4775-8fa0-67d9c085d837",
+          "text": "Quest completed.",
+          "at": "2026-10-14T00:20:40.519Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "d19b0b41-f4f7-44fa-9392-ec61637de93e",
+      "title": "Compactor Pre-start",
+      "description": "a prestart document for the compactors at TFS",
+      "tier": "major",
+      "repeat": false,
+      "person": "da2f9d98-6d75-4fed-858c-9cce90823a3a",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-09-29T00:08:51.557Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-06T02:53:22.023Z",
+      "reminder": "Contacted Dan to get this started",
+      "dueDate": "2026-10-12",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "4c259041-8711-4cb6-9fc8-511402882acc",
+          "text": "Create draft",
+          "done": false
+        },
+        {
+          "id": "85371ea1-dd23-45f2-93da-b388b049fe11",
+          "text": "Send draft to Sam & Dan for approval",
+          "done": false
+        },
+        {
+          "id": "8eeb0c76-64d9-4dea-aa36-cfc925160b3f",
+          "text": "Save into DM and update register 5678167",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "f4fb7290-dacf-4a09-8a8f-dfc54a0eb7b3",
+          "text": "Quest added to the log.",
+          "at": "2026-09-29T00:08:51.557Z",
+          "system": true
+        },
+        {
+          "id": "560e4431-8a22-4de0-8de3-cc123e6c0bfc",
+          "text": "Emailed dan since i had not heard from in to get this project started",
+          "at": "2026-10-06T02:53:04.143Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "178f92f2-b639-4736-8960-4fe16cea8cd9",
+      "title": "Babinda  & Gordonvale Commercial Waste - Aug 2026 - Naus Report not showing correctly",
+      "description": "From Leanne - I am just looking at the commercial transactions for August at Babinda and Gordonvale.  It appears there are no weights connected to the August tickets – which I thought was a bit weird, seeing as there appears to be a payment on the transaction and they were there in July. I initially thought maybe the season change on the 15/8 had affected the deemed weights but the transactions affected are across the whole month.",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-09-29T02:19:39.174Z",
+      "completedAt": "2026-09-29T22:54:28.577Z",
+      "lastUpdatedAt": "2026-09-29T22:54:28.577Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "dc8861f6-f8b8-4420-b256-b1c367adf767",
+          "text": "Quest added to the log.",
+          "at": "2026-09-29T02:19:39.174Z",
+          "system": true
+        },
+        {
+          "id": "c665b656-78b2-4794-80d2-a5e7741bcb5c",
+          "text": "I emailed Nick for assistance as i was stuck",
+          "at": "2026-09-29T02:19:59.415Z",
+          "system": false
+        },
+        {
+          "id": "8a250931-06b4-4611-81c7-156689b6254a",
+          "text": "Nick came to the same conclusion that it must be the report she is using since we are getting weights and she is not",
+          "at": "2026-09-29T02:20:23.583Z",
+          "system": false
+        },
+        {
+          "id": "83d78dbd-7b7c-42bd-bb9a-e2ed3af364f5",
+          "text": "I have sent an email to Leanne to confirm what report she is using",
+          "at": "2026-09-29T02:20:50.471Z",
+          "system": false
+        },
+        {
+          "id": "ebada209-f4d9-4f43-abcf-dbe807330e93",
+          "text": "I went fishing for issues, looked at net weights, seems there are two different net weights, one has in () total product. This one has correct weights. whatever report she is using must not have the  correct variable",
+          "at": "2026-09-29T02:24:55.238Z",
+          "system": false
+        },
+        {
+          "id": "5b328781-ddce-4718-8d03-275681e6b97f",
+          "text": "Quest completed.",
+          "at": "2026-09-29T22:54:28.577Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "658a3956-e86d-4b6b-81b8-40002d709f0b",
+      "title": "Glass Sampling",
+      "description": "Take Samples of glass and send off at the beginning of month, ensure it has been dry",
+      "tier": "major",
+      "repeat": true,
+      "person": "ba1f8074-c459-4230-8e1a-f20aa71b035f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 1,
+      "createdAt": "2026-09-29T03:59:49.667Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-07T21:09:05.832Z",
+      "reminder": "Take samples",
+      "dueDate": "2026-11-06",
+      "checkIn": {
+        "cadence": "monthly",
+        "lastCheckIn": "2026-11-05T14:00:00.000Z"
+      },
+      "restingUntil": "2026-11-05T14:00:00.000Z",
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "8bfc10f0-7ff1-40fc-8df0-7916ec97330a",
+          "text": "Quest added to the log.",
+          "at": "2026-09-29T03:59:49.667Z",
+          "system": true
+        },
+        {
+          "id": "627c456b-5b73-4028-836b-109ab063b2de",
+          "text": "Switched to a repeatable quest.",
+          "at": "2026-09-29T04:00:02.107Z",
+          "system": true
+        },
+        {
+          "id": "4f5f1475-1c85-4291-b2ef-ef9556ec8f16",
+          "text": "Check-in cadence set to Monthly.",
+          "at": "2026-09-29T04:00:09.338Z",
+          "system": true
+        },
+        {
+          "id": "b192afdf-fa15-4581-a271-acfe6d0c7788",
+          "text": "Due date set to 7 Oct 2026.",
+          "at": "2026-10-06T03:02:07.404Z",
+          "system": true
+        },
+        {
+          "id": "81d48bb7-41cf-4c22-8911-a01da8b9cf1f",
+          "text": "Sample taken",
+          "at": "2026-10-07T21:08:47.353Z",
+          "system": false
+        },
+        {
+          "id": "0f2ae43b-59b1-43e4-a5cf-c9dcd6af937d",
+          "text": "Cycle 1 complete — resting until 6 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-10-07T21:09:05.832Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "cec16b26-d104-4cf2-a804-5367dbd617fe",
+      "title": "Send off Glass sampling results email",
+      "description": "Good afternoon,\n\nThe routine tests of the MRF and CRS crushed glass sampled on 08/09/2026 have been received and updated in our monitoring spreadsheet.\n\nMRF Glass\n\n•\tResults are within MRTS36 thresholds. \n•\tResults are not within MRTS39 thresholds.\n\nCRS Glass\n\n•\tAll results are within MRTS36 and MRTS39 thresholds. \n\nPlease let me know if you have any questions or require further information.",
+      "tier": "major",
+      "repeat": true,
+      "person": "ba1f8074-c459-4230-8e1a-f20aa71b035f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 1,
+      "createdAt": "2026-09-29T04:01:17.813Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-26T22:49:07.110Z",
+      "reminder": "Wait for results",
+      "dueDate": "2026-11-19",
+      "checkIn": {
+        "cadence": "monthly",
+        "lastCheckIn": "2026-11-18T14:00:00.000Z"
+      },
+      "restingUntil": "2026-11-18T14:00:00.000Z",
+      "links": [],
+      "subtasks": [
+        {
+          "id": "b76dfde4-9518-45ef-a75b-0396e3756018",
+          "text": "Receive Email with results",
+          "done": false
+        },
+        {
+          "id": "678a2417-97d5-4bee-8155-39c638b1ea2a",
+          "text": "Update 6639124 with results",
+          "done": false
+        },
+        {
+          "id": "2cb52a24-d182-4067-8cd0-8aa39257d8ed",
+          "text": "Send out email with results - ensure to specify sugar, eg if 90, Sugar at 90mg/kg, 10 below the maxium",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "dbb8ab3f-4bf3-467e-a282-8bd64f2c8d80",
+          "text": "Quest added to the log.",
+          "at": "2026-09-29T04:01:17.813Z",
+          "system": true
+        },
+        {
+          "id": "0045a192-9d9c-4c49-98f9-517b8c4a52fa",
+          "text": "Vlad has asked for me to make these more specific when sending off emails, referencing how close or how much over sugar levels are",
+          "at": "2026-10-06T04:43:34.768Z",
+          "system": false
+        },
+        {
+          "id": "fcb5a14c-4989-4a2b-9bfd-9b17b2a5f346",
+          "text": "Cycle 1 complete — resting until 19 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-10-26T22:49:07.110Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "f4263112-5a70-462c-9b56-4f71ae33ab68",
+      "title": "Naus dashboard request",
+      "description": "The team will use  all outgoing numbers to fill in their matrix boards and reports\n\ncater them towards PTS and STS, as using the weighbridge outgoing tonnes and incoming transactions – southern will have to continue getting them manually a different way or a different dashboard as they rely on incoming to mrf for most of their numbers and it will complicate the dashboard\n\nALUMINIUM scrap (t)\ncar batteries (t)\nCARDBOARD (site) (t)\nCO-MINGLED RECYCLING \nCOPPER WIRE (t)\nScrap FERROUS metal (t)\nSTAINLESS STEEL (t)\nTRANSACTIONS (incoming) (excluding remondis site)\nRevenue (excluding remondis site)",
+      "tier": "major",
+      "repeat": false,
+      "person": "da2f9d98-6d75-4fed-858c-9cce90823a3a",
+      "current": false,
+      "status": "active",
+      "progress": 25,
+      "cycles": 0,
+      "createdAt": "2026-09-30T22:53:27.976Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-06T03:00:06.515Z",
+      "reminder": "Dan has sent me an email requesting a dashboard be made",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "bd3ff868-3a47-49ea-a5fa-3011fdcd2aad",
+          "text": "Create draft dashboard",
+          "done": true
+        },
+        {
+          "id": "c0959a09-7dbc-4c46-8cdb-5963047a5223",
+          "text": "Create draft reports",
+          "done": false
+        },
+        {
+          "id": "dc8a2936-0997-4571-941d-e7bcaa6aad7a",
+          "text": "Send to Dan for approval",
+          "done": false
+        },
+        {
+          "id": "b6208f4a-f406-49c3-9f1c-0f7cfd964cb7",
+          "text": "Complete Task",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "2711d806-48d5-40e4-a0ad-a954e6db571b",
+          "text": "Quest added to the log.",
+          "at": "2026-09-30T22:53:27.976Z",
+          "system": true
+        },
+        {
+          "id": "e89da651-7c14-499f-ba8c-a0285cf00e34",
+          "text": "Currently having issues getting all the data for this",
+          "at": "2026-10-06T02:54:00.988Z",
+          "system": false
+        },
+        {
+          "id": "95ad7a06-d84d-440d-8ba0-0044ce9f62b0",
+          "text": "Ran into a few issues with getting data, have asked dan for examples on how it should look",
+          "at": "2026-10-06T02:59:22.114Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "cd39a8c9-75aa-4a0f-89fc-9d2e491d4672",
+      "title": "Assist at martyn street possibly? awaiting confirmation",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "4b4677d2-f00a-4946-a0b6-8a72bd0236fb",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-01T03:18:46.019Z",
+      "completedAt": "2026-10-01T04:19:14.695Z",
+      "lastUpdatedAt": "2026-10-01T04:19:14.695Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "a035d245-ee5d-4d41-a989-c03b6ccfefe7",
+          "text": "Quest added to the log.",
+          "at": "2026-10-01T03:18:46.019Z",
+          "system": true
+        },
+        {
+          "id": "74e6d0a4-daa8-47af-b4d6-ca75c4868732",
+          "text": "Was not needed, work all of a sudden went from drowning to nearly complete...",
+          "at": "2026-10-01T04:19:08.245Z",
+          "system": false
+        },
+        {
+          "id": "f7cd9e29-5bdf-485e-9e6e-43467bf2c3a5",
+          "text": "Quest completed.",
+          "at": "2026-10-01T04:19:14.695Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "51d01f7a-f73e-467f-86e7-4bde6fa9986b",
+      "title": "CRS - Incoming various material",
+      "description": "Create a digital form Nick and I can use on our phones while out and about instead of using a clipboard and paper and having to understand handwriting. With wind and weather sometimes, these numbers are not legible leading to missing information. Needs to follow councils security in the rare chance it is checked by someone. needs two factor auth.",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-06T01:10:21.795Z",
+      "completedAt": "2026-10-26T22:50:13.293Z",
+      "lastUpdatedAt": "2026-10-26T22:50:13.293Z",
+      "reminder": "Currently testing",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "106a5e57-3603-4446-87b3-813c9739f0da",
+          "label": "Digital Form",
+          "url": "https://crcmrf.github.io/crs-intake/"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "82dd6ef0-a48d-42d1-8516-5bbcceb91b16",
+          "text": "Create draft",
+          "done": true
+        },
+        {
+          "id": "4c3c1c3a-c51e-42ac-8188-d6f766713850",
+          "text": "Send draft to Nick for approval",
+          "done": true
+        },
+        {
+          "id": "473499f3-e420-4f13-ad6f-c938396ec243",
+          "text": "Trial for a weeks to see if everything works correctly",
+          "done": true
+        }
+      ],
+      "notes": [
+        {
+          "id": "18afa616-3046-4b1d-93db-075f471986f1",
+          "text": "Quest added to the log.",
+          "at": "2026-10-06T01:10:21.795Z",
+          "system": true
+        },
+        {
+          "id": "c066b8e6-52e2-4b32-b0fa-e360f7bb9240",
+          "text": "Created dashboard to compare past and current materials being brought in from each location",
+          "at": "2026-10-06T02:02:31.346Z",
+          "system": false
+        },
+        {
+          "id": "9b4ce7fb-5341-4629-8268-8db71e08f5e2",
+          "text": "Created a digital version of the sheet allowing for multiple users and realtime edits",
+          "at": "2026-10-06T02:02:54.063Z",
+          "system": false
+        },
+        {
+          "id": "ae4784f9-cead-4037-bf05-c56a7ea8bf49",
+          "text": "Added ability to edit entries after adding to add weight to IBCS or if entry is put in wrong",
+          "at": "2026-10-06T02:03:20.982Z",
+          "system": false
+        },
+        {
+          "id": "9a2a3265-7b05-4a63-9ea2-4907c8f6edc2",
+          "text": "Add ability to print and export data, export to excel and print to A4",
+          "at": "2026-10-06T02:03:42.530Z",
+          "system": false
+        },
+        {
+          "id": "e155eaee-0128-4490-8a31-6afd4efd48a7",
+          "text": "It seems this is a success - marking as complete - Nick has had no issues",
+          "at": "2026-10-26T22:49:34.096Z",
+          "system": false
+        },
+        {
+          "id": "0fdf19bd-4968-457f-8816-2b9527b6137b",
+          "text": "Quest completed.",
+          "at": "2026-10-26T22:50:13.293Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "5f4b82dc-e666-4d05-b22a-642928580f12",
+      "title": "One Council Asset Audit",
+      "description": "Do an audit on the assets in one council to get, names, equipment, locations, ect fixed",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-10-06T03:22:27.616Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-06T03:30:28.739Z",
+      "reminder": "",
+      "dueDate": "2026-10-21",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [
+        {
+          "id": "8ba1a7f4-35e9-4584-bbd3-c772cb6aa5d9",
+          "text": "Create a list of assets that need fixing and what is needed to fix them",
+          "done": false
+        },
+        {
+          "id": "845a7946-c9b1-487f-b232-b308aac15605",
+          "text": "Send list to Sam for approval",
+          "done": false
+        },
+        {
+          "id": "d3ec6a1f-ec22-498c-8003-e82776e96ac0",
+          "text": "Send approved list to relevant department required to achieve task",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "2f2d8a4a-775e-4c00-9f8d-78bf385c3cb1",
+          "text": "Quest added to the log.",
+          "at": "2026-10-06T03:22:27.616Z",
+          "system": true
+        },
+        {
+          "id": "d89fea4a-0b0a-4d34-997e-17610e30d480",
+          "text": "Been making a list, realised some assets are not part of the main area.... need to find where they are. Only know they exist from past capex projects",
+          "at": "2026-10-06T03:30:28.739Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "598ccacc-c20a-4785-b23c-a83c1b088834",
+      "title": "CAPEX 601455 - Weighbridge office upgrades - Stage 2 -  $170,000.00",
+      "description": "A capex project for 601455 that has a budget of $170,000 - DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-10-06T23:54:55.608Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-27T23:56:45.581Z",
+      "reminder": "Assessment Complete - Follow up with sam on next steps",
+      "dueDate": "2026-10-19",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-10-14T00:19:23.579Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "f3de1c39-a21a-4f37-acc1-fc686a9b039c",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "8ada9b58-790a-433f-bf4a-08c0b1d3b3d2",
+          "text": "Initiate Project",
+          "done": false
+        },
+        {
+          "id": "72911892-f0cb-4079-a6c6-fe6d32e68a01",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": false
+        },
+        {
+          "id": "880d21e9-8e3a-49b6-a113-615bbbea15cd",
+          "text": "Receive approval from Sam",
+          "done": false
+        },
+        {
+          "id": "1ce654e0-a210-4807-af29-ba63e74f379b",
+          "text": "Get Cost Estimates",
+          "done": false
+        },
+        {
+          "id": "2ac96431-caf4-420f-9901-cd4f53c59ebb",
+          "text": "Submit Project Scoring",
+          "done": false
+        },
+        {
+          "id": "8a430301-73eb-4115-9ffb-1cda9c1502af",
+          "text": "(If complex project) Submit project Brief register",
+          "done": false
+        },
+        {
+          "id": "6f085570-e7e6-41b8-870d-88a2aca9ce38",
+          "text": "Review project planning details",
+          "done": false
+        },
+        {
+          "id": "39fc9a30-f7e7-4c93-888f-6d193db83c1b",
+          "text": "Review project planning details PMU run IPO",
+          "done": false
+        },
+        {
+          "id": "b79cd626-c228-428e-ae21-76782c33456e",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": false
+        },
+        {
+          "id": "b459cf93-f452-4112-86aa-1704908a7cdc",
+          "text": "Submit for PLA approval",
+          "done": false
+        },
+        {
+          "id": "15c43ef5-11bb-41b0-8b0f-08e5c80ae3c1",
+          "text": "Review project and financial details, escalate for approval",
+          "done": false
+        },
+        {
+          "id": "d7c43580-3b40-4392-9705-a3d13e505f1c",
+          "text": "Review project and financial details",
+          "done": false
+        },
+        {
+          "id": "6359f447-c9a9-416d-a6b1-5245b5b1debb",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "bbeb8d7b-2f7c-4fe3-a655-562279d68711",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "dc44e831-574f-4dc1-a502-97bb32aefb0b",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "5135166c-3efe-4bfa-9d01-2ae568c4ca1c",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "549d52c8-26ff-4b4b-9571-7f85f8ae7f4f",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "e06d88cc-9faa-4c6e-8c58-d6afe0ea57d5",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "11fee6cb-b9ee-42ac-aca5-95af5d3bc386",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "e736e0d5-d1bd-4768-a4b3-dc06eb561c08",
+          "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
+          "at": "2026-10-06T23:54:55.608Z",
+          "system": true
+        },
+        {
+          "id": "853da7b9-b6e0-4f3a-a7c2-90fac61d7220",
+          "text": "Email sent to AKTIV to confirm Monday, 19th for site visit",
+          "at": "2026-10-07T02:03:25.511Z",
+          "system": false
+        },
+        {
+          "id": "9e104579-9eba-46a9-9567-61a1daf5714a",
+          "text": "Due date set to 19 Oct 2026.",
+          "at": "2026-10-14T00:19:18.111Z",
+          "system": true
+        },
+        {
+          "id": "02406997-cdef-4b1a-8c83-c1db3eef1a57",
+          "text": "Checked in. Back on the board for now.",
+          "at": "2026-10-14T00:19:23.579Z",
+          "system": true
+        },
+        {
+          "id": "cc2f810d-25cd-48d2-9e92-a8043c43a9f6",
+          "text": "Passed structural assessment - Followed up with Daniel to give me email to say it passed",
+          "at": "2026-10-27T23:56:45.581Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "33e6a4b3-6589-4b9b-a7c9-8a86a202f9b4",
+      "title": "Calendars and planners",
+      "description": "Get numbers of how many of each the TFS's want",
+      "tier": "minor",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-10-06T23:58:33.186Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-07T00:09:01.271Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "b7393994-ee06-4c57-a5a0-8a66cefa4808",
+          "text": "Quest added to the log.",
+          "at": "2026-10-06T23:58:33.186Z",
+          "system": true
+        },
+        {
+          "id": "962b953a-a9f8-4539-953f-1dab171b2060",
+          "text": "x1 for smithfield",
+          "at": "2026-10-07T00:08:43.421Z",
+          "system": false
+        },
+        {
+          "id": "3b9988ca-45b4-41d2-959a-94ec0b2508d0",
+          "text": "x2 for portsmith",
+          "at": "2026-10-07T00:08:53.214Z",
+          "system": false
+        },
+        {
+          "id": "b4074869-f0ab-4e39-a377-35825bff5f7e",
+          "text": "x1 for dan",
+          "at": "2026-10-07T00:09:01.271Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "4b9073b4-7ec2-46e3-aace-ad7e038f7dca",
+      "title": "WOODWAVES - ACCOUNT CREATE AND VEHICLE ADD",
+      "description": "Request from Duncan to create a new account and vehicles x5",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-07T21:31:08.127Z",
+      "completedAt": "2026-10-07T22:05:01.521Z",
+      "lastUpdatedAt": "2026-10-07T22:05:01.521Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "6f489096-ccd1-4858-bff1-7d7e5e5e88ba",
+          "text": "Quest added to the log.",
+          "at": "2026-10-07T21:31:08.127Z",
+          "system": true
+        },
+        {
+          "id": "db88ce86-0677-4329-8e51-5d56471f26c9",
+          "text": "Quest completed.",
+          "at": "2026-10-07T22:05:01.521Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "89d367ca-af02-4cb3-9ff0-bbfc7cfc8ad0",
+      "title": "KLS Fencing Pty Ltd - account create",
+      "description": "Create account and vehicles as per email from duncan x 3",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-07T21:31:41.674Z",
+      "completedAt": "2026-10-07T22:04:53.585Z",
+      "lastUpdatedAt": "2026-10-07T22:04:53.585Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "4351b47f-879b-4dec-a958-07b2484c58f8",
+          "text": "Quest added to the log.",
+          "at": "2026-10-07T21:31:41.674Z",
+          "system": true
+        },
+        {
+          "id": "8f42674e-c0c8-4464-99da-969032ae3ffc",
+          "text": "Quest completed.",
+          "at": "2026-10-07T22:04:53.585Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "cbdff9eb-5ec8-4ae7-9a24-cb6fed004dcc",
+      "title": "Arkwood - vehicle add",
+      "description": "Add vehicles and account for arkwood",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-07T22:05:28.711Z",
+      "completedAt": "2026-10-07T22:54:14.800Z",
+      "lastUpdatedAt": "2026-10-07T22:54:14.800Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "887ad445-daf5-4149-b6f5-fcdd54d97551",
+          "text": "Quest added to the log.",
+          "at": "2026-10-07T22:05:28.711Z",
+          "system": true
+        },
+        {
+          "id": "dc1e9fc2-3047-4c91-ac1f-93ca26edc991",
+          "text": "Asked Nick to confirm what i did was right since was my first time attempting such a task",
+          "at": "2026-10-07T22:54:10.323Z",
+          "system": false
+        },
+        {
+          "id": "c007ca45-6d71-4fc6-9524-9f48143e4acd",
+          "text": "Quest completed.",
+          "at": "2026-10-07T22:54:14.800Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "6d08d4fc-6d8e-4d2c-850a-2ef4fb8f0857",
+      "title": "Update JH STS access to retare vehicles",
+      "description": "Button was not present due to him not have power operator applied to his account",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-09T01:48:11.387Z",
+      "completedAt": "2026-10-09T01:52:11.502Z",
+      "lastUpdatedAt": "2026-10-09T01:52:11.502Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "1ff97b69-59aa-4d52-bb7a-3bff0efb0b14",
+          "text": "Quest added to the log.",
+          "at": "2026-10-09T01:48:11.387Z",
+          "system": true
+        },
+        {
+          "id": "d53a65c3-9faf-4ba3-9769-1ad55c202d21",
+          "text": "Quest completed.",
+          "at": "2026-10-09T01:52:11.502Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "e4a1215a-3770-4488-a96a-dcbb8947030f",
+      "title": "Contractor Induction QR",
+      "description": "The next QR code for Vlad",
+      "tier": "major",
+      "repeat": false,
+      "person": "9f382b7b-1c57-46fd-9113-698c6051dff5",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-10-11T23:22:35.509Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-14T21:45:05.219Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "56dbacc4-0ca9-4c10-9315-fe188bec3e71",
+          "label": "Word Version",
+          "url": "https://cairnscouncil-my.sharepoint.com/:w:/r/personal/vlad_horicka_cairns_qld_gov_au/_layouts/15/Doc.aspx?sourcedoc=%7BE8C61FFE-DCA6-46B2-AA72-04C230455D56%7D&file=contractor%20induction.docx&wdLOR=cA6C01499-9AD0-474B-B878-27A64257C7CB&fromShare=true&action=default&mobileredirect=true"
+        }
+      ],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "2c855afa-dc91-4cc9-a4d2-325b46f5bc92",
+          "text": "Quest added to the log.",
+          "at": "2026-10-11T23:22:35.509Z",
+          "system": true
+        },
+        {
+          "id": "56841ddb-b758-4c4f-af27-10ca8b0f3413",
+          "text": "We need maps from main office to toilets, smoko, ect",
+          "at": "2026-10-12T01:57:25.719Z",
+          "system": false
+        },
+        {
+          "id": "1de8bc5a-a707-4e91-ba2d-c1e871aba00b",
+          "text": "Need similar to other QR code that has the seen and downloaded for diagrams",
+          "at": "2026-10-12T01:57:57.064Z",
+          "system": false
+        },
+        {
+          "id": "58a32425-cec4-4fa2-9d5a-b00217731bf6",
+          "text": "Send breakdown to Sam to see how she wants to proceed",
+          "at": "2026-10-13T21:30:58.889Z",
+          "system": false
+        },
+        {
+          "id": "6b538b62-cf80-42b8-bdcf-97fc97ab64d9",
+          "text": "Sam says to keep as draft until after we know what is happening with meeting",
+          "at": "2026-10-14T21:45:05.219Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "8c81f006-acdc-4c56-9258-78d7cb969f8c",
+      "title": "Sent Sam AMCS new support site feedback",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-14T23:33:14.620Z",
+      "completedAt": "2026-10-14T23:33:22.002Z",
+      "lastUpdatedAt": "2026-10-14T23:33:22.002Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "9b8652bd-1f73-42b2-af4e-2a6eb7e8b36b",
+          "text": "Quest added to the log.",
+          "at": "2026-10-14T23:33:14.620Z",
+          "system": true
+        },
+        {
+          "id": "25ad601d-1a08-4cee-9af7-74fcff3c6616",
+          "text": "Quest completed.",
+          "at": "2026-10-14T23:33:22.002Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "e3745082-3547-47a1-9bdc-65721b7eafa0",
+      "title": "BBS Proceedure update",
+      "description": "Vlad has asked me to update the procedures for the BBS\n74632034        - Buy Back Shop Opening and Closing Procedure\n4910620           -  Buy Back Shop Pos Information",
+      "tier": "major",
+      "repeat": false,
+      "person": "9f382b7b-1c57-46fd-9113-698c6051dff5",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-10-28T21:55:40.773Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-28T21:55:40.773Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "21e416bb-07ba-4176-ab71-714a86c2ab5c",
+          "text": "Quest added to the log.",
+          "at": "2026-10-28T21:55:40.773Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "e3f896a7-2813-45da-b574-e138af327f48",
+      "title": "Anniversary Year 1 2025",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "f2afd713-a33d-45ea-bbc8-bdf74a92d78c",
+      "current": false,
+      "status": "completed",
+      "progress": 100,
+      "cycles": 0,
+      "createdAt": "2026-10-29T04:03:10.772Z",
+      "completedAt": "2026-10-29T04:03:17.609Z",
+      "lastUpdatedAt": "2026-10-29T04:03:17.609Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "f460738a-df9d-469d-bf4f-576187e863d7",
+          "text": "Quest added to the log.",
+          "at": "2026-10-29T04:03:10.772Z",
+          "system": true
+        },
+        {
+          "id": "04e8d7ac-71cb-4dbd-994c-195171ac1244",
+          "text": "Quest completed.",
+          "at": "2026-10-29T04:03:17.609Z",
+          "system": true
+        }
+      ]
+    },
+    {
+      "id": "ac209611-918c-4baa-8141-a3d6038c1cde",
+      "title": "Anniversary Year 2 2026",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "f2afd713-a33d-45ea-bbc8-bdf74a92d78c",
+      "current": false,
+      "status": "active",
+      "progress": 20,
+      "cycles": 0,
+      "createdAt": "2026-10-29T04:03:40.716Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-29T04:13:31.013Z",
+      "reminder": "",
+      "dueDate": "2026-11-16",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "36c0981c-ccc2-4dce-9abe-3562dfe67967",
+          "label": "Image",
+          "url": "https://images.stunninggift4u.com/wp-content/uploads/2022/09/16012640/banner-tsxsxrang-stunning-gift_optimized-3.jpg"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "08b2c332-38af-42f7-bdfb-b623d5c14d72",
+          "text": "Present",
+          "done": false
+        },
+        {
+          "id": "0c05cad7-f46f-4403-9e79-19784f43db54",
+          "text": "Card",
+          "done": false
+        },
+        {
+          "id": "0a4422c3-efa2-430e-8711-614a747cf199",
+          "text": "Lego Flower",
+          "done": false
+        },
+        {
+          "id": "44d7b9cd-2a5e-434c-8416-f35e016521af",
+          "text": "Game",
+          "done": true
+        },
+        {
+          "id": "912bda6e-2487-4ff3-9c8d-28fa0ad5ef16",
+          "text": "Resturant",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "5bb167ba-bf64-4469-bdda-c1a0e9fc3040",
+          "text": "Quest added to the log.",
+          "at": "2026-10-29T04:03:40.716Z",
+          "system": true
+        },
+        {
+          "id": "a657651e-f1fa-41fb-90e3-fc9e45998700",
+          "text": "Present i want a puzzle that locks in that we hang on the wall. Use gridfinity maybe?",
+          "at": "2026-10-29T04:13:31.013Z",
+          "system": false
+        }
+      ]
+    },
+    {
+      "id": "373afe91-9da3-430c-950f-44ceddf5e1be",
+      "title": "CAPEX 601359 - Additional storage shed - $100,000",
+      "description": "A capex project for Additional storage shed that has a budget of $100,000- DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "current": false,
+      "status": "active",
+      "progress": 21,
+      "cycles": 0,
+      "createdAt": "2026-10-29T22:06:48.573Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-29T22:34:02.329Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-10-29T22:06:48.573Z"
+      },
+      "restingUntil": null,
+      "links": [
+        {
+          "id": "db534fbe-61d7-4554-a437-1dfdb2641d10",
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        },
+        {
+          "id": "11a9a0de-c4bf-4305-a53c-0284a8f5b8bd",
+          "label": "Project",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectMyMaintenance/Index?f=$PRJ.PLM.PC.MNT&h=1854VSaW6w&t=1B901F22&suite=CES&pagekey=20261030080633"
+        }
+      ],
+      "subtasks": [
+        {
+          "id": "b192662e-a24c-4bfb-9caa-e6ca87514930",
+          "text": "Initiate Project",
+          "done": true
+        },
+        {
+          "id": "8c33fcb4-e293-4ca9-a5ca-cf73449e5c9c",
+          "text": "Submitted Business Case for Sam's approval",
+          "done": true
+        },
+        {
+          "id": "a71ec395-eb00-4c06-8be6-3fdf38857888",
+          "text": "Receive approval from Sam",
+          "done": false
+        },
+        {
+          "id": "eb571a64-015e-451e-b8e4-94ba92170638",
+          "text": "Get Cost Estimates",
+          "done": false
+        },
+        {
+          "id": "321331f1-0abd-4c59-a4e9-4d080da03d48",
+          "text": "Submit Project Scoring",
+          "done": true
+        },
+        {
+          "id": "90ae1a43-e8b2-4b3b-b95f-ee1547daad6f",
+          "text": "(If complex project) Submit project Brief register",
+          "done": true
+        },
+        {
+          "id": "d009d1d8-cd2c-46a5-aabd-f14029fbd358",
+          "text": "Review project planning details",
+          "done": false
+        },
+        {
+          "id": "0bb41b6e-7d7c-408e-a1a3-0d0c50fefd27",
+          "text": "Review project planning details PMU run IPO",
+          "done": false
+        },
+        {
+          "id": "80af99a2-c3be-4cf5-bec6-9e1f3f1e6c95",
+          "text": "Stage 3 - Finalise project and financial details",
+          "done": false
+        },
+        {
+          "id": "fa93ed7e-44db-4c04-a447-20079dea8007",
+          "text": "Submit for PLA approval",
+          "done": false
+        },
+        {
+          "id": "2cdf38c4-2c1b-43c0-8680-3b0c3247f565",
+          "text": "Review project and financial details, escalate for approval",
+          "done": false
+        },
+        {
+          "id": "6a76276c-7fdf-4a9a-a83c-23ea602a1903",
+          "text": "Review project and financial details",
+          "done": false
+        },
+        {
+          "id": "847b0375-7b42-40a0-9bad-cb6bafeea31a",
+          "text": "Begin Work",
+          "done": false
+        },
+        {
+          "id": "c8604b26-5306-4610-b5ad-faf674998f03",
+          "text": "Execute Project to practical completion",
+          "done": false
+        },
+        {
+          "id": "916fffbf-7681-487b-a3a3-512c527ab201",
+          "text": "Work Complete (Physical work)",
+          "done": false
+        },
+        {
+          "id": "735d8325-c893-411c-ab6f-572772dc8593",
+          "text": "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+          "done": false
+        },
+        {
+          "id": "537751fd-fea9-434f-8539-2ca9e7b0c366",
+          "text": "PMU to review for completeness",
+          "done": false
+        },
+        {
+          "id": "a57e1acb-365e-46d9-86fb-5963647fd65a",
+          "text": "Complete Post Project Review",
+          "done": false
+        },
+        {
+          "id": "25cc81dd-8125-45d5-a9da-edc80fb10a67",
+          "text": "Project Complete",
+          "done": false
+        }
+      ],
+      "notes": [
+        {
+          "id": "7fcba869-cb80-45d7-981c-b04b42751da7",
+          "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
+          "at": "2026-10-29T22:06:48.573Z",
+          "system": true
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      "id": "p-default",
+      "name": "Sam"
+    },
+    {
+      "id": "ba1f8074-c459-4230-8e1a-f20aa71b035f",
+      "name": "Glass"
+    },
+    {
+      "id": "4b4677d2-f00a-4946-a0b6-8a72bd0236fb",
+      "name": "Steve"
+    },
+    {
+      "id": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "name": "Mandalay Requests"
+    },
+    {
+      "id": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
+      "name": "CAPEX"
+    },
+    {
+      "id": "da2f9d98-6d75-4fed-858c-9cce90823a3a",
+      "name": "Dan"
+    },
+    {
+      "id": "9f382b7b-1c57-46fd-9113-698c6051dff5",
+      "name": "Vlad"
+    },
+    {
+      "id": "f2afd713-a33d-45ea-bbc8-bdf74a92d78c",
+      "name": "Wife"
+    }
+  ],
+  "templates": [
+    {
+      "id": "549242f4-1000-4860-9536-a7e065206a4b",
+      "name": "CAPEX Project - PROJECT# - PNAME- $xxxx",
+      "title": "CAPEX Project - xxx - $xxxx",
+      "description": "A capex project for xxxx that has a budget of xxxxx - DM file xxxxx- one council link of xxxx",
+      "tier": "major",
+      "repeat": false,
+      "reminder": "",
+      "cadence": "weekly",
+      "subtasks": [
+        "Initiate Project",
+        "Submitted Business Case for Sam's approval",
+        "Receive approval from Sam",
+        "Get Cost Estimates",
+        "Submit Project Scoring",
+        "(If complex project) Submit project Brief register",
+        "Review project planning details",
+        "Review project planning details PMU run IPO",
+        "Stage 3 - Finalise project and financial details",
+        "Submit for PLA approval",
+        "Review project and financial details, escalate for approval",
+        "Review project and financial details",
+        "Begin Work",
+        "Execute Project to practical completion",
+        "Work Complete (Physical work)",
+        "Stage 4 - Complete Financial transactions close all work orders complete all post project tasks",
+        "PMU to review for completeness",
+        "Complete Post Project Review",
+        "Project Complete"
+      ],
+      "links": [
+        {
+          "label": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/P",
+          "url": "https://cairns.t1cloud.com/T1Default/CiAnywhere/Web/CAIRNS/Projects/ProjectEnquiry/Index?f=$PRJ.PROJ.LST&h=AXmAL4E9AP&t=1B4A34B5&suite=CES&pagekey=20260907111017"
+        }
+      ]
+    },
+    {
+      "id": "7346fc61-f4c0-4155-9d9c-4a78e89c8ab1",
+      "name": "Mandalay Support Template",
+      "title": "Mandalay Support Template",
+      "description": "A template for mandalay support requests",
+      "tier": "major",
+      "repeat": false,
+      "reminder": "",
+      "cadence": "weekly",
+      "subtasks": [
+        "Receive request for support",
+        "Find resolution and email confirmation of problem solved",
+        "If elevation required, Contact Mandalay on the help desk or phone call"
+      ],
+      "links": [
+        {
+          "label": "Mandalay Support (Old)",
+          "url": "https://mandalay.zendesk.com/hc/en-us/requests/52401?brand_id=2263156"
+        },
+        {
+          "label": "Mandalay (AMCS) Support",
+          "url": "https://amcsgroup.my.site.com/globalsupport/s/"
+        }
+      ]
+    }
+  ]
+}

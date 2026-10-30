@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quest Log</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style id="app-style">
+  :root{
+    color-scheme:light;
+    --leather:#241a12;
+    --leather-2:#170f0a;
+    --leather-3:#33261a;
+    --parchment:#ecdcb8;
+    --parchment-2:#e2cea0;
+    --parchment-edge:#b99a63;
+    --ink:#3a2712;
+    --ink-soft:#7a5c34;
+    --ink-faint:#93764a;
+    --gold:#b8842f;
+    --gold-bright:#e7b64f;
+    --seal:#7d2222;
+    --seal-bright:#a33333;
+    --sage:#4c6b3f;
+    --sage-bright:#6f9a5c;
+    --shadow:rgba(10,6,3,0.45);
+    --glow:rgba(231,182,79,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at 20% -10%, #3a2b1c 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 0%, #2c2015 0%, transparent 50%),
+      var(--leather);
+    color:var(--parchment);
+    font-family:"EB Garamond", Georgia, "Times New Roman", serif;
+    font-size:17px;
+    line-height:1.5;
+    min-height:100vh;
+  }
+
+  h1,h2,h3{font-family:"Cinzel", "Times New Roman", serif; margin:0;}
+
+  a{color:inherit;}
+
+  .section-label{
+    font-family:"Cinzel", serif;
+    font-size:0.82rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-bright);
+    margin:0 0 0.85rem 0;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, rgba(231,182,79,0.5), transparent);
+  }
+  .section-label--urgent{color:var(--seal-bright);}
+  .section-label--urgent::after{background:linear-gradient(90deg, rgba(163,51,51,0.65), transparent);}
+  .section-label--current{color:var(--gold-bright);}
+  .section-label--current::after{background:linear-gradient(90deg, var(--gold-bright), transparent);}
+  .section-label--checkin::after{background:repeating-linear-gradient(90deg, var(--gold-bright) 0 6px, transparent 6px 12px);}
+
+  .tome{
+    max-width:1180px;
+    margin:0 auto;
+    padding:2.2rem 1.4rem 4rem;
+  }
+
+  /* ---------- header ---------- */
+  .tome__header{
+    display:flex;
+    align-items:center;
+    gap:1.1rem;
+    padding-bottom:1.4rem;
+    margin-bottom:1.8rem;
+    border-bottom:2px solid var(--leather-3);
+    position:relative;
+  }
+  .tome__header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-6px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:0.6;
+  }
+  .tome__crest{flex:none; width:52px; height:52px; color:var(--gold-bright);}
+  .tome__titles{flex:1; min-width:0;}
+  .tome__titles h1{
+    font-size:2rem;
+    font-weight:600;
+    color:var(--parchment);
+    letter-spacing:0.02em;
+    text-wrap:balance;
+  }
+  .tome__subtitle{
+    margin:0.3rem 0 0;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    color:var(--ink-faint);
+  }
+
+  .seal-btn{
+    flex:none;
+    font-family:"Cinzel", serif;
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--parchment);
+    background:linear-gradient(160deg, var(--seal-bright), var(--seal));
+    border:1px solid #5c1717;
+    border-radius:999px;
+    padding:0.7rem 1.4rem;
+    cursor:pointer;
+    box-shadow:0 3px 0 #4a1414, 0 6px 14px var(--shadow);
+    transition:transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .seal-btn:hover{transform:translateY(-1px); box-shadow:0 4px 0 #4a1414, 0 10px 18px var(--shadow);}
+  .seal-btn:active{transform:translateY(1px); box-shadow:0 1px 0 #4a1414;}
+  .seal-btn:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--gold-bright); outline-offset:2px;
+  }
+
+  .ghost-btn{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.74rem;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    background:transparent;
+    border:1px solid var(--parchment-edge);
+    border-radius:6px;
+    padding:0.4rem 0.7rem;
+    cursor:pointer;
+  }
+  .ghost-btn:hover{color:var(--ink); border-color:var(--ink-soft); background:rgba(0,0,0,0.04);}
+
+  /* ---------- layout ---------- */
+  .tome__body{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:1.8rem;
+    align-items:start;
+  }
+  @media (max-width:880px){
+    .tome__body{grid-template-columns:1fr;}
+    .tome__aside{order:2;}
+  }
+  @media (max-width:520px){
+    .tome__header{flex-wrap:wrap;}
+    .tome__titles{order:2; flex:1 1 100%;}
+    .seal-btn{order:3; flex:1 1 100%; text-align:center;}
+    .tome__titles h1{font-size:1.7rem;}
+  }
+
+  /* ---------- person tabs ---------- */
+  .person-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:0.6rem;
+    margin:0 0 1.7rem;
+  }
+  .person-tabs__list{display:flex; flex-wrap:wrap; gap:0.45rem; flex:1;}
+  .person-tab{
+    position:relative;
+    font-family:"Cinzel", serif;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    color:var(--ink-faint);
+    background:rgba(0,0,0,0.18);
+    border:1px solid var(--leather-3);
+    border-radius:999px;
+    padding:0.42rem 0.95rem;
+    cursor:pointer;
+    transition:background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  }
+  .person-tab__urgent-badge{
+    position:absolute;
+    top:-0.5rem;
+    right:-0.4rem;
+    min-width:1.15rem;
+    height:1.15rem;
+    padding:0 0.3rem;
+    border-radius:999px 999px 999px 2px;
+    background:#c23b3b;
+    color:#fff8ec;
+    border:1px solid #7d2222;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.62rem;
+    font-weight:600;
+    line-height:1.1rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 5px rgba(0,0,0,0.45);
+    pointer-events:none;
+  }
+  .person-tab:hover{color:var(--parchment); border-color:var(--parchment-edge);}
+  .person-tab.is-active{
+    color:#2a1c08;
+    background:linear-gradient(160deg, var(--gold-bright), var(--gold));
+    border-color:#8f6420;
+    font-weight:600;
+  }
+  .person-tab__count{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.66rem;
+    opacity:0.8;
+    margin-left:0.25rem;
+  }
+  .person-tabs__manage-btn{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.72rem;
+    color:var(--ink-faint);
+    background:none;
+    border:1px solid var(--leather-3);
+    border-radius:6px;
+    padding:0.4rem 0.65rem;
+    cursor:pointer;
+  }
+  .person-tabs__manage-btn:hover{color:var(--parchment); border-color:var(--parchment-edge);}
+  .person-manage-panel{
+    flex:1 1 100%;
+    background:var(--parchment);
+    color:var(--ink);
+    border-radius:10px;
+    padding:1rem 1.1rem;
+    margin-top:0.2rem;
+    border:1px solid var(--parchment-edge);
+    box-shadow:0 8px 20px var(--shadow), inset 0 0 0 1px rgba(0,0,0,0.05);
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+  }
+  .person-manage-row{display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
+  .person-manage-row form{display:flex; gap:0.5rem;}
+  .person-manage-row input[type="text"]{width:auto; min-width:120px; max-width:180px;}
+
+  /* ---------- sort bar ---------- */
+  .toolbar-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.6rem;
+    margin-bottom:1.4rem;
+  }
+  .toolbar-btn{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    color:var(--ink-faint);
+    background:none;
+    border:1px solid var(--leather-3);
+    border-radius:6px;
+    padding:0.5rem 0.8rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .toolbar-btn:hover{color:var(--parchment); border-color:var(--parchment-edge);}
+  .toolbar-actions{display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;}
+  .save-status{font-family:"IBM Plex Mono", monospace; font-size:0.72rem; color:var(--ink-faint); white-space:nowrap;}
+  .save-status.is-pending{color:rgba(236,220,184,0.55);}
+  .save-status.is-saving{color:var(--gold-bright);}
+  .save-status.is-saved{color:var(--sage-bright);}
+  .save-status.is-error{color:var(--seal-bright); font-weight:600;}
+  .settings-form{display:grid; grid-template-columns:1fr 1fr; gap:0.85rem 1rem; margin-top:0.2rem;}
+  .settings-form .full{grid-column:1/-1;}
+  .settings-status{font-size:0.9rem; color:var(--ink); background:rgba(76,107,63,0.12); border-left:3px solid var(--sage); padding:0.5rem 0.7rem; border-radius:0 6px 6px 0; margin:0 0 1rem;}
+  .settings-status.is-error{color:var(--seal); background:rgba(125,34,34,0.1); border-left-color:var(--seal);}
+  #templates-panel-container:empty{display:none;}
+  #templates-panel-container .person-manage-panel{margin-top:0; margin-bottom:1.4rem;}
+  #templates-panel-container textarea{width:100%; min-height:4.5rem; font-family:"EB Garamond", serif; font-size:0.95rem;}
+  .sort-bar{
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .sort-bar label{margin:0; white-space:nowrap;}
+  .sort-bar select{
+    width:auto;
+    max-width:230px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    padding:0.4rem 0.6rem;
+  }
+
+  .quest-section{margin-bottom:2.1rem;}
+
+  .quest-list{display:flex; flex-direction:column; gap:1rem;}
+  .quest-list--minor{gap:0.6rem;}
+
+  /* ---------- new quest form ---------- */
+  #new-quest-form-container:not(:empty){margin-bottom:1.8rem;}
+  .new-quest-panel{
+    background:var(--parchment);
+    color:var(--ink);
+    border-radius:10px;
+    padding:1.3rem 1.4rem 1.5rem;
+    box-shadow:0 10px 26px var(--shadow), inset 0 0 0 1px rgba(0,0,0,0.06);
+    border:1px solid var(--parchment-edge);
+  }
+  .new-quest-panel h2{font-size:1.05rem; margin-bottom:0.9rem; color:var(--ink);}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:0.85rem 1rem;}
+  .form-grid .full{grid-column:1/-1;}
+  @media (max-width:640px){.form-grid{grid-template-columns:1fr;}}
+
+  label{display:block; font-family:"IBM Plex Mono", monospace; font-size:0.7rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:0.3rem;}
+  input[type="text"], input[type="url"], input[type="date"], textarea, select{
+    width:100%;
+    font-family:"EB Garamond", serif;
+    font-size:1rem;
+    color:var(--ink);
+    background:#f7ecd4;
+    border:1px solid var(--parchment-edge);
+    border-radius:6px;
+    padding:0.5rem 0.65rem;
+  }
+  textarea{resize:vertical; min-height:3.2rem;}
+  .radio-row{display:flex; gap:1.2rem; align-items:center; padding-top:0.35rem;}
+  .radio-row label{display:flex; align-items:center; gap:0.4rem; text-transform:none; font-family:"EB Garamond", serif; font-size:0.95rem; color:var(--ink); letter-spacing:0; margin:0;}
+  .check-row{display:flex; align-items:center; gap:0.5rem; padding-top:0.35rem;}
+  .check-row label{margin:0; text-transform:none; font-family:"EB Garamond", serif; font-size:0.95rem; color:var(--ink); letter-spacing:0;}
+
+  .form-actions{display:flex; gap:0.6rem; margin-top:1.1rem; justify-content:flex-end;}
+  .primary-btn{
+    font-family:"Cinzel", serif; font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase;
+    background:var(--gold); color:#2a1c08; border:1px solid #8f6420; border-radius:6px;
+    padding:0.55rem 1.1rem; cursor:pointer;
+  }
+  .primary-btn:hover{background:var(--gold-bright);}
+  .text-btn{background:none; border:none; color:var(--ink-soft); font-family:"EB Garamond", serif; font-size:0.95rem; cursor:pointer; text-decoration:underline;}
+
+  /* ---------- quest cards ---------- */
+  .quest-card{
+    background:var(--parchment);
+    color:var(--ink);
+    border-radius:10px;
+    padding:1.1rem 1.3rem 1.2rem;
+    box-shadow:0 8px 20px var(--shadow), inset 0 0 0 1px rgba(0,0,0,0.05);
+    border:1px solid var(--parchment-edge);
+    position:relative;
+    scroll-margin-top:1.5rem;
+  }
+  .quest-card--major{
+    border:1px solid var(--gold);
+    box-shadow:0 10px 26px var(--shadow), 0 0 0 1px rgba(184,132,47,0.35), inset 0 0 0 1px rgba(0,0,0,0.05);
+    padding:1.35rem 1.5rem 1.4rem;
+  }
+  .quest-card--minor{
+    background:var(--parchment-2);
+    padding:0.8rem 1.1rem 0.9rem;
+  }
+  .quest-card--completed{opacity:0.88;}
+  .quest-card--urgent{border:1px solid var(--seal-bright); animation:urgent-pulse 2.6s ease-in-out infinite;}
+  .quest-card--checkin{border:1px dashed var(--gold); box-shadow:0 10px 22px var(--shadow), 0 0 0 1px rgba(184,132,47,0.32), inset 0 0 0 1px rgba(0,0,0,0.05);}
+  .quest-card--resting{opacity:0.9; border:1px dashed var(--sage);}
+  .quest-card--current{
+    border:2px solid var(--gold-bright);
+    box-shadow:0 12px 30px var(--shadow), 0 0 0 3px rgba(231,182,79,0.35), inset 0 0 0 1px rgba(0,0,0,0.05);
+  }
+  @keyframes urgent-pulse{
+    0%,100%{box-shadow:0 10px 26px var(--shadow), 0 0 0 1px rgba(163,51,51,0.4), inset 0 0 0 1px rgba(0,0,0,0.05);}
+    50%{box-shadow:0 10px 26px var(--shadow), 0 0 0 3px rgba(163,51,51,0.6), inset 0 0 0 1px rgba(0,0,0,0.05);}
+  }
+
+  .quest-card__top{display:flex; align-items:flex-start; gap:0.6rem; flex-wrap:wrap;}
+  .quest-icon{flex:none; width:1.3rem; height:1.3rem; margin-top:0.15rem; color:var(--gold);}
+  .quest-icon--minor{width:0.85rem; height:0.85rem; margin-top:0.5rem; color:var(--ink-soft);}
+  .quest-card__title{
+    flex:1; min-width:120px;
+    font-size:1.28rem; font-weight:600; color:var(--ink); text-wrap:balance;
+  }
+  .quest-card--minor .quest-card__title{font-size:1rem; font-weight:600;}
+
+  .quest-tag{
+    font-family:"IBM Plex Mono", monospace; font-size:0.68rem; letter-spacing:0.03em;
+    padding:0.2rem 0.55rem; border-radius:999px; white-space:nowrap;
+  }
+  .quest-tag--repeat{background:rgba(76,107,63,0.16); color:var(--sage); border:1px solid rgba(76,107,63,0.4);}
+  .quest-tag--due{background:rgba(184,132,47,0.1); color:var(--ink-soft); border:1px solid var(--parchment-edge);}
+  .quest-tag--duetoday{background:rgba(184,132,47,0.24); color:#6b4a12; border:1px solid var(--gold);}
+  .quest-tag--urgent{background:rgba(125,34,34,0.16); color:var(--seal-bright); border:1px solid rgba(125,34,34,0.5); font-weight:600;}
+  .quest-tag--checkin{background:rgba(184,132,47,0.1); color:var(--ink-soft); border:1px dashed var(--parchment-edge);}
+  .quest-tag--checkin-overdue{background:rgba(184,132,47,0.24); color:#6b4a12; border:1px dashed var(--gold); font-weight:600;}
+  .quest-tag--resting{background:rgba(76,107,63,0.14); color:var(--sage); border:1px dashed rgba(76,107,63,0.45);}
+  .quest-tag--current{
+    background:linear-gradient(160deg, var(--gold-bright), var(--gold));
+    color:#2a1c08; border:1px solid #8f6420; font-weight:700;
+  }
+
+  .quest-card__desc{margin:0.55rem 0 0; color:var(--ink-soft); font-size:0.98rem;}
+  .quest-card--minor .quest-card__desc{font-size:0.9rem; margin-top:0.3rem;}
+
+  .quest-card__reminder{
+    margin:0.7rem 0 0; font-size:0.92rem; color:var(--ink);
+    background:rgba(184,132,47,0.14); border-left:3px solid var(--gold);
+    padding:0.4rem 0.65rem; border-radius:0 6px 6px 0;
+  }
+  .quest-card__reminder b{font-family:"Cinzel", serif; font-weight:600; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.15rem;}
+
+  .quest-card__stale{
+    margin:0.7rem 0 0; font-size:0.86rem; color:#5c3a1e;
+    background:rgba(125,34,34,0.08); border:1px dashed rgba(125,34,34,0.4);
+    padding:0.4rem 0.65rem; border-radius:6px;
+  }
+
+  .quest-card__subtask-summary{margin:0.35rem 0 0; font-size:0.78rem; color:var(--ink-soft); font-family:"IBM Plex Mono", monospace;}
+
+  .progress-bar{
+    margin-top:0.85rem; position:relative; height:0.85rem; border-radius:999px;
+    background:rgba(0,0,0,0.12); box-shadow:inset 0 1px 2px rgba(0,0,0,0.25);
+    overflow:hidden;
+  }
+  .quest-card--minor .progress-bar{height:0.55rem;}
+  .progress-bar__fill{
+    height:100%; border-radius:999px;
+    background:linear-gradient(90deg, var(--gold), var(--gold-bright));
+    transition:width 0.35s ease;
+  }
+  .quest-card--completed .progress-bar__fill{background:linear-gradient(90deg, var(--sage), var(--sage-bright));}
+  .progress-bar__label{
+    position:absolute; right:0.5rem; top:50%; transform:translateY(-50%);
+    font-family:"IBM Plex Mono", monospace; font-size:0.62rem; color:var(--ink);
+    mix-blend-mode:multiply;
+  }
+  .quest-card--minor .progress-bar__label{display:none;}
+
+  .quest-card__links{display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:0.75rem;}
+  .link-chip{
+    display:inline-flex; align-items:center; gap:0.35rem;
+    font-family:"IBM Plex Mono", monospace; font-size:0.74rem;
+    background:rgba(0,0,0,0.06); border:1px solid var(--parchment-edge); border-radius:6px;
+    padding:0.28rem 0.55rem; color:var(--ink-soft); text-decoration:none; max-width:100%;
+  }
+  .link-chip span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:220px;}
+  .link-chip:hover{color:var(--ink); border-color:var(--ink-soft);}
+  .link-chip button{background:none; border:none; color:inherit; cursor:pointer; font-size:0.85em; padding:0; line-height:1;}
+
+  .quest-card__manage{margin-top:0.9rem;}
+  .quest-card__manage > summary{
+    cursor:pointer; font-family:"IBM Plex Mono", monospace; font-size:0.72rem;
+    letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft);
+    list-style:none; display:inline-flex; align-items:center; gap:0.35rem;
+  }
+  .quest-card__manage > summary::-webkit-details-marker{display:none;}
+  .quest-card__manage > summary::before{content:"▸"; font-size:0.7rem; transition:transform 0.15s;}
+  .quest-card__manage[open] > summary::before{transform:rotate(90deg);}
+
+  .manage-grid{
+    margin-top:0.9rem; padding-top:0.9rem; border-top:1px dashed var(--parchment-edge);
+    display:flex; flex-direction:column; gap:1rem;
+  }
+  .manage-row{display:flex; flex-wrap:wrap; align-items:center; gap:0.5rem;}
+  .manage-row form{display:flex; gap:0.5rem; flex:1; min-width:220px;}
+  .manage-row form input{flex:1;}
+  .small-btn{
+    font-family:"IBM Plex Mono", monospace; font-size:0.72rem; padding:0.4rem 0.7rem;
+    border-radius:6px; border:1px solid var(--parchment-edge); background:rgba(0,0,0,0.03); color:var(--ink-soft); cursor:pointer;
+  }
+  .small-btn:hover{color:var(--ink); background:rgba(0,0,0,0.06);}
+  .small-btn.is-current{background:rgba(184,132,47,0.2); color:#6b4a12; border-color:var(--gold);}
+  .step-btn{width:1.9rem; height:1.9rem; border-radius:50%; border:1px solid var(--parchment-edge); background:rgba(0,0,0,0.03); cursor:pointer; color:var(--ink-soft); font-family:"IBM Plex Mono", monospace;}
+
+  .subtask-list{display:flex; flex-direction:column; gap:0.4rem; margin-bottom:0.6rem;}
+  .subtask-item{
+    display:flex; align-items:center; gap:0.55rem; font-size:0.94rem; color:var(--ink);
+    background:rgba(0,0,0,0.03); border-radius:6px; padding:0.4rem 0.6rem; cursor:pointer;
+  }
+  .subtask-item input[type="checkbox"]{flex:none; width:1rem; height:1rem; accent-color:var(--sage); cursor:pointer;}
+  .subtask-item__text{flex:1;}
+  .subtask-item.is-done .subtask-item__text{color:var(--ink-faint); text-decoration:line-through;}
+  .subtask-item__remove{flex:none; background:none; border:none; color:var(--ink-faint); cursor:pointer; font-size:0.95em; padding:0 0.15rem; line-height:1;}
+  .subtask-item__remove:hover{color:var(--seal);}
+
+  .notes-list{display:flex; flex-direction:column; gap:0.55rem; max-height:220px; overflow-y:auto; padding-right:0.3rem;}
+  .note-item{
+    font-size:0.9rem; background:rgba(0,0,0,0.035); border-radius:6px; padding:0.5rem 0.65rem;
+    border-left:2px solid var(--parchment-edge);
+  }
+  .note-item.is-fresh{border-left-color:var(--gold); background:rgba(231,182,79,0.14); box-shadow:0 0 0 1px rgba(231,182,79,0.3);}
+  .note-item.is-system{font-style:italic; color:var(--ink-soft);}
+  .note-item time{display:block; font-family:"IBM Plex Mono", monospace; font-size:0.65rem; color:var(--ink-faint); margin-top:0.25rem;}
+
+  .action-row{display:flex; flex-wrap:wrap; gap:0.55rem; justify-content:flex-end;}
+  .complete-btn{
+    font-family:"Cinzel", serif; font-size:0.76rem; letter-spacing:0.05em; text-transform:uppercase;
+    background:var(--sage); color:#f3f7ee; border:1px solid #395030; border-radius:6px; padding:0.45rem 0.85rem; cursor:pointer;
+  }
+  .complete-btn:hover{background:var(--sage-bright);}
+  .reopen-btn{font-family:"IBM Plex Mono", monospace; font-size:0.72rem; background:none; border:1px solid var(--parchment-edge); color:var(--ink-soft); border-radius:6px; padding:0.4rem 0.7rem; cursor:pointer;}
+  .delete-btn{font-family:"IBM Plex Mono", monospace; font-size:0.72rem; background:none; border:1px solid rgba(125,34,34,0.4); color:var(--seal); border-radius:6px; padding:0.4rem 0.7rem; cursor:pointer;}
+  .delete-btn.is-confirming{background:var(--seal); color:#f7e9e9;}
+
+  /* ---------- completed ---------- */
+  details#completed-details > summary{
+    cursor:pointer; list-style:none; display:flex; align-items:center; gap:0.6rem;
+  }
+  details#completed-details > summary::-webkit-details-marker{display:none;}
+  details#completed-details > summary::before{content:"▸"; color:var(--gold-bright); font-size:0.8rem; transition:transform 0.15s;}
+  details#completed-details[open] > summary::before{transform:rotate(90deg);}
+  #completed-quests{margin-top:1rem;}
+
+  /* ---------- aside ---------- */
+  .aside-panel{
+    background:rgba(0,0,0,0.18);
+    border:1px solid var(--leather-3);
+    border-radius:10px;
+    padding:1.1rem 1.2rem 1.2rem;
+    margin-bottom:1.4rem;
+  }
+  .aside-panel__hint{margin:0 0 0.8rem; font-size:0.8rem; line-height:1.4; color:rgba(236,220,184,0.55);}
+  .reminder-item{
+    display:flex; gap:0.55rem; align-items:flex-start; padding:0.55rem 0; cursor:pointer;
+    border-bottom:1px solid rgba(255,255,255,0.06); background:none; border-left:none; border-right:none; border-top:none;
+    width:100%; text-align:left; color:var(--parchment); font-family:inherit;
+  }
+  .reminder-item:last-child{border-bottom:none;}
+  .reminder-item:hover .reminder-item__text{color:var(--gold-bright);}
+  .reminder-item__icon{flex:none; width:0.75rem; height:0.75rem; margin-top:0.35rem; color:var(--gold);}
+  .reminder-item__body{min-width:0;}
+  .reminder-item__task{font-size:0.72rem; font-family:"IBM Plex Mono", monospace; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.03em;}
+  .reminder-item__text{font-size:0.92rem; color:var(--parchment); margin-top:0.1rem;}
+
+  .chronicle-item{padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.06);}
+  .chronicle-item:last-child{border-bottom:none;}
+  .chronicle-item.is-fresh{
+    background:linear-gradient(90deg, rgba(231,182,79,0.14), transparent);
+    border-radius:6px; padding:0.6rem 0.6rem; margin:0 -0.6rem 0.1rem;
+    box-shadow:inset 2px 0 0 var(--gold-bright);
+  }
+  .chronicle-item__task{
+    font-size:0.72rem; font-family:"IBM Plex Mono", monospace; color:var(--gold-bright);
+    text-transform:uppercase; letter-spacing:0.03em; background:none; border:none; cursor:pointer; padding:0; text-align:left;
+  }
+  .chronicle-item__task:hover{text-decoration:underline;}
+  .chronicle-item__text{font-size:0.9rem; color:var(--parchment); margin:0.2rem 0;}
+  .chronicle-item__time{font-family:"IBM Plex Mono", monospace; font-size:0.65rem; color:var(--ink-faint);}
+
+  .empty-note{color:var(--ink-faint); font-size:0.88rem; font-style:italic;}
+  .empty-note--aside{color:rgba(236,220,184,0.5);}
+
+  .tome__footer{margin-top:2.5rem; text-align:center;}
+  #readonly-note:not([hidden]){
+    display:inline-block; font-family:"IBM Plex Mono", monospace; font-size:0.78rem;
+    color:var(--gold-bright); background:rgba(184,132,47,0.12); border:1px solid rgba(184,132,47,0.4);
+    border-radius:999px; padding:0.5rem 1.1rem;
+  }
+  #readonly-note[hidden]{display:none;}
+
+  .toast{
+    position:fixed; left:50%; bottom:1.6rem; transform:translateX(-50%) translateY(120%);
+    background:var(--parchment); color:var(--ink); font-family:"IBM Plex Mono", monospace; font-size:0.82rem;
+    padding:0.65rem 1.1rem; border-radius:8px; box-shadow:0 8px 24px var(--shadow);
+    transition:transform 0.25s ease; z-index:50; max-width:90vw;
+  }
+  .toast.is-visible{transform:translateX(-50%) translateY(0);}
+
+  /* ---------- weekly report modal ---------- */
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(20,12,6,0.68);
+    display:flex; align-items:flex-start; justify-content:center;
+    padding:3.5rem 1.2rem; overflow-y:auto; z-index:60;
+  }
+  .modal-backdrop[hidden]{display:none;}
+  .modal-card{
+    background:var(--parchment); color:var(--ink);
+    border-radius:12px; max-width:640px; width:100%;
+    padding:1.7rem 1.9rem 1.6rem;
+    box-shadow:0 24px 60px rgba(0,0,0,0.55), inset 0 0 0 1px rgba(0,0,0,0.06);
+    border:1px solid var(--parchment-edge);
+  }
+  .report-title{font-family:"Cinzel", serif; font-size:1.3rem; font-weight:600; color:var(--ink); margin:0 0 0.2rem;}
+  .report-range{font-family:"IBM Plex Mono", monospace; font-size:0.78rem; color:var(--ink-soft); margin:0 0 1.3rem;}
+  .report-person-heading{
+    font-family:"Cinzel", serif; font-size:1.05rem; font-weight:700; color:var(--ink);
+    margin:1.6rem 0 0.3rem; padding-top:1.3rem; border-top:2px solid var(--parchment-edge);
+  }
+  .report-person-heading:first-of-type{margin-top:0.2rem; padding-top:0; border-top:none;}
+  .report-person-heading + .report-heading{border-top:none; padding-top:0; margin-top:0.4rem;}
+  .report-heading{
+    font-family:"Cinzel", serif; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gold); margin:1.1rem 0 0.5rem; padding-top:0.9rem; border-top:1px dashed var(--parchment-edge);
+  }
+  .report-heading:first-of-type{margin-top:0; padding-top:0; border-top:none;}
+  .report-list{margin:0; padding-left:1.1rem; display:flex; flex-direction:column; gap:0.35rem;}
+  .report-list li{font-size:0.94rem; line-height:1.4;}
+  .report-note-date{color:var(--ink-faint); font-family:"IBM Plex Mono", monospace; font-size:0.72rem;}
+  .report-item-detail{font-size:0.82rem; color:var(--ink-soft); margin:0.2rem 0 0 0.1rem;}
+  .report-item-detail b{color:var(--ink-faint); font-weight:600;}
+  .modal-actions{display:flex; justify-content:flex-end; gap:0.7rem; margin-top:1.4rem; padding-top:1rem; border-top:1px solid var(--parchment-edge);}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+
+  /* ---------- printing the weekly report ---------- */
+  @media print{
+    @page{ size:A4; margin:16mm 14mm; }
+    html, body{background:#fff !important;}
+    body > *:not(#report-modal-backdrop){display:none !important;}
+    #report-modal-backdrop:not([hidden]){
+      display:block !important; position:static !important; inset:auto;
+      background:#fff !important; padding:0; overflow:visible; height:auto;
+    }
+    .modal-card{
+      max-width:100%; width:auto; margin:0; padding:0;
+      background:#fff !important; color:#000 !important;
+      border:none; border-radius:0; box-shadow:none;
+    }
+    .modal-actions{display:none !important;}
+    .report-title{color:#000;}
+    .report-range{color:#333;}
+    .report-person-heading{color:#000; border-top-color:#999; break-after:avoid; break-inside:avoid;}
+    .report-person-heading:first-of-type{break-before:avoid;}
+    .report-heading{color:#000; border-top-color:#ccc; break-after:avoid;}
+    .report-list{color:#000;}
+    .report-list li{break-inside:avoid;}
+    .report-note-date{color:#555;}
+    .report-item-detail{color:#444;}
+    .report-item-detail b{color:#000;}
+    .empty-note{color:#555;}
+  }
+</style>
+</head>
+<body>
+<div class="tome">
+<header class="tome__header">
+<svg aria-hidden="true" class="tome__crest" fill="none" viewbox="0 0 48 48">
+<path d="M24 3 L42 11 V23 C42 34 34.5 41.5 24 45 C13.5 41.5 6 34 6 23 V11 Z" stroke="currentColor" stroke-width="2"></path>
+<path d="M24 12 V32 M15 20 L24 12 L33 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="tome__titles">
+<h1>Quest Log</h1>
+<p class="tome__subtitle" id="header-subtitle">— connecting to GitHub… —</p>
+</div>
+<button class="seal-btn" data-action="toggle-new-quest" type="button">+ New Quest</button>
+</header>
+<nav aria-label="Quest logs by person" class="person-tabs" id="person-tabs"></nav>
+<div id="new-quest-form-container"></div>
+<div class="tome__body">
+<main class="tome__main">
+<div class="toolbar-row">
+<div class="sort-bar" id="sort-bar"></div>
+<div class="toolbar-actions" id="toolbar-actions"></div>
+</div>
+<div id="templates-panel-container"></div>
+<section class="quest-section quest-section--current" hidden="" id="current-section">
+<h2 class="section-label section-label--current">Current Quest</h2>
+<div class="quest-list quest-list--current" id="current-quest"></div>
+</section>
+<section class="quest-section quest-section--urgent" id="urgent-section">
+<h2 class="section-label section-label--urgent">Urgent — Past Due</h2>
+<div class="quest-list quest-list--urgent" id="urgent-quests"></div>
+</section>
+<section class="quest-section quest-section--checkin" hidden="" id="checkin-section">
+<h2 class="section-label section-label--checkin">Check-In Due</h2>
+<div class="quest-list quest-list--checkin" id="checkin-quests"></div>
+</section>
+<section class="quest-section quest-section--major">
+<h2 class="section-label">Main Quests</h2>
+<div class="quest-list quest-list--major" id="major-quests"></div>
+</section>
+<section class="quest-section quest-section--minor">
+<h2 class="section-label">Side Quests</h2>
+<div class="quest-list quest-list--minor" id="minor-quests"></div>
+</section>
+<section class="quest-section quest-section--completed">
+<details id="completed-details" open="">
+<summary class="section-label" style="display:inline-flex">Completed Chronicles (<span id="completed-count">0</span>)</summary>
+<div class="quest-list quest-list--completed" id="completed-quests"></div>
+</details>
+</section>
+</main>
+<aside class="tome__aside">
+<section class="aside-panel">
+<h2 class="section-label">Focus Points</h2>
+<p class="aside-panel__hint">Short reminders for where to pick a quest back up — set one from its Manage panel and it'll surface here.</p>
+<div id="reminders-list"></div>
+</section>
+<section class="aside-panel">
+<h2 class="section-label">Recent Chronicle</h2>
+<div id="chronicle-list"></div>
+</section>
+</aside>
+</div>
+<footer class="tome__footer">
+<span hidden="" id="readonly-note">Can't save changes — your GitHub token was rejected. Open Settings to fix it.</span>
+</footer>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<div class="modal-backdrop" hidden="" id="report-modal-backdrop"><div class="modal-card"><div id="report-modal-body"></div><div class="modal-actions"><button class="text-btn" data-action="close-weekly-report" type="button">Close</button><button class="ghost-btn" data-action="print-weekly-report" type="button">🖨️ Print</button><button class="primary-btn" data-action="copy-weekly-report" type="button">Copy to clipboard</button></div></div></div>
+<div class="modal-backdrop" hidden id="settings-modal-backdrop"><div class="modal-card" id="settings-modal-card"></div></div>
+<script id="app-state" type="application/json">{}</script>
+<script id="app-logic">
+(function(){
+  "use strict";
+
+  /* ---------------- utilities ---------------- */
+  function uid(){
+    if(window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return "id-" + Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+  function nowIso(){ return new Date().toISOString(); }
+  function clone(o){ return JSON.parse(JSON.stringify(o)); }
+  function escapeHtml(str){
+    return String(str == null ? "" : str).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function clamp(n, lo, hi){ return Math.max(lo, Math.min(hi, n)); }
+
+  function fmtDateTime(iso){
+    try{
+      var d = new Date(iso);
+      return new Intl.DateTimeFormat(undefined, {dateStyle:"medium", timeStyle:"short"}).format(d);
+    } catch(e){ return iso; }
+  }
+  function daysSince(iso){
+    var d = new Date(iso).getTime();
+    return (Date.now() - d) / 86400000;
+  }
+  function fmtRelative(iso){
+    var mins = (Date.now() - new Date(iso).getTime()) / 60000;
+    if(mins < 1) return "just now";
+    if(mins < 60) return Math.floor(mins) + "m ago";
+    var hours = mins/60;
+    if(hours < 24) return Math.floor(hours) + "h ago";
+    var days = hours/24;
+    if(days < 30) return Math.floor(days) + "d ago";
+    return fmtDateTime(iso);
+  }
+  function isHttpish(url){ return /^(https?:|mailto:)/i.test((url||"").trim()); }
+
+  /* ---------------- due dates & check-in cadence ---------------- */
+  var CADENCE_ORDER = ["none","weekly","fortnightly","monthly","quarterly","yearly"];
+  var CADENCE_DAYS = {weekly:7, fortnightly:14, monthly:30, quarterly:91, yearly:365};
+  var CADENCE_LABELS = {none:"No check-in", weekly:"Weekly", fortnightly:"Fortnightly", monthly:"Monthly", quarterly:"Quarterly", yearly:"Yearly"};
+
+  function parseLocalDate(dateStr){
+    if(!dateStr) return null;
+    var parts = String(dateStr).split("-");
+    if(parts.length !== 3) return null;
+    var d = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function startOfDay(d){ var x = new Date(d); x.setHours(0,0,0,0); return x; }
+  function dayDiff(a, b){ return Math.round((startOfDay(a) - startOfDay(b)) / 86400000); }
+  function fmtDate(d){
+    try{ return new Intl.DateTimeFormat(undefined, {dateStyle:"medium"}).format(d); } catch(e){ return ""; }
+  }
+  function fmtDateOnly(dateStr){
+    var d = parseLocalDate(dateStr);
+    return d ? fmtDate(d) : "";
+  }
+  function toDateOnlyString(d){
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, "0");
+    var day = String(d.getDate()).padStart(2, "0");
+    return y + "-" + m + "-" + day;
+  }
+
+  // Positive = overdue by N days, 0 = due today, negative = N days away. null = no due date.
+  function overdueDaysForDue(t){
+    var due = parseLocalDate(t.dueDate);
+    if(!due) return null;
+    return dayDiff(new Date(), due);
+  }
+  function isUrgent(t){
+    if(t.status !== "active") return false;
+    var d = overdueDaysForDue(t);
+    return d !== null && d > 0;
+  }
+
+  function nextCheckInDate(t){
+    if(!t.checkIn || t.checkIn.cadence === "none" || !CADENCE_DAYS[t.checkIn.cadence]) return null;
+    var base = new Date(t.checkIn.lastCheckIn || t.createdAt);
+    if(isNaN(base.getTime())) return null;
+    var d = new Date(base.getTime());
+    d.setDate(d.getDate() + CADENCE_DAYS[t.checkIn.cadence]);
+    return d;
+  }
+
+  // Where a completing repeatable quest's next occurrence lands. When a due
+  // date is set, the cadence counts forward from THAT date rather than from
+  // whenever it actually got completed — a quest due 31/08, weekly, comes
+  // back 7/09 whether it was finished early, late, or right on time. With no
+  // due date there's no fixed anchor to roll forward, so it falls back to
+  // counting from the moment of completion.
+  function nextOccurrenceDate(t){
+    if(!t.checkIn || t.checkIn.cadence === "none" || !CADENCE_DAYS[t.checkIn.cadence]) return null;
+    var anchor = t.dueDate ? parseLocalDate(t.dueDate) : null;
+    if(!anchor) anchor = new Date();
+    var d = new Date(anchor.getTime());
+    d.setDate(d.getDate() + CADENCE_DAYS[t.checkIn.cadence]);
+    return d;
+  }
+  // Positive = overdue by N days, 0 = due today, negative = N days away. null = no cadence set.
+  function checkInOverdueDays(t){
+    var next = nextCheckInDate(t);
+    if(!next) return null;
+    return dayDiff(new Date(), next);
+  }
+  function isCheckInDue(t){
+    if(t.status !== "active") return false;
+    var d = checkInOverdueDays(t);
+    return d !== null && d > 0;
+  }
+  function checkinStatusText(t){
+    var next = nextCheckInDate(t);
+    if(!next) return "";
+    var od = checkInOverdueDays(t);
+    if(od > 0) return "Check-in overdue by " + od + " day" + (od === 1 ? "" : "s") + ".";
+    if(od === 0) return "Check-in due today.";
+    return "Next check-in: " + fmtDate(next) + ".";
+  }
+
+  // A repeatable quest with a check-in cadence set doesn't reappear the
+  // instant it's completed — it rests (and shows in Completed Chronicles
+  // instead) until that cadence's next date arrives, at which point this
+  // just goes false on its own and the task falls back into circulation.
+  function isResting(t){
+    if(t.status !== "active" || !t.restingUntil) return false;
+    return new Date(t.restingUntil).getTime() > Date.now();
+  }
+
+  // A task belongs to exactly one bucket for placement: completed tasks go
+  // to the archive, and a resting repeatable quest sits there too; an
+  // active task with a lapsed due date is more urgent than one that's
+  // merely due for a periodic check-in, which in turn outranks its
+  // ordinary main/side quest placement.
+  function bucketOf(t){
+    if(t.status !== "active") return "completed";
+    if(isResting(t)) return "resting";
+    if(t.current) return "current";
+    if(isUrgent(t)) return "urgent";
+    if(isCheckInDue(t)) return "checkin";
+    return t.tier;
+  }
+
+  function dueBadge(t){
+    if(!t.dueDate || t.status !== "active" || isResting(t)) return "";
+    var od = overdueDaysForDue(t);
+    if(od === null) return "";
+    if(od > 0) return '<span class="quest-tag quest-tag--urgent">Overdue ' + od + 'd — was due ' + escapeHtml(fmtDateOnly(t.dueDate)) + '</span>';
+    if(od === 0) return '<span class="quest-tag quest-tag--duetoday">Due today</span>';
+    return '<span class="quest-tag quest-tag--due">Due ' + escapeHtml(fmtDateOnly(t.dueDate)) + '</span>';
+  }
+  function checkinBadge(t){
+    if(!t.checkIn || t.checkIn.cadence === "none" || t.status !== "active" || isResting(t)) return "";
+    var od = checkInOverdueDays(t);
+    if(od === null) return "";
+    var cadLabel = CADENCE_LABELS[t.checkIn.cadence];
+    if(od > 0) return '<span class="quest-tag quest-tag--checkin-overdue">Check-in overdue ' + od + 'd</span>';
+    if(od === 0) return '<span class="quest-tag quest-tag--checkin-overdue">Check-in due today</span>';
+    return '<span class="quest-tag quest-tag--checkin">' + escapeHtml(cadLabel) + ' check-in</span>';
+  }
+  function restingBadge(t){
+    if(!isResting(t)) return "";
+    return '<span class="quest-tag quest-tag--resting">Resting until ' + escapeHtml(fmtDate(new Date(t.restingUntil))) + '</span>';
+  }
+
+  function recomputeProgress(t){
+    if(t.subtasks && t.subtasks.length){
+      var done = t.subtasks.filter(function(s){ return s.done; }).length;
+      t.progress = Math.round(done / t.subtasks.length * 100);
+    }
+  }
+
+  /* ---------------- state ---------------- */
+  function normalizeState(s){
+    if(!s || !Array.isArray(s.tasks)) return {meta:{createdAt: nowIso()}, people:[{id:"p-default", name:"Main"}], tasks:[]};
+    if(!Array.isArray(s.people) || !s.people.length){
+      s.people = [{id:"p-default", name:"Main"}];
+    }
+    var validPersonIds = {};
+    s.people.forEach(function(p){ validPersonIds[p.id] = true; });
+    s.tasks.forEach(function(t){
+      if(!Array.isArray(t.subtasks)) t.subtasks = [];
+      if(!t.checkIn || typeof t.checkIn !== "object") t.checkIn = {cadence:"none", lastCheckIn:null};
+      if(CADENCE_ORDER.indexOf(t.checkIn.cadence) === -1) t.checkIn.cadence = "none";
+      if(t.dueDate === undefined) t.dueDate = null;
+      if(t.restingUntil === undefined) t.restingUntil = null;
+      if(!t.person || !validPersonIds[t.person]) t.person = s.people[0].id;
+      if(typeof t.current !== "boolean") t.current = false;
+    });
+    // Only one current quest per person — if data ever ends up with more
+    // (a stale merge, a manual edit), keep the most recently updated one.
+    var seenCurrentFor = {};
+    s.tasks
+      .filter(function(t){ return t.current; })
+      .sort(function(a,b){ return new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt); })
+      .forEach(function(t){
+        if(seenCurrentFor[t.person]) t.current = false;
+        else seenCurrentFor[t.person] = true;
+      });
+    if(!Array.isArray(s.templates)) s.templates = [];
+    s.templates.forEach(function(tpl){
+      if(!tpl.id) tpl.id = uid();
+      if(typeof tpl.name !== "string" || !tpl.name) tpl.name = tpl.title || "Untitled template";
+      if(typeof tpl.title !== "string") tpl.title = tpl.name || "";
+      if(typeof tpl.description !== "string") tpl.description = "";
+      if(tpl.tier !== "major" && tpl.tier !== "minor") tpl.tier = "major";
+      if(typeof tpl.repeat !== "boolean") tpl.repeat = false;
+      if(typeof tpl.reminder !== "string") tpl.reminder = "";
+      if(CADENCE_ORDER.indexOf(tpl.cadence) === -1) tpl.cadence = "none";
+      if(!Array.isArray(tpl.subtasks)) tpl.subtasks = [];
+      if(!Array.isArray(tpl.links)) tpl.links = [];
+    });
+    return s;
+  }
+  var initialStateEl = document.getElementById("app-state");
+  var state;
+  try{ state = normalizeState(JSON.parse(initialStateEl.textContent)); }
+  catch(e){ state = {meta:{createdAt: nowIso()}, tasks:[]}; }
+
+  var ghConfigured = false;
+  var ghConfig = null;
+  var ghSha = null;
+  var loaded = false;
+  var readOnly = false;
+  var pendingDeleteId = null;
+  var pendingDeleteTimer = null;
+  var openManageIds = new Set();
+
+  // Which person's tab is showing is a per-viewer choice, not shared data —
+  // it lives in this browser's localStorage rather than in the published
+  // state, so switching tabs never triggers a publish and never overwrites
+  // anyone else's selection.
+  var ACTIVE_PERSON_KEY = "questlog-active-person";
+  var activePersonId = null;
+  var managePeopleOpen = false;
+  var pendingDeletePersonId = null;
+  var pendingDeletePersonTimer = null;
+
+  // Task templates are shared canonical data (like tasks/people), so they
+  // live in `state.templates` and publish like anything else. Whether the
+  // management panel is expanded, though, is per-viewer transient UI, same
+  // treatment as managePeopleOpen above.
+  var manageTemplatesOpen = false;
+  var pendingDeleteTemplateId = null;
+  var pendingDeleteTemplateTimer = null;
+  function loadActivePersonId(){
+    try{
+      var v = localStorage.getItem(ACTIVE_PERSON_KEY);
+      if(v) activePersonId = v;
+    } catch(e){}
+  }
+  function saveActivePersonId(id){
+    try{ localStorage.setItem(ACTIVE_PERSON_KEY, id); } catch(e){}
+  }
+  function ensureActivePerson(){
+    if(!Array.isArray(state.people) || !state.people.length) return;
+    if(!state.people.some(function(p){ return p.id === activePersonId; })){
+      activePersonId = state.people[0].id;
+      saveActivePersonId(activePersonId);
+    }
+  }
+  function tasksForActivePerson(){
+    return state.tasks.filter(function(t){ return t.person === activePersonId; });
+  }
+
+  // Which order the lists render in is also a per-viewer choice — different
+  // people looking at the same quests may want different sorting — so it
+  // lives in localStorage next to the active tab, not in the shared state.
+  var SORT_MODE_KEY = "questlog-sort-mode";
+  var SORT_OPTIONS = [
+    {value:"due", label:"Due date — soonest first"},
+    {value:"updated", label:"Recently updated"},
+    {value:"progress", label:"Progress — least done first"},
+    {value:"alpha", label:"Alphabetical"},
+    {value:"newest", label:"Newest added"}
+  ];
+  var sortMode = "due";
+  function loadSortMode(){
+    try{
+      var v = localStorage.getItem(SORT_MODE_KEY);
+      if(v && SORT_OPTIONS.some(function(o){ return o.value === v; })) sortMode = v;
+    } catch(e){}
+  }
+  function saveSortMode(v){
+    try{ localStorage.setItem(SORT_MODE_KEY, v); } catch(e){}
+  }
+  function taskComparator(mode){
+    switch(mode){
+      case "due":
+        return function(a,b){
+          var ad = a.dueDate ? parseLocalDate(a.dueDate).getTime() : Infinity;
+          var bd = b.dueDate ? parseLocalDate(b.dueDate).getTime() : Infinity;
+          if(ad !== bd) return ad - bd;
+          return new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt);
+        };
+      case "progress":
+        return function(a,b){
+          if(a.progress !== b.progress) return a.progress - b.progress;
+          return new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt);
+        };
+      case "alpha":
+        return function(a,b){ return a.title.localeCompare(b.title); };
+      case "newest":
+        return function(a,b){ return new Date(b.createdAt) - new Date(a.createdAt); };
+      case "updated":
+      default:
+        return function(a,b){ return new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt); };
+    }
+  }
+
+  // Every mutation re-renders whole quest lists from scratch, which would
+  // otherwise snap open "Manage Quest" panels shut on every change. Track
+  // which cards are expanded (capture phase: <details> "toggle" doesn't
+  // bubble) so renderCard() can restore that state.
+  document.addEventListener("toggle", function(e){
+    if(e.target.matches && e.target.matches(".quest-card__manage")){
+      var card = e.target.closest(".quest-card");
+      var id = card && card.dataset.id;
+      if(id){
+        if(e.target.open) openManageIds.add(id);
+        else openManageIds.delete(id);
+      }
+    }
+  }, true);
+
+  /* ---------------- GitHub-backed persistence ----------------
+   * This used to run on Claude's Artifact platform, which published the
+   * whole page (markup + data) to a hosted URL on every change. Off that
+   * platform there's no server at all — so GitHub itself is the backend:
+   * the page is a static file (wherever it's hosted) and the task data
+   * lives in a JSON file in a GitHub repo, read and written straight from
+   * the browser via the GitHub REST API. A Personal Access Token (entered
+   * once, below) authorizes those reads/writes; it's kept in this
+   * browser's localStorage only and never leaves the browser except in
+   * requests to api.github.com.
+   */
+  var GH_CFG_KEY = "questlog-github-config";
+
+  function loadGhConfig(){
+    try{
+      var raw = localStorage.getItem(GH_CFG_KEY);
+      if(!raw) return null;
+      var c = JSON.parse(raw);
+      if(c && c.token && c.owner && c.repo) return c;
+    } catch(e){}
+    return null;
+  }
+  function saveGhConfig(c){
+    try{ localStorage.setItem(GH_CFG_KEY, JSON.stringify(c)); } catch(e){}
+  }
+  function clearGhConfig(){
+    try{ localStorage.removeItem(GH_CFG_KEY); } catch(e){}
+  }
+
+  function ghPath(){ return (ghConfig && ghConfig.path) || "data.json"; }
+  function ghBranch(){ return (ghConfig && ghConfig.branch) || "main"; }
+  function ghApiUrl(){
+    return "https://api.github.com/repos/" + encodeURIComponent(ghConfig.owner) + "/" +
+      encodeURIComponent(ghConfig.repo) + "/contents/" + ghPath().split("/").map(encodeURIComponent).join("/");
+  }
+  function ghHeaders(){
+    return {
+      "Authorization": "Bearer " + ghConfig.token,
+      "Accept": "application/vnd.github+json",
+      "Content-Type": "application/json"
+    };
+  }
+  // btoa/atob only handle Latin1, so UTF-8 text (emoji, curly quotes, etc.
+  // in a note) needs escaping through first or it silently corrupts.
+  function utf8ToBase64(str){ return btoa(unescape(encodeURIComponent(str))); }
+  function base64ToUtf8(b64){ return decodeURIComponent(escape(atob(b64.replace(/\n/g, "")))); }
+
+  function ghLoad(){
+    return fetch(ghApiUrl() + "?ref=" + encodeURIComponent(ghBranch()), {headers: ghHeaders()})
+      .then(function(res){
+        if(res.status === 404) return {notFound: true};
+        if(!res.ok) return res.json().catch(function(){ return {}; }).then(function(b){
+          var err = new Error((b && b.message) || ("HTTP " + res.status));
+          err.status = res.status; err.body = b; throw err;
+        });
+        return res.json();
+      })
+      .then(function(data){
+        if(data.notFound) return null;
+        ghSha = data.sha;
+        return JSON.parse(base64ToUtf8(data.content));
+      });
+  }
+  function ghSave(stateObj){
+    var body = {
+      message: "Quest Log update — " + nowIso(),
+      content: utf8ToBase64(JSON.stringify(stateObj, null, 2)),
+      branch: ghBranch()
+    };
+    if(ghSha) body.sha = ghSha;
+    return fetch(ghApiUrl(), {method: "PUT", headers: ghHeaders(), body: JSON.stringify(body)})
+      .then(function(res){
+        if(!res.ok) return res.json().catch(function(){ return {}; }).then(function(b){
+          var err = new Error((b && b.message) || ("HTTP " + res.status));
+          err.status = res.status; err.body = b; throw err;
+        });
+        return res.json();
+      })
+      .then(function(data){ ghSha = data.content.sha; });
+  }
+
+  ghConfig = loadGhConfig();
+  ghConfigured = !!ghConfig;
+  if(ghConfigured){
+    ghLoad().then(function(remote){
+      if(remote) state = normalizeState(remote);
+      // remote === null means data.json doesn't exist in the repo yet —
+      // keep the empty default state and the first save below creates it.
+      loaded = true;
+      initUi();
+    }).catch(function(err){
+      console.error("Quest Log: initial load failed", err);
+      loaded = true;
+      readOnly = (err && (err.status === 401 || err.status === 403));
+      showToast("Couldn't load from GitHub — check Settings.");
+      initUi();
+    });
+  } else {
+    loaded = true;
+    initUi();
+    openSettings();
+  }
+
+  /* ---------------- mutation / persistence ---------------- */
+  function findTask(s, id){
+    for(var i=0;i<s.tasks.length;i++){ if(s.tasks[i].id === id) return s.tasks[i]; }
+    return null;
+  }
+  function findTemplate(s, id){
+    if(!s.templates) return null;
+    for(var i=0;i<s.templates.length;i++){ if(s.templates[i].id === id) return s.templates[i]; }
+    return null;
+  }
+  function addSystemNote(t, text, ts){
+    t.notes.push({id: uid(), text: text, at: ts, system: true});
+    if(t.notes.length > 60) t.notes = t.notes.slice(t.notes.length - 60);
+  }
+
+  // A successful publish() reloads THIS view too (it's how every other open
+  // view picks up the change) — so anything living only in JS variables,
+  // like which "Manage Quest" panels are expanded or the scroll position,
+  // would otherwise be wiped on every single edit. Stash it here right
+  // before publishing and restore it during the fresh load that follows
+  // (see initUi below).
+  var UI_STASH_KEY = "questlog-ui-stash";
+  function stashUiStateForReload(){
+    try{
+      var completedDetails = document.getElementById("completed-details");
+      sessionStorage.setItem(UI_STASH_KEY, JSON.stringify({
+        open: Array.from(openManageIds),
+        completedOpen: !!(completedDetails && completedDetails.open),
+        managePeopleOpen: managePeopleOpen,
+        manageTemplatesOpen: manageTemplatesOpen,
+        scrollY: window.scrollY
+      }));
+    } catch(e){ /* sessionStorage unavailable — worst case the panel re-collapses */ }
+  }
+
+  // Every edit used to publish (and wait on) a full network round-trip
+  // before the next one could start, so ticking several subtasks in a row
+  // would stall on the first click and could even lose the second click if
+  // it landed while the first was still saving. Instead: apply every edit
+  // to `state` immediately and render right away (so clicking never feels
+  // laggy or gets silently dropped), then coalesce a short burst of edits
+  // into a single commit a moment later, so five quick clicks become one
+  // save instead of five that race each other.
+  var busy = false;
+  var dirty = false;
+  var publishTimer = null;
+  var SAVE_DEBOUNCE_MS = 1200;
+  var SAVE_RETRY_MS = 4000;
+
+  function mutate(fn){
+    if(readOnly){ showToast("Can't save — check your GitHub token's permissions in Settings."); return; }
+    fn(state);
+    render();
+    if(!ghConfigured){
+      showToast("Not connected to GitHub yet — open Settings to connect.");
+      return;
+    }
+    dirty = true;
+    renderSaveStatus("pending");
+    clearTimeout(publishTimer);
+    publishTimer = setTimeout(trySave, SAVE_DEBOUNCE_MS);
+  }
+
+  function trySave(){
+    if(busy || !dirty) return;
+    dirty = false;
+    busy = true;
+    renderSaveStatus("saving");
+    ghSave(state).then(function(){
+      busy = false;
+      renderSaveStatus("saved");
+      // Anything typed/clicked while that save was in flight is already
+      // reflected in `state` and marked dirty — send it along too.
+      if(dirty){ clearTimeout(publishTimer); trySave(); }
+    }).catch(function(err){
+      busy = false;
+      var status = err && err.status;
+      if(status === 401 || status === 403){
+        readOnly = true;
+        renderSaveStatus("error");
+        render();
+      } else if(status === 409){
+        // Someone/something else (another tab, a manual repo edit) changed
+        // the file since we last read it. Refresh the sha we're targeting
+        // and just retry — our local `state` already has this change plus
+        // anything since, so the retry carries it forward as the new
+        // version rather than losing it.
+        ghLoad().then(function(){
+          dirty = true;
+          clearTimeout(publishTimer);
+          publishTimer = setTimeout(trySave, 300);
+        }).catch(function(){
+          dirty = true;
+          renderSaveStatus("error");
+          clearTimeout(publishTimer);
+          publishTimer = setTimeout(trySave, SAVE_RETRY_MS);
+        });
+      } else {
+        console.error("Quest Log: save failed", err);
+        showToast("Couldn't save to GitHub — retrying…");
+        dirty = true;
+        renderSaveStatus("error");
+        clearTimeout(publishTimer);
+        publishTimer = setTimeout(trySave, SAVE_RETRY_MS);
+      }
+    });
+  }
+
+  /* ---------------- toast ---------------- */
+  var toastTimer = null;
+  function showToast(msg){
+    var el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove("is-visible"); }, 3200);
+  }
+
+  /* ---------------- weekly report ---------------- */
+  var WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+  var currentReportText = "";
+
+  function fmtReportDate(d){
+    try{ return new Intl.DateTimeFormat(undefined, {month:"short", day:"numeric", year:"numeric"}).format(d); }
+    catch(e){ return d.toDateString(); }
+  }
+
+  function buildWeeklyReportDataForPerson(person, now, weekStart, weekEnd){
+    var tasks = state.tasks.filter(function(t){ return t.person === person.id; });
+
+    var completedThisWeek = [];
+    tasks.forEach(function(t){
+      (t.notes || []).forEach(function(n){
+        if(!n.system) return;
+        var isCompletionNote = /^Quest completed/.test(n.text) || /^Cycle \d+ complete/.test(n.text);
+        if(isCompletionNote && new Date(n.at) >= weekStart){
+          completedThisWeek.push({title: t.title, text: n.text, at: n.at});
+        }
+      });
+    });
+    completedThisWeek.sort(function(a,b){ return new Date(b.at) - new Date(a.at); });
+
+    var inProgress = tasks.filter(function(t){ return t.status === "active" && !isResting(t); })
+      .sort(function(a,b){
+        if(a.tier !== b.tier) return a.tier === "major" ? -1 : 1;
+        return b.progress - a.progress;
+      });
+
+    var overdue = tasks.filter(function(t){ return t.status === "active" && !isResting(t) && isUrgent(t); })
+      .sort(function(a,b){ return overdueDaysForDue(b) - overdueDaysForDue(a); });
+
+    var upcoming = tasks.filter(function(t){
+      if(t.status !== "active" || isResting(t) || !t.dueDate || isUrgent(t)) return false;
+      var d = parseLocalDate(t.dueDate);
+      return d >= startOfDay(now) && d <= weekEnd;
+    }).sort(function(a,b){ return parseLocalDate(a.dueDate) - parseLocalDate(b.dueDate); });
+
+    var notesThisWeek = [];
+    tasks.forEach(function(t){
+      (t.notes || []).forEach(function(n){
+        if(n.system) return;
+        if(new Date(n.at) >= weekStart){
+          notesThisWeek.push({title: t.title, text: n.text, at: n.at});
+        }
+      });
+    });
+    notesThisWeek.sort(function(a,b){ return new Date(b.at) - new Date(a.at); });
+
+    return {
+      personName: person.name,
+      completedThisWeek: completedThisWeek, inProgress: inProgress,
+      overdue: overdue, upcoming: upcoming, notesThisWeek: notesThisWeek
+    };
+  }
+
+  function buildWeeklyReportData(){
+    var now = new Date();
+    var weekStart = new Date(now.getTime() - WEEK_MS);
+    var weekEnd = new Date(now.getTime() + WEEK_MS);
+    var people = Array.isArray(state.people) ? state.people : [];
+    var sections = people.map(function(p){
+      return buildWeeklyReportDataForPerson(p, now, weekStart, weekEnd);
+    });
+    return {now: now, weekStart: weekStart, sections: sections};
+  }
+
+  // The focus reminder and the most recent note are the fastest way to see
+  // what's actually going on with a quest beyond its bare title/percentage —
+  // used to flesh out the Overdue, Due-soon and In-progress lines below.
+  function latestNoteFor(t){
+    if(!t.notes || !t.notes.length) return null;
+    var userNotes = t.notes.filter(function(n){ return !n.system; });
+    if(!userNotes.length) return null;
+    var sorted = userNotes.slice().sort(function(a,b){ return new Date(b.at) - new Date(a.at); });
+    return sorted[0];
+  }
+  function appendTaskDetailTextLines(lines, t){
+    if(t.description && t.description.trim()){
+      lines.push("    Description: " + t.description.trim());
+    }
+    if(t.reminder && t.reminder.trim()){
+      lines.push("    Focus: " + t.reminder.trim());
+    }
+    var n = latestNoteFor(t);
+    if(n){
+      lines.push("    Latest: " + n.text + " (" + fmtReportDate(new Date(n.at)) + ")");
+    }
+  }
+  function taskDetailHtml(t){
+    var bits = "";
+    if(t.description && t.description.trim()){
+      bits += '<div class="report-item-detail"><b>Description:</b> ' + escapeHtml(t.description.trim()) + '</div>';
+    }
+    if(t.reminder && t.reminder.trim()){
+      bits += '<div class="report-item-detail"><b>Focus:</b> ' + escapeHtml(t.reminder.trim()) + '</div>';
+    }
+    var n = latestNoteFor(t);
+    if(n){
+      bits += '<div class="report-item-detail"><b>Latest:</b> ' + escapeHtml(n.text) + ' <span class="report-note-date">(' + escapeHtml(fmtReportDate(new Date(n.at))) + ')</span></div>';
+    }
+    return bits;
+  }
+
+  function appendPersonReportTextLines(lines, s){
+    lines.push("");
+    lines.push("================================================");
+    lines.push(s.personName.toUpperCase() + " — " + s.inProgress.length + " active, " + s.overdue.length + " overdue");
+    lines.push("================================================");
+    lines.push("");
+    lines.push("Completed this week (" + s.completedThisWeek.length + ")");
+    if(s.completedThisWeek.length){
+      s.completedThisWeek.forEach(function(c){ lines.push("- " + c.title + " — " + c.text); });
+    } else lines.push("- Nothing marked complete this week.");
+    lines.push("");
+    lines.push("Overdue (" + s.overdue.length + ")");
+    if(s.overdue.length){
+      s.overdue.forEach(function(t){
+        var od = overdueDaysForDue(t);
+        lines.push("- " + t.title + " — " + od + " day" + (od === 1 ? "" : "s") + " overdue (was due " + fmtDateOnly(t.dueDate) + ")");
+        appendTaskDetailTextLines(lines, t);
+      });
+    } else lines.push("- Nothing overdue.");
+    lines.push("");
+    lines.push("Due in the next 7 days (" + s.upcoming.length + ")");
+    if(s.upcoming.length){
+      s.upcoming.forEach(function(t){
+        lines.push("- " + t.title + " — due " + fmtDateOnly(t.dueDate));
+        appendTaskDetailTextLines(lines, t);
+      });
+    } else lines.push("- Nothing due in the next week.");
+    lines.push("");
+    lines.push("In progress (" + s.inProgress.length + " active)");
+    if(s.inProgress.length){
+      s.inProgress.forEach(function(t){
+        lines.push("- " + t.title + " — " + t.progress + "%" + (t.dueDate ? (" — due " + fmtDateOnly(t.dueDate)) : ""));
+        appendTaskDetailTextLines(lines, t);
+      });
+    } else lines.push("- No active quests.");
+    lines.push("");
+    lines.push("Notes logged this week (" + s.notesThisWeek.length + ")");
+    if(s.notesThisWeek.length){
+      s.notesThisWeek.forEach(function(n){ lines.push("- " + n.title + ": " + n.text + " (" + fmtReportDate(new Date(n.at)) + ")"); });
+    } else lines.push("- No notes logged this week.");
+  }
+
+  function buildWeeklyReportText(data){
+    var lines = [];
+    lines.push("WEEKLY REPORT — ALL TABS");
+    lines.push("Week of " + fmtReportDate(data.weekStart) + " – " + fmtReportDate(data.now));
+    data.sections.forEach(function(s){ appendPersonReportTextLines(lines, s); });
+    return lines.join("\n");
+  }
+
+  function buildPersonReportHtml(s){
+    function list(items, empty, renderFn){
+      if(!items.length) return '<p class="empty-note">' + empty + '</p>';
+      return '<ul class="report-list">' + items.map(renderFn).join("") + '</ul>';
+    }
+    return (
+      '<h2 class="report-person-heading">' + escapeHtml(s.personName) + '</h2>' +
+      '<h3 class="report-heading">Completed this week (' + s.completedThisWeek.length + ')</h3>' +
+      list(s.completedThisWeek, "Nothing marked complete this week.", function(c){
+        return '<li><b>' + escapeHtml(c.title) + '</b> — ' + escapeHtml(c.text) + '</li>';
+      }) +
+      '<h3 class="report-heading">Overdue (' + s.overdue.length + ')</h3>' +
+      list(s.overdue, "Nothing overdue.", function(t){
+        var od = overdueDaysForDue(t);
+        return '<li><b>' + escapeHtml(t.title) + '</b> — ' + od + ' day' + (od === 1 ? "" : "s") + ' overdue (was due ' + escapeHtml(fmtDateOnly(t.dueDate)) + ')' + taskDetailHtml(t) + '</li>';
+      }) +
+      '<h3 class="report-heading">Due in the next 7 days (' + s.upcoming.length + ')</h3>' +
+      list(s.upcoming, "Nothing due in the next week.", function(t){
+        return '<li><b>' + escapeHtml(t.title) + '</b> — due ' + escapeHtml(fmtDateOnly(t.dueDate)) + taskDetailHtml(t) + '</li>';
+      }) +
+      '<h3 class="report-heading">In progress (' + s.inProgress.length + ' active)</h3>' +
+      list(s.inProgress, "No active quests.", function(t){
+        return '<li><b>' + escapeHtml(t.title) + '</b> — ' + t.progress + '%' + (t.dueDate ? (' — due ' + escapeHtml(fmtDateOnly(t.dueDate))) : "") + taskDetailHtml(t) + '</li>';
+      }) +
+      '<h3 class="report-heading">Notes logged this week (' + s.notesThisWeek.length + ')</h3>' +
+      list(s.notesThisWeek, "No notes logged this week.", function(n){
+        return '<li><b>' + escapeHtml(n.title) + ':</b> ' + escapeHtml(n.text) + ' <span class="report-note-date">(' + escapeHtml(fmtReportDate(new Date(n.at))) + ')</span></li>';
+      })
+    );
+  }
+
+  function buildWeeklyReportHtml(data){
+    return (
+      '<h2 class="report-title">Weekly Report — All Tabs</h2>' +
+      '<p class="report-range">Week of ' + escapeHtml(fmtReportDate(data.weekStart)) + ' – ' + escapeHtml(fmtReportDate(data.now)) + '</p>' +
+      data.sections.map(buildPersonReportHtml).join("")
+    );
+  }
+
+  // The modal lives inside this page's own sandboxed frame, where a script
+  // can't pop a native print dialog (same restriction that blocks alert/
+  // confirm) — calling window.print() here silently does nothing. A plain
+  // top-level tab isn't sandboxed that way, so build the report as its own
+  // tiny standalone page and open THAT in a new tab; print() works there,
+  // and even if a browser still blocks the auto-trigger, the tab itself is
+  // a clean, white, A4-ready page the user can print with their browser's
+  // own Ctrl/Cmd+P.
+  function buildPrintableReportDocument(data){
+    var bodyHtml = buildWeeklyReportHtml(data);
+    return '<!doctype html><html><head><meta charset="UTF-8"><title>Weekly Report — All Tabs</title><style>' +
+      '@page{ size:A4; margin:16mm 14mm; }' +
+      'body{font-family:Georgia,"Times New Roman",serif; color:#1a1a1a; background:#fff; margin:0 auto; padding:28px; max-width:720px;}' +
+      '.report-title{font-family:Georgia,serif; font-size:1.45rem; font-weight:700; margin:0 0 0.2rem;}' +
+      '.report-range{font-family:"Courier New",monospace; font-size:0.82rem; color:#444; margin:0 0 1.2rem;}' +
+      '.report-person-heading{font-family:Georgia,serif; font-size:1.15rem; font-weight:700; margin:1.6rem 0 0.3rem; padding-top:1.2rem; border-top:2px solid #999;}' +
+      '.report-person-heading:first-of-type{margin-top:0; padding-top:0; border-top:none;}' +
+      '.report-heading{font-family:Georgia,serif; font-size:0.8rem; letter-spacing:0.06em; text-transform:uppercase; color:#555; margin:1rem 0 0.5rem; padding-top:0.85rem; border-top:1px dashed #ccc;}' +
+      '.report-heading:first-of-type{margin-top:0; padding-top:0; border-top:none;}' +
+      '.report-person-heading + .report-heading{border-top:none; padding-top:0; margin-top:0.4rem;}' +
+      '.report-list{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:0.3rem;}' +
+      '.report-list li{font-size:0.95rem; line-height:1.4;}' +
+      '.report-note-date{color:#666; font-family:"Courier New",monospace; font-size:0.74rem;}' +
+      '.report-item-detail{font-size:0.84rem; color:#444; margin:0.2rem 0 0 0.1rem;}' +
+      '.report-item-detail b{color:#000;}' +
+      '.empty-note{color:#666; font-style:italic; margin:0;}' +
+      '@media print{ body{padding:0; max-width:none;} }' +
+      '</style></head><body>' + bodyHtml + '</body></html>';
+  }
+  function openPrintableReport(){
+    var data = buildWeeklyReportData();
+    var html = buildPrintableReportDocument(data);
+    try{
+      var blob = new Blob([html], {type: "text/html"});
+      var url = URL.createObjectURL(blob);
+      var win = window.open(url, "_blank");
+      if(!win){
+        showToast("Pop-up blocked — allow pop-ups for this page, then try Print again.");
+        return;
+      }
+      showToast("Opening a print-ready version in a new tab…");
+      win.addEventListener("load", function(){
+        try{ win.print(); } catch(e){}
+      });
+    } catch(e){
+      showToast("Couldn't open a print preview — try Copy to clipboard instead.");
+    }
+  }
+
+  function openWeeklyReport(){
+    var data = buildWeeklyReportData();
+    currentReportText = buildWeeklyReportText(data);
+    document.getElementById("report-modal-body").innerHTML = buildWeeklyReportHtml(data);
+    document.getElementById("report-modal-backdrop").hidden = false;
+  }
+  function closeWeeklyReport(){
+    document.getElementById("report-modal-backdrop").hidden = true;
+  }
+
+  /* ---------------- GitHub settings modal ---------------- */
+  function renderSettingsModal(statusMsg, statusIsError){
+    var c = ghConfig || {};
+    var card = document.getElementById("settings-modal-card");
+    card.innerHTML =
+      '<h2 class="report-title">Connect to GitHub</h2>' +
+      '<p class="report-range">Your quest data is stored as a JSON file in a GitHub repo you control — this page talks to it directly from your browser using a Personal Access Token.</p>' +
+      (statusMsg ? '<p class="settings-status' + (statusIsError ? " is-error" : "") + '">' + escapeHtml(statusMsg) + '</p>' : "") +
+      '<form id="settings-form" class="settings-form" data-action="save-settings">' +
+        '<div class="full"><label for="gh-token">Personal access token</label>' +
+          '<input id="gh-token" type="password" name="token" autocomplete="off" placeholder="' +
+            (c.token ? "Already saved — leave blank to keep it" : "github_pat_… or ghp_…") + '"></div>' +
+        '<div><label for="gh-owner">Repo owner (your username)</label>' +
+          '<input id="gh-owner" type="text" name="owner" value="' + escapeHtml(c.owner || "") + '" required></div>' +
+        '<div><label for="gh-repo">Repo name</label>' +
+          '<input id="gh-repo" type="text" name="repo" value="' + escapeHtml(c.repo || "quest-log") + '" required></div>' +
+        '<div><label for="gh-path">Data file path</label>' +
+          '<input id="gh-path" type="text" name="path" value="' + escapeHtml(c.path || "data.json") + '" required></div>' +
+        '<div><label for="gh-branch">Branch</label>' +
+          '<input id="gh-branch" type="text" name="branch" value="' + escapeHtml(c.branch || "main") + '" required></div>' +
+        '<div class="form-actions" style="justify-content:space-between;">' +
+          (ghConfigured ? '<button type="button" class="delete-btn" data-action="disconnect-github">Disconnect</button>' : '<span></span>') +
+          '<span style="display:flex; gap:0.6rem;">' +
+            '<button type="button" class="text-btn" data-action="close-settings">Close</button>' +
+            '<button type="submit" class="primary-btn">Save &amp; connect</button>' +
+          '</span>' +
+        '</div>' +
+      '</form>';
+  }
+  function openSettings(){
+    renderSettingsModal();
+    document.getElementById("settings-modal-backdrop").hidden = false;
+    var t = document.getElementById("gh-token");
+    if(t) t.focus();
+  }
+  function closeSettings(){
+    document.getElementById("settings-modal-backdrop").hidden = true;
+  }
+  function onSaveSettingsForm(form){
+    var fd = new FormData(form);
+    var token = (fd.get("token") || "").toString().trim();
+    var owner = (fd.get("owner") || "").toString().trim();
+    var repo = (fd.get("repo") || "").toString().trim().replace(/^\/+|\/+$/g, "");
+    var path = (fd.get("path") || "data.json").toString().trim().replace(/^\/+/, "") || "data.json";
+    var branch = (fd.get("branch") || "main").toString().trim() || "main";
+    if(!token && ghConfig && ghConfig.token) token = ghConfig.token;
+    if(!token || !owner || !repo){
+      renderSettingsModal("A token, owner and repo are all required.", true);
+      return;
+    }
+    var newConfig = {token: token, owner: owner, repo: repo, path: path, branch: branch};
+    renderSettingsModal("Connecting…");
+    ghConfig = newConfig;
+    ghSha = null;
+    ghLoad().then(function(remote){
+      saveGhConfig(newConfig);
+      ghConfigured = true;
+      readOnly = false;
+      if(remote){
+        state = normalizeState(remote);
+      }
+      // remote === null: the file doesn't exist in this repo yet — treat
+      // this connection as the one that creates it, seeded with whatever's
+      // currently in `state` (freshly started, or carried over from before
+      // this repo was connected).
+      render();
+      closeSettings();
+      if(remote === null){
+        dirty = true;
+        clearTimeout(publishTimer);
+        publishTimer = setTimeout(trySave, 200);
+      }
+      showToast(remote === null ? "Connected — creating " + path + " in the repo…" : "Connected to GitHub.");
+    }).catch(function(err){
+      ghConfig = loadGhConfig();
+      var msg = "Couldn't connect — check the token, owner and repo name.";
+      if(err && err.status === 404) msg = "Repo or file not found — check the owner, repo and path.";
+      else if(err && (err.status === 401 || err.status === 403)) msg = "Token rejected — check it has Contents read/write access to this repo.";
+      renderSettingsModal(msg, true);
+    });
+  }
+  function onDisconnectGithub(){
+    clearGhConfig();
+    ghConfig = null;
+    ghConfigured = false;
+    ghSha = null;
+    readOnly = false;
+    render();
+    renderSettingsModal("Disconnected. Your local view is unchanged, but nothing will save until you reconnect.");
+  }
+
+  /* ---------------- rendering ---------------- */
+  function questIconMajor(){
+    return '<svg class="quest-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 L21 6 V12 C21 17.5 17.2 21.7 12 23 C6.8 21.7 3 17.5 3 12 V6 Z" stroke="currentColor" stroke-width="1.6"/></svg>';
+  }
+  function questIconMinor(){
+    return '<svg class="quest-icon quest-icon--minor" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.8"/></svg>';
+  }
+  function reminderIcon(){
+    return '<svg class="reminder-item__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 L21 6 V12 C21 17.5 17.2 21.7 12 23 C6.8 21.7 3 17.5 3 12 V6 Z" stroke="currentColor" stroke-width="2"/></svg>';
+  }
+
+  function renderLinks(task){
+    if(!task.links.length) return "";
+    return '<div class="quest-card__links">' + task.links.map(function(l){
+      var label = escapeHtml(l.label || l.url);
+      if(isHttpish(l.url)){
+        return '<a class="link-chip" href="' + escapeHtml(l.url) + '" target="_blank" rel="noopener noreferrer" title="' + escapeHtml(l.url) + '"><span>' + label + '</span>' +
+          (readOnly ? "" : '<button type="button" data-action="remove-link" data-id="' + task.id + '" data-link-id="' + l.id + '" title="Remove link" aria-label="Remove link">×</button>') + '</a>';
+      }
+      return '<span class="link-chip" title="' + escapeHtml(l.url) + '"><span>' + label + '</span>' +
+        '<button type="button" data-action="copy-link" data-url="' + escapeHtml(l.url) + '" title="Copy path" aria-label="Copy path">⧉</button>' +
+        (readOnly ? "" : '<button type="button" data-action="remove-link" data-id="' + task.id + '" data-link-id="' + l.id + '" title="Remove link" aria-label="Remove link">×</button>') + '</span>';
+    }).join("") + '</div>';
+  }
+
+  function renderNotes(task){
+    var notes = task.notes.slice().sort(function(a,b){ return new Date(b.at) - new Date(a.at); });
+    if(!notes.length) return '<p class="empty-note">No notes logged yet.</p>';
+    return '<div class="notes-list">' + notes.map(function(n, i){
+      return '<div class="note-item' + (i===0 ? " is-fresh" : "") + (n.system ? " is-system" : "") + '">' +
+        '<div>' + escapeHtml(n.text) + '</div>' +
+        '<time datetime="' + n.at + '">' + fmtDateTime(n.at) + '</time></div>';
+    }).join("") + '</div>';
+  }
+
+  function renderSubtasksReadOnly(task){
+    if(!task.subtasks || !task.subtasks.length) return "";
+    return '<div class="subtask-list">' + task.subtasks.map(function(s){
+      return '<div class="subtask-item' + (s.done ? " is-done" : "") + '" style="cursor:default">' +
+        '<span aria-hidden="true">' + (s.done ? "☑" : "☐") + '</span>' +
+        '<span class="subtask-item__text">' + escapeHtml(s.text) + '</span>' +
+      '</div>';
+    }).join("") + '</div>';
+  }
+
+  function renderManage(task){
+    var hasSubtasks = task.subtasks && task.subtasks.length > 0;
+    var openAttr = openManageIds.has(task.id) ? " open" : "";
+
+    var editDetailsBlock = '<div>' +
+      '<label for="edit-title-' + task.id + '">Title</label>' +
+      '<form data-action="edit-task-details" data-id="' + task.id + '">' +
+        '<input id="edit-title-' + task.id + '" type="text" name="title" maxlength="120" value="' + escapeHtml(task.title) + '" required>' +
+        '<label for="edit-desc-' + task.id + '" style="margin-top:0.6rem">Description</label>' +
+        '<textarea id="edit-desc-' + task.id + '" name="description" maxlength="600" placeholder="Optional details or context">' + escapeHtml(task.description) + '</textarea>' +
+        '<button type="submit" class="small-btn" style="margin-top:0.5rem">Save details</button>' +
+      '</form>' +
+    '</div>';
+
+    var movePersonBlock = (Array.isArray(state.people) && state.people.length > 1)
+      ? '<div>' +
+          '<label for="move-person-' + task.id + '">Move to tab</label>' +
+          '<form data-action="move-task-person" data-id="' + task.id + '" class="manage-row">' +
+            '<select id="move-person-' + task.id + '" name="personId" style="max-width:200px">' +
+              state.people.map(function(p){
+                return '<option value="' + p.id + '"' + (p.id === task.person ? " selected" : "") + '>' + escapeHtml(p.name) + '</option>';
+              }).join("") +
+            '</select>' +
+            '<button type="submit" class="small-btn">Save</button>' +
+          '</form>' +
+        '</div>'
+      : "";
+
+    var progressBlock;
+    if(hasSubtasks){
+      var doneCount = task.subtasks.filter(function(s){ return s.done; }).length;
+      progressBlock = '<div>' +
+        '<label>Progress — ' + task.progress + '%</label>' +
+        '<p class="empty-note">Following the ' + doneCount + '/' + task.subtasks.length + ' subtasks below — check them off as you go.</p>' +
+      '</div>';
+    } else {
+      var progressStops = [0,25,50,75,100].map(function(p){
+        return '<button type="button" class="small-btn" data-action="set-progress" data-id="' + task.id + '" data-value="' + p + '">' + p + '%</button>';
+      }).join("");
+      progressBlock = '<div>' +
+        '<label>Progress — ' + task.progress + '%</label>' +
+        '<div class="manage-row">' +
+          '<button type="button" class="step-btn" data-action="bump-progress" data-id="' + task.id + '" data-delta="-10" aria-label="Decrease progress">−</button>' +
+          '<input id="progress-slider-' + task.id + '" type="range" min="0" max="100" step="5" value="' + task.progress + '" data-action="slide-progress" data-id="' + task.id + '" style="flex:1">' +
+          '<button type="button" class="step-btn" data-action="bump-progress" data-id="' + task.id + '" data-delta="10" aria-label="Increase progress">+</button>' +
+        '</div>' +
+        '<div class="manage-row" style="margin-top:0.4rem">' + progressStops + '</div>' +
+      '</div>';
+    }
+
+    var subtasksBlock = '<div>' +
+      '<label>Subtasks' + (hasSubtasks ? "" : " (optional)") + '</label>' +
+      (hasSubtasks ? '<div class="subtask-list">' + task.subtasks.map(function(s){
+        return '<label class="subtask-item' + (s.done ? " is-done" : "") + '">' +
+          '<input type="checkbox" data-action="toggle-subtask" data-id="' + task.id + '" data-subtask-id="' + s.id + '"' + (s.done ? " checked" : "") + '>' +
+          '<span class="subtask-item__text">' + escapeHtml(s.text) + '</span>' +
+          '<button type="button" class="subtask-item__remove" data-action="remove-subtask" data-id="' + task.id + '" data-subtask-id="' + s.id + '" aria-label="Remove subtask">×</button>' +
+        '</label>';
+      }).join("") + '</div>' : "") +
+      '<form data-action="add-subtask" data-id="' + task.id + '" class="manage-row">' +
+        '<input id="subtask-add-' + task.id + '" type="text" name="subtask" placeholder="Break this quest down…" maxlength="200" required>' +
+        '<button type="submit" class="small-btn">Add</button>' +
+      '</form>' +
+    '</div>';
+
+    var scheduleBlock = '<div>' +
+      '<label for="due-input-' + task.id + '">Due date</label>' +
+      '<form data-action="set-due-date" data-id="' + task.id + '" class="manage-row">' +
+        '<input id="due-input-' + task.id + '" type="date" name="dueDate" value="' + (task.dueDate || "") + '" style="max-width:170px">' +
+        '<button type="submit" class="small-btn">Save</button>' +
+        (task.dueDate ? '<button type="button" class="small-btn" data-action="clear-due-date" data-id="' + task.id + '">Clear</button>' : "") +
+      '</form>' +
+      '<label for="cadence-input-' + task.id + '" style="margin-top:0.8rem">Check-in cadence</label>' +
+      '<form data-action="set-cadence" data-id="' + task.id + '" class="manage-row">' +
+        '<select id="cadence-input-' + task.id + '" name="cadence" style="max-width:170px">' +
+          CADENCE_ORDER.map(function(c){
+            return '<option value="' + c + '"' + (task.checkIn.cadence === c ? " selected" : "") + '>' + CADENCE_LABELS[c] + '</option>';
+          }).join("") +
+        '</select>' +
+        '<button type="submit" class="small-btn">Save</button>' +
+        (task.checkIn.cadence !== "none" && !isResting(task) ? '<button type="button" class="small-btn" data-action="checkin-now" data-id="' + task.id + '">Check in now</button>' : "") +
+      '</form>' +
+      (task.checkIn.cadence !== "none" && !isResting(task) ? '<p class="empty-note">' + escapeHtml(checkinStatusText(task)) + '</p>' : "") +
+      (isResting(task) ? '<p class="empty-note">Resting after completing a cycle — use "Reactivate now" below to skip the wait.</p>' : "") +
+    '</div>';
+
+    return '<details class="quest-card__manage"' + openAttr + '><summary>Manage Quest</summary><div class="manage-grid">' +
+      editDetailsBlock +
+      progressBlock +
+      subtasksBlock +
+      '<div>' +
+        '<label for="note-input-' + task.id + '">Add a note</label>' +
+        '<form data-action="add-note" data-id="' + task.id + '" class="manage-row">' +
+          '<input id="note-input-' + task.id + '" type="text" name="note" placeholder="What happened, what changed…" maxlength="400" required>' +
+          '<button type="submit" class="small-btn">Log it</button>' +
+        '</form>' +
+        renderNotes(task) +
+      '</div>' +
+      '<div>' +
+        '<label for="reminder-input-' + task.id + '">Focus reminder</label>' +
+        '<form data-action="set-reminder" data-id="' + task.id + '" class="manage-row">' +
+          '<input id="reminder-input-' + task.id + '" type="text" name="reminder" placeholder="Where to pick this back up…" maxlength="200" value="' + escapeHtml(task.reminder) + '">' +
+          '<button type="submit" class="small-btn">Save</button>' +
+        '</form>' +
+      '</div>' +
+      scheduleBlock +
+      '<div>' +
+        '<label>Links &amp; file locations</label>' +
+        '<form data-action="add-link" data-id="' + task.id + '" class="manage-row">' +
+          '<input id="link-label-' + task.id + '" type="text" name="label" placeholder="Label (optional)" maxlength="60" style="max-width:140px">' +
+          '<input id="link-url-' + task.id + '" type="text" name="url" placeholder="URL or file path…" maxlength="500" required>' +
+          '<button type="submit" class="small-btn">Add</button>' +
+        '</form>' +
+      '</div>' +
+      '<div>' +
+        '<label>Quest type</label>' +
+        '<div class="manage-row" style="align-items:center;">' +
+          '<p class="empty-note" style="margin:0">' + (task.repeat
+            ? ("Repeatable — completed " + task.cycles + " cycle" + (task.cycles === 1 ? "" : "s") + " so far.")
+            : "One-off — archives for good once completed.") + '</p>' +
+          '<button type="button" class="small-btn" data-action="toggle-repeat" data-id="' + task.id + '">' +
+            (task.repeat ? "Switch to one-off" : "Switch to repeatable") +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+      movePersonBlock +
+      (task.status === "active" && !isResting(task)
+        ? '<div>' +
+            '<label>Current quest</label>' +
+            '<div class="manage-row" style="align-items:center;">' +
+              '<p class="empty-note" style="margin:0">' + (task.current
+                ? "Pinned as your current quest — it sits above everything else."
+                : "Pin this as your current quest to keep it front and center.") + '</p>' +
+              '<button type="button" class="small-btn' + (task.current ? " is-current" : "") + '" data-action="toggle-current" data-id="' + task.id + '">' +
+                (task.current ? "Unpin" : "Set as current") +
+              '</button>' +
+            '</div>' +
+          '</div>'
+        : "") +
+      (isResting(task)
+        ? '<div class="action-row" style="justify-content:space-between; align-items:center;">' +
+            '<p class="empty-note" style="margin:0">Resting until ' + escapeHtml(fmtDate(new Date(task.restingUntil))) + '.</p>' +
+            '<span style="display:flex; gap:0.55rem;">' +
+              '<button type="button" class="reopen-btn" data-action="reactivate-now" data-id="' + task.id + '">Reactivate now</button>' +
+              '<button type="button" class="small-btn" data-action="save-as-template" data-id="' + task.id + '">Save as template</button>' +
+              '<button type="button" class="delete-btn" data-action="delete-task" data-id="' + task.id + '">Delete quest</button>' +
+            '</span>' +
+          '</div>'
+        : '<div class="action-row">' +
+            (task.status === "active"
+              ? '<button type="button" class="complete-btn" data-action="complete-task" data-id="' + task.id + '">' + (task.repeat ? "Complete cycle" : "Mark complete") + '</button>'
+              : '<button type="button" class="reopen-btn" data-action="reopen-task" data-id="' + task.id + '">Reopen quest</button>') +
+            '<button type="button" class="small-btn" data-action="save-as-template" data-id="' + task.id + '">Save as template</button>' +
+            '<button type="button" class="delete-btn" data-action="delete-task" data-id="' + task.id + '">Delete quest</button>' +
+          '</div>') +
+    '</div></details>';
+  }
+
+  function renderCard(task){
+    var bucket = bucketOf(task);
+    var stale = task.status === "active" && bucket !== "resting" && daysSince(task.lastUpdatedAt) >= (task.tier === "major" ? 3 : 7);
+    var cls = "quest-card quest-card--" + task.tier +
+      (task.status === "completed" ? " quest-card--completed" : "") +
+      (bucket === "urgent" ? " quest-card--urgent" : "") +
+      (bucket === "checkin" ? " quest-card--checkin" : "") +
+      (bucket === "resting" ? " quest-card--resting" : "") +
+      (bucket === "current" ? " quest-card--current" : "");
+    var icon = task.tier === "major" ? questIconMajor() : questIconMinor();
+    var repeatTag = task.repeat ? '<span class="quest-tag quest-tag--repeat">Repeatable ×' + task.cycles + '</span>' : "";
+    var currentTag = task.current ? '<span class="quest-tag quest-tag--current">★ Current Quest</span>' : "";
+    var reminderBlock = (task.reminder && task.status === "active")
+      ? '<p class="quest-card__reminder"><b>Focus</b>' + escapeHtml(task.reminder) + '</p>' : "";
+    var staleBlock = stale
+      ? '<p class="quest-card__stale">Gone quiet for ' + Math.floor(daysSince(task.lastUpdatedAt)) + ' day(s) — any progress worth logging?</p>' : "";
+    var subtaskSummary = (task.subtasks && task.subtasks.length)
+      ? '<p class="quest-card__subtask-summary">' + task.subtasks.filter(function(s){return s.done;}).length + ' of ' + task.subtasks.length + ' subtasks done</p>' : "";
+    var writeAffordances = readOnly ? "" : renderManage(task);
+    var readOnlySummary = readOnly ? '<div class="manage-grid">' + renderSubtasksReadOnly(task) + renderNotes(task) + '</div>' : "";
+
+    return '<article class="' + cls + '" id="quest-' + task.id + '" data-id="' + task.id + '">' +
+      '<div class="quest-card__top">' + icon +
+        '<h3 class="quest-card__title">' + escapeHtml(task.title) + '</h3>' + currentTag + repeatTag + dueBadge(task) + checkinBadge(task) + restingBadge(task) +
+        (task.status === "completed" ? '<span class="quest-tag" style="background:rgba(76,107,63,0.18);color:var(--sage);border:1px solid rgba(76,107,63,0.4)">Completed ' + fmtRelative(task.completedAt) + '</span>' : "") +
+      '</div>' +
+      (task.description ? '<p class="quest-card__desc">' + escapeHtml(task.description) + '</p>' : "") +
+      '<div class="progress-bar" role="progressbar" aria-valuenow="' + task.progress + '" aria-valuemin="0" aria-valuemax="100" aria-label="' + escapeHtml(task.title) + ' progress">' +
+        '<div class="progress-bar__fill" style="width:' + task.progress + '%"></div>' +
+        '<span class="progress-bar__label">' + task.progress + '%</span>' +
+      '</div>' +
+      subtaskSummary + reminderBlock + staleBlock + renderLinks(task) +
+      (readOnly ? readOnlySummary : writeAffordances) +
+    '</article>';
+  }
+
+  function renderQuestLists(){
+    var buckets = {current:[], urgent:[], checkin:[], resting:[], major:[], minor:[]};
+    tasksForActivePerson().forEach(function(t){
+      var b = bucketOf(t);
+      if(buckets[b]) buckets[b].push(t);
+    });
+    var cmp = taskComparator(sortMode);
+    ["urgent","checkin","major","minor"].forEach(function(b){
+      buckets[b].sort(cmp);
+    });
+    // Soonest-to-return first, so the archive reads as a queue rather than a jumble.
+    buckets.resting.sort(function(a,b){ return new Date(a.restingUntil) - new Date(b.restingUntil); });
+
+    var completed = tasksForActivePerson().filter(function(t){ return t.status === "completed"; })
+      .sort(function(a,b){ return new Date(b.completedAt) - new Date(a.completedAt); });
+    var archive = buckets.resting.concat(completed);
+
+    var currentSection = document.getElementById("current-section");
+    var urgentSection = document.getElementById("urgent-section");
+    var checkinSection = document.getElementById("checkin-section");
+    currentSection.hidden = buckets.current.length === 0;
+    urgentSection.hidden = buckets.urgent.length === 0;
+    checkinSection.hidden = buckets.checkin.length === 0;
+    document.getElementById("current-quest").innerHTML = buckets.current.map(renderCard).join("");
+    document.getElementById("urgent-quests").innerHTML = buckets.urgent.map(renderCard).join("");
+    document.getElementById("checkin-quests").innerHTML = buckets.checkin.map(renderCard).join("");
+
+    document.getElementById("major-quests").innerHTML = buckets.major.length
+      ? buckets.major.map(renderCard).join("")
+      : '<p class="empty-note">No main quests yet — begin one with “New Quest”.</p>';
+    document.getElementById("minor-quests").innerHTML = buckets.minor.length
+      ? buckets.minor.map(renderCard).join("")
+      : '<p class="empty-note">No side quests logged.</p>';
+    document.getElementById("completed-quests").innerHTML = archive.length
+      ? archive.map(renderCard).join("")
+      : '<p class="empty-note">Nothing completed yet.</p>';
+    document.getElementById("completed-count").textContent = archive.length;
+  }
+
+  function renderReminders(){
+    var withReminders = tasksForActivePerson().filter(function(t){ return t.status === "active" && t.reminder && t.reminder.trim(); })
+      .sort(function(a,b){
+        if(a.tier !== b.tier) return a.tier === "major" ? -1 : 1;
+        return new Date(b.lastUpdatedAt) - new Date(a.lastUpdatedAt);
+      });
+    var el = document.getElementById("reminders-list");
+    if(!withReminders.length){
+      el.innerHTML = '<p class="empty-note empty-note--aside">No focus points set. Add one from a quest’s Manage panel.</p>';
+      return;
+    }
+    el.innerHTML = withReminders.map(function(t){
+      return '<button type="button" class="reminder-item" data-action="scroll-to-task" data-id="' + t.id + '">' + reminderIcon() +
+        '<span class="reminder-item__body"><span class="reminder-item__task">' + escapeHtml(t.title) + '</span>' +
+        '<span class="reminder-item__text">' + escapeHtml(t.reminder) + '</span></span></button>';
+    }).join("");
+  }
+
+  function renderChronicle(){
+    var entries = [];
+    tasksForActivePerson().forEach(function(t){
+      t.notes.forEach(function(n){
+        entries.push({taskId: t.id, taskTitle: t.title, text: n.text, at: n.at});
+      });
+    });
+    entries.sort(function(a,b){ return new Date(b.at) - new Date(a.at); });
+    entries = entries.slice(0, 14);
+    var el = document.getElementById("chronicle-list");
+    if(!entries.length){
+      el.innerHTML = '<p class="empty-note empty-note--aside">No entries yet — notes you log will appear here.</p>';
+      return;
+    }
+    el.innerHTML = entries.map(function(e, i){
+      return '<div class="chronicle-item' + (i===0 ? " is-fresh" : "") + '">' +
+        '<button type="button" class="chronicle-item__task" data-action="scroll-to-task" data-id="' + e.taskId + '">' + escapeHtml(e.taskTitle) + '</button>' +
+        '<p class="chronicle-item__text">' + escapeHtml(e.text) + '</p>' +
+        '<span class="chronicle-item__time">' + fmtRelative(e.at) + '</span></div>';
+    }).join("");
+  }
+
+  function renderFooter(){
+    var note = document.getElementById("readonly-note");
+    if(note) note.hidden = !readOnly;
+  }
+
+  // Small persistent status next to the Settings button — "Saved", "Saving…",
+  // a transient error, or (before a token's configured) nothing. Doesn't use
+  // the toast since that's for one-off events, not an ongoing connection state.
+  var saveStatusResetTimer = null;
+  function renderSaveStatus(kind){
+    var el = document.getElementById("save-status");
+    if(!el) return;
+    clearTimeout(saveStatusResetTimer);
+    if(!ghConfigured){ el.textContent = ""; el.className = "save-status"; return; }
+    if(kind === "pending"){ el.textContent = "Unsaved changes…"; el.className = "save-status is-pending"; return; }
+    if(kind === "saving"){ el.textContent = "Saving to GitHub…"; el.className = "save-status is-saving"; return; }
+    if(kind === "error"){ el.textContent = readOnly ? "Can't save — check token permissions" : "Couldn't save — retrying…"; el.className = "save-status is-error"; return; }
+    if(kind === "saved"){
+      el.textContent = "Saved to GitHub";
+      el.className = "save-status is-saved";
+      saveStatusResetTimer = setTimeout(function(){ el.textContent = ""; el.className = "save-status"; }, 2500);
+      return;
+    }
+    el.textContent = ""; el.className = "save-status";
+  }
+
+  function renderSubtitle(){
+    var el = document.getElementById("header-subtitle");
+    var activeTasks = tasksForActivePerson().filter(function(t){ return t.status === "active"; });
+    var urgentCount = activeTasks.filter(isUrgent).length;
+    var checkinCount = activeTasks.filter(isCheckInDue).length;
+    var bits = [activeTasks.length + " quest" + (activeTasks.length === 1 ? "" : "s") + " underway"];
+    if(urgentCount) bits.push(urgentCount + " urgent");
+    if(checkinCount) bits.push(checkinCount + " due for check-in");
+    el.textContent = "— " + bits.join(" · ") + " —";
+  }
+
+  function renderPersonTabs(){
+    var el = document.getElementById("person-tabs");
+    if(!el || !Array.isArray(state.people)) return;
+    var tabsHtml = state.people.map(function(p){
+      var count = state.tasks.filter(function(t){ return t.person === p.id && t.status === "active"; }).length;
+      var isActive = p.id === activePersonId;
+      // Overdue quests on the tab you're already looking at surface in the
+      // Urgent section below — this badge is for what's expired on OTHER
+      // tabs, so it wouldn't be missed just because you're not on that tab.
+      var urgentCount = isActive ? 0 : state.tasks.filter(function(t){ return t.person === p.id && isUrgent(t); }).length;
+      var urgentBadge = urgentCount
+        ? '<span class="person-tab__urgent-badge" title="' + urgentCount + ' overdue quest' + (urgentCount === 1 ? "" : "s") + '">' + (urgentCount > 99 ? "99+" : urgentCount) + '</span>'
+        : "";
+      return '<button type="button" class="person-tab' + (isActive ? " is-active" : "") + '" data-action="switch-person" data-id="' + p.id + '">' +
+        escapeHtml(p.name) + (count ? ' <span class="person-tab__count">' + count + '</span>' : "") + urgentBadge +
+      '</button>';
+    }).join("");
+    el.innerHTML = '<div class="person-tabs__list">' + tabsHtml + '</div>' +
+      '<button type="button" class="person-tabs__manage-btn" data-action="toggle-manage-people">' + (managePeopleOpen ? "Close" : "Manage tabs") + '</button>' +
+      (managePeopleOpen ? renderManagePeoplePanel() : "");
+  }
+
+  function renderManagePeoplePanel(){
+    var rows = state.people.map(function(p){
+      var taskCount = state.tasks.filter(function(t){ return t.person === p.id; }).length;
+      return '<div class="person-manage-row">' +
+        '<form data-action="rename-person" data-id="' + p.id + '">' +
+          '<input id="person-name-' + p.id + '" type="text" name="name" value="' + escapeHtml(p.name) + '" maxlength="40" required>' +
+          '<button type="submit" class="small-btn">Save</button>' +
+        '</form>' +
+        '<span class="empty-note" style="margin:0">' + taskCount + ' quest' + (taskCount === 1 ? "" : "s") + '</span>' +
+        (state.people.length > 1
+          ? '<button type="button" class="delete-btn' + (pendingDeletePersonId === p.id ? " is-confirming" : "") + '" data-action="remove-person" data-id="' + p.id + '">' +
+              (pendingDeletePersonId === p.id ? "Click again to confirm" : "Remove") + '</button>'
+          : '<span class="empty-note" style="margin:0">Only tab left</span>') +
+      '</div>';
+    }).join("");
+    return '<div class="person-manage-panel">' + rows +
+      '<form data-action="add-person" class="manage-row">' +
+        '<input type="text" name="name" placeholder="Add a person…" maxlength="40" required>' +
+        '<button type="submit" class="small-btn">Add tab</button>' +
+      '</form>' +
+    '</div>';
+  }
+
+  function renderSortBar(){
+    var el = document.getElementById("sort-bar");
+    if(!el) return;
+    el.innerHTML = '<label for="sort-select">Sort by</label>' +
+      '<select id="sort-select" data-action="change-sort">' +
+        SORT_OPTIONS.map(function(o){
+          return '<option value="' + o.value + '"' + (o.value === sortMode ? " selected" : "") + '>' + escapeHtml(o.label) + '</option>';
+        }).join("") +
+      '</select>';
+  }
+
+  function renderToolbarActions(){
+    var el = document.getElementById("toolbar-actions");
+    if(!el) return;
+    el.innerHTML =
+      '<button type="button" class="toolbar-btn" data-action="toggle-manage-templates">' +
+        (manageTemplatesOpen ? "Close Templates" : "🧩 Templates") +
+      '</button>' +
+      '<button type="button" class="toolbar-btn" data-action="open-weekly-report">📋 Weekly Report (All Tabs)</button>' +
+      '<button type="button" class="toolbar-btn" data-action="open-settings">⚙️ GitHub' + (ghConfigured ? "" : " — not connected") + '</button>' +
+      '<span id="save-status" class="save-status"></span>';
+    renderSaveStatus(dirty ? "pending" : (ghConfigured ? "" : ""));
+  }
+
+  function renderManageTemplatesPanel(){
+    var templates = Array.isArray(state.templates) ? state.templates : [];
+    if(!templates.length){
+      return '<div class="person-manage-panel"><p class="empty-note" style="margin:0">' +
+        'No templates yet — open a quest’s “Manage Quest” panel and use “Save as template” to create one from it.</p></div>';
+    }
+    var rows = templates.map(function(tpl){
+      return '<div class="person-manage-row" style="width:100%; align-items:flex-start;">' +
+        '<form data-action="rename-template" data-id="' + tpl.id + '">' +
+          '<input id="tpl-name-' + tpl.id + '" type="text" name="name" value="' + escapeHtml(tpl.name) + '" maxlength="120" required>' +
+          '<button type="submit" class="small-btn">Save</button>' +
+        '</form>' +
+        '<button type="button" class="small-btn" data-action="toggle-template-tier" data-id="' + tpl.id + '">' +
+          (tpl.tier === "major" ? "Main quest" : "Side quest") +
+        '</button>' +
+        '<button type="button" class="small-btn" data-action="toggle-template-repeat" data-id="' + tpl.id + '">' +
+          (tpl.repeat ? "Repeatable" : "One-off") +
+        '</button>' +
+        '<form data-action="set-template-cadence" data-id="' + tpl.id + '">' +
+          '<select id="tpl-cadence-' + tpl.id + '" name="cadence" style="max-width:160px">' +
+            CADENCE_ORDER.map(function(c){
+              return '<option value="' + c + '"' + (tpl.cadence === c ? " selected" : "") + '>' + CADENCE_LABELS[c] + '</option>';
+            }).join("") +
+          '</select>' +
+          '<button type="submit" class="small-btn">Save</button>' +
+        '</form>' +
+        '<button type="button" class="delete-btn' + (pendingDeleteTemplateId === tpl.id ? " is-confirming" : "") + '" data-action="delete-template" data-id="' + tpl.id + '">' +
+          (pendingDeleteTemplateId === tpl.id ? "Click again to confirm" : "Delete") +
+        '</button>' +
+        '<form data-action="set-template-subtasks" data-id="' + tpl.id + '" style="flex:1 1 100%; display:flex; flex-direction:column; gap:0.35rem; margin-top:0.3rem;">' +
+          '<label style="margin:0">Subtasks (one per line)</label>' +
+          '<textarea id="tpl-subtasks-' + tpl.id + '" name="subtasks" maxlength="4000" placeholder="One subtask per line…">' + escapeHtml(tpl.subtasks.join("\n")) + '</textarea>' +
+          '<button type="submit" class="small-btn" style="align-self:flex-start;">Save subtasks</button>' +
+        '</form>' +
+      '</div>';
+    }).join("");
+    return '<div class="person-manage-panel">' + rows + '</div>';
+  }
+
+  function renderTemplatesPanelContainer(){
+    var el = document.getElementById("templates-panel-container");
+    if(!el) return;
+    el.innerHTML = manageTemplatesOpen ? renderManageTemplatesPanel() : "";
+  }
+
+  // render() runs on every single change — including ones that have nothing
+  // to do with whatever the user happens to be mid-typing elsewhere (ticking
+  // a subtask on one quest while a note is half-typed on another, say). Each
+  // sub-render below rebuilds its container's HTML straight from `state`,
+  // which would otherwise silently erase any in-progress edit that hasn't
+  // been submitted yet. So: snapshot every live field's value (and whichever
+  // one is focused) before re-rendering, then reapply it — and refocus —
+  // onto the freshly-built elements afterward, so fast back-to-back actions
+  // never cost you whatever you were in the middle of typing.
+  function captureLiveFieldValues(){
+    var root = document.querySelector(".tome");
+    if(!root) return null;
+    var map = {};
+    var active = document.activeElement;
+    var activeId = null, selStart = null, selEnd = null;
+    Array.prototype.forEach.call(root.querySelectorAll("input[id], textarea[id], select[id]"), function(el){
+      map[el.id] = (el.type === "checkbox" || el.type === "radio") ? {checked: el.checked} : {value: el.value};
+      if(el === active){
+        activeId = el.id;
+        if(typeof el.selectionStart === "number"){
+          selStart = el.selectionStart;
+          selEnd = el.selectionEnd;
+        }
+      }
+    });
+    return {values: map, activeId: activeId, selStart: selStart, selEnd: selEnd};
+  }
+  function restoreLiveFieldValues(saved){
+    if(!saved) return;
+    Object.keys(saved.values).forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      var v = saved.values[id];
+      if(v.checked !== undefined){
+        if(el.checked !== v.checked) el.checked = v.checked;
+      } else if(el.value !== v.value){
+        el.value = v.value;
+      }
+    });
+    if(saved.activeId){
+      var el = document.getElementById(saved.activeId);
+      if(el && document.activeElement !== el){
+        el.focus();
+        if(saved.selStart !== null && typeof el.setSelectionRange === "function"){
+          try{ el.setSelectionRange(saved.selStart, saved.selEnd); }catch(e){}
+        }
+      }
+    }
+  }
+
+  function render(){
+    var savedFields = captureLiveFieldValues();
+    ensureActivePerson();
+    renderPersonTabs();
+    renderSortBar();
+    renderToolbarActions();
+    renderTemplatesPanelContainer();
+    renderSubtitle();
+    renderQuestLists();
+    renderReminders();
+    renderChronicle();
+    renderFooter();
+    restoreLiveFieldValues(savedFields);
+  }
+
+  /* ---------------- new quest form ---------------- */
+  function newQuestFormHtml(){
+    return '<div class="new-quest-panel">' +
+      '<h2>Begin a New Quest</h2>' +
+      '<form data-action="new-quest">' +
+        '<div class="form-grid">' +
+          (state.templates && state.templates.length
+            ? '<div class="full"><label for="nq-template">Use a template (optional)</label><select id="nq-template" name="templateId" data-action="apply-template">' +
+                '<option value="">— No template —</option>' +
+                state.templates.map(function(tpl){ return '<option value="' + tpl.id + '">' + escapeHtml(tpl.name) + '</option>'; }).join("") +
+              '</select></div>'
+            : "") +
+          '<div class="full"><label for="nq-title">Title</label><input id="nq-title" type="text" name="title" maxlength="120" required autofocus></div>' +
+          '<div class="full"><label for="nq-desc">Description</label><textarea id="nq-desc" name="description" maxlength="600" placeholder="Optional details or context"></textarea></div>' +
+          '<div><label>Type</label><div class="radio-row">' +
+            '<label><input type="radio" name="tier" value="major" checked> Main quest</label>' +
+            '<label><input type="radio" name="tier" value="minor"> Side quest</label>' +
+          '</div></div>' +
+          '<div><label>&nbsp;</label><div class="check-row"><input type="checkbox" id="nq-repeat" name="repeat"><label for="nq-repeat">Repeatable — re-add it each time it’s completed</label></div></div>' +
+          '<div class="full"><label for="nq-reminder">Focus reminder (optional)</label><input id="nq-reminder" type="text" name="reminder" maxlength="200" placeholder="Where to pick this back up"></div>' +
+          '<div><label for="nq-due">Due date (optional)</label><input id="nq-due" type="date" name="dueDate"></div>' +
+          '<div><label for="nq-cadence">Check-in cadence</label><select id="nq-cadence" name="cadence">' +
+            CADENCE_ORDER.map(function(c){ return '<option value="' + c + '">' + CADENCE_LABELS[c] + '</option>'; }).join("") +
+          '</select></div>' +
+          '<div><label for="nq-link-label">Link label (optional)</label><input id="nq-link-label" type="text" name="linkLabel" maxlength="60"></div>' +
+          '<div><label for="nq-link-url">Link or file path (optional)</label><input id="nq-link-url" type="text" name="linkUrl" maxlength="500"></div>' +
+        '</div>' +
+        '<div class="form-actions">' +
+          '<button type="button" class="text-btn" data-action="cancel-new-quest">Cancel</button>' +
+          '<button type="submit" class="primary-btn">Add to the Log</button>' +
+        '</div>' +
+      '</form></div>';
+  }
+  function toggleNewQuestForm(){
+    var c = document.getElementById("new-quest-form-container");
+    if(c.innerHTML.trim()){ c.innerHTML = ""; return; }
+    c.innerHTML = newQuestFormHtml();
+    var t = document.getElementById("nq-title");
+    if(t) t.focus();
+  }
+  function closeNewQuestForm(){
+    document.getElementById("new-quest-form-container").innerHTML = "";
+  }
+
+  /* ---------------- event handlers ---------------- */
+  function onSubmitNewQuest(form){
+    var fd = new FormData(form);
+    var title = (fd.get("title") || "").toString().trim();
+    if(!title) return;
+    var description = (fd.get("description") || "").toString().trim();
+    var tier = (fd.get("tier") || "major").toString();
+    var repeat = fd.get("repeat") === "on";
+    var reminder = (fd.get("reminder") || "").toString().trim();
+    var dueDate = (fd.get("dueDate") || "").toString().trim();
+    var cadence = (fd.get("cadence") || "none").toString();
+    if(CADENCE_ORDER.indexOf(cadence) === -1) cadence = "none";
+    var linkLabel = (fd.get("linkLabel") || "").toString().trim();
+    var linkUrl = (fd.get("linkUrl") || "").toString().trim();
+    var templateId = (fd.get("templateId") || "").toString();
+
+    mutate(function(draft){
+      var ts = nowIso();
+      var tpl = templateId ? findTemplate(draft, templateId) : null;
+      var subtasks = tpl ? tpl.subtasks.map(function(text){
+        return {id: uid(), text: text.slice(0,200), done: false};
+      }) : [];
+      var links = tpl ? tpl.links.map(function(l){
+        return {id: uid(), label: (l.label || "").slice(0,60), url: (l.url || "").slice(0,500)};
+      }) : [];
+      if(linkUrl) links.push({id: uid(), label: linkLabel.slice(0,60) || linkUrl.slice(0,60), url: linkUrl.slice(0,500)});
+      var task = {
+        id: uid(), title: title.slice(0,120), description: description.slice(0,600),
+        tier: tier === "minor" ? "minor" : "major", repeat: repeat,
+        person: activePersonId, current: false,
+        status: "active", progress: 0, cycles: 0,
+        createdAt: ts, completedAt: null, lastUpdatedAt: ts,
+        reminder: reminder.slice(0,200),
+        dueDate: dueDate || null,
+        checkIn: {cadence: cadence, lastCheckIn: cadence !== "none" ? ts : null},
+        restingUntil: null,
+        links: links,
+        subtasks: subtasks,
+        notes: [{id: uid(), text: tpl ? ('Quest added to the log from the "' + tpl.name + '" template.') : "Quest added to the log.", at: ts, system: true}]
+      };
+      draft.tasks.push(task);
+    });
+    closeNewQuestForm();
+  }
+
+  function onSaveAsTemplate(id){
+    var savedName = "";
+    mutate(function(draft){
+      var src = findTask(draft, id);
+      if(!src) return;
+      if(!Array.isArray(draft.templates)) draft.templates = [];
+      savedName = src.title;
+      draft.templates.push({
+        id: uid(),
+        name: src.title.slice(0,120),
+        title: src.title.slice(0,120),
+        description: src.description || "",
+        tier: src.tier,
+        repeat: src.repeat,
+        reminder: src.reminder || "",
+        cadence: (src.checkIn && src.checkIn.cadence) || "none",
+        subtasks: (src.subtasks || []).map(function(s){ return s.text; }),
+        links: (src.links || []).map(function(l){ return {label: l.label, url: l.url}; })
+      });
+    });
+    if(savedName) showToast('Saved as template: "' + savedName + '"');
+  }
+  function onRenameTemplate(id, name){
+    name = (name || "").toString().trim();
+    if(!name) return;
+    mutate(function(draft){
+      var tpl = findTemplate(draft, id);
+      if(!tpl) return;
+      tpl.name = name.slice(0,120);
+    });
+  }
+  function onToggleTemplateTier(id){
+    mutate(function(draft){
+      var tpl = findTemplate(draft, id);
+      if(!tpl) return;
+      tpl.tier = tpl.tier === "major" ? "minor" : "major";
+    });
+  }
+  function onToggleTemplateRepeat(id){
+    mutate(function(draft){
+      var tpl = findTemplate(draft, id);
+      if(!tpl) return;
+      tpl.repeat = !tpl.repeat;
+    });
+  }
+  function onSetTemplateCadence(id, cadence){
+    if(CADENCE_ORDER.indexOf(cadence) === -1) cadence = "none";
+    mutate(function(draft){
+      var tpl = findTemplate(draft, id);
+      if(!tpl) return;
+      tpl.cadence = cadence;
+    });
+  }
+  function onSetTemplateSubtasks(id, text){
+    var lines = (text || "").toString().split("\n")
+      .map(function(l){ return l.trim(); })
+      .filter(Boolean)
+      .slice(0,30)
+      .map(function(l){ return l.slice(0,200); });
+    mutate(function(draft){
+      var tpl = findTemplate(draft, id);
+      if(!tpl) return;
+      tpl.subtasks = lines;
+    });
+  }
+  function onDeleteTemplate(id){
+    mutate(function(draft){
+      draft.templates = (draft.templates || []).filter(function(t){ return t.id !== id; });
+    });
+  }
+
+  function onCompleteTask(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      if(t.repeat){
+        t.cycles += 1;
+        t.progress = 0;
+        if(t.subtasks && t.subtasks.length){
+          t.subtasks.forEach(function(s){ s.done = false; });
+        }
+        if(t.checkIn && t.checkIn.cadence !== "none"){
+          // Scheduled repeat: log the cycle, rest in Completed Chronicles,
+          // and don't reappear until the next occurrence is due. When a due
+          // date is set, that next occurrence rolls forward from the due
+          // date itself (not from whenever it happened to get completed),
+          // and the due date advances to match.
+          var next = nextOccurrenceDate(t);
+          var hadDueDate = !!t.dueDate;
+          t.restingUntil = next ? next.toISOString() : null;
+          if(next) t.current = false; // resting quests can't be the pinned current quest
+          if(next && hadDueDate){
+            t.dueDate = toDateOnlyString(next);
+            t.checkIn.lastCheckIn = next.toISOString();
+          } else {
+            t.checkIn.lastCheckIn = ts;
+          }
+          addSystemNote(t, "Cycle " + t.cycles + " complete — resting until " + (next ? fmtDate(next) : "its next check-in") +
+            (hadDueDate ? " (due date rolled forward to match)." : "."), ts);
+        } else {
+          // No cadence set: keep the original behavior of going straight
+          // back on the board.
+          t.restingUntil = null;
+          addSystemNote(t, "Quest completed — cycle " + t.cycles + " done. Back on the board.", ts);
+        }
+      } else {
+        t.status = "completed";
+        t.completedAt = ts;
+        t.progress = 100;
+        t.current = false; // a completed quest can't stay pinned as current
+        addSystemNote(t, "Quest completed.", ts);
+      }
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onReactivateNow(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t || !isResting(t)) return;
+      var ts = nowIso();
+      t.restingUntil = null;
+      addSystemNote(t, "Reactivated early — back on the board.", ts);
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onToggleRepeat(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      if(t.repeat){
+        t.repeat = false;
+        t.restingUntil = null;
+        addSystemNote(t, "Switched to a one-off quest.", ts);
+      } else {
+        t.repeat = true;
+        if(t.status === "completed"){
+          t.status = "active";
+          t.completedAt = null;
+          addSystemNote(t, "Switched to a repeatable quest and reopened.", ts);
+        } else {
+          addSystemNote(t, "Switched to a repeatable quest.", ts);
+        }
+      }
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onToggleCurrent(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      if(t.current){
+        t.current = false;
+        addSystemNote(t, "Unpinned as current quest.", ts);
+      } else {
+        draft.tasks.forEach(function(other){
+          if(other.id !== t.id && other.person === t.person && other.current){
+            other.current = false;
+          }
+        });
+        t.current = true;
+        addSystemNote(t, "Pinned as current quest.", ts);
+      }
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onReopenTask(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      t.status = "active";
+      t.completedAt = null;
+      addSystemNote(t, "Quest reopened.", ts);
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onDeleteTask(id){
+    mutate(function(draft){
+      draft.tasks = draft.tasks.filter(function(t){ return t.id !== id; });
+    });
+  }
+
+  function onSwitchPerson(id){
+    if(id === activePersonId) return;
+    activePersonId = id;
+    saveActivePersonId(id);
+    render();
+  }
+  function onAddPerson(name){
+    name = name.trim();
+    if(!name) return;
+    mutate(function(draft){
+      if(!Array.isArray(draft.people)) draft.people = [];
+      draft.people.push({id: uid(), name: name.slice(0,40)});
+    });
+  }
+  function onRenamePerson(id, name){
+    name = name.trim();
+    if(!name) return;
+    mutate(function(draft){
+      var p = (draft.people || []).filter(function(x){ return x.id === id; })[0];
+      if(!p || p.name === name.slice(0,40)) return;
+      p.name = name.slice(0,40);
+    });
+  }
+  function onRemovePerson(id){
+    mutate(function(draft){
+      if(!Array.isArray(draft.people) || draft.people.length <= 1) return;
+      var idx = -1;
+      for(var i=0;i<draft.people.length;i++){ if(draft.people[i].id === id){ idx = i; break; } }
+      if(idx === -1) return;
+      var fallback = draft.people[idx === 0 ? 1 : 0];
+      draft.tasks.forEach(function(t){
+        if(t.person === id){
+          t.person = fallback.id;
+          t.current = false; // avoid colliding with whatever is already current on the fallback tab
+        }
+      });
+      draft.people.splice(idx, 1);
+    });
+  }
+  function onSetProgress(id, value){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      if(t.subtasks && t.subtasks.length) return; // progress follows the subtask checklist instead
+      t.progress = clamp(Math.round(value/5)*5, 0, 100);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onAddNote(id, text){
+    text = text.trim();
+    if(!text) return;
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      t.notes.push({id: uid(), text: text.slice(0,400), at: ts, system: false});
+      if(t.notes.length > 60) t.notes = t.notes.slice(t.notes.length - 60);
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onSetReminder(id, text){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      t.reminder = text.trim().slice(0,200);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onEditTaskDetails(id, title, description){
+    title = (title || "").toString().trim();
+    if(!title) return;
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      t.title = title.slice(0,120);
+      t.description = (description || "").toString().trim().slice(0,600);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onMoveTaskPerson(id, personId){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var toPerson = (draft.people || []).filter(function(p){ return p.id === personId; })[0];
+      if(!toPerson || t.person === personId) return;
+      var fromPerson = (draft.people || []).filter(function(p){ return p.id === t.person; })[0];
+      var ts = nowIso();
+      t.person = personId;
+      t.current = false; // avoid colliding with whatever's already current on the destination tab
+      addSystemNote(t, "Moved from \"" + (fromPerson ? fromPerson.name : "—") + "\" to \"" + toPerson.name + "\".", ts);
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onAddLink(id, label, url){
+    url = url.trim();
+    if(!url) return;
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      t.links.push({id: uid(), label: label.trim().slice(0,60) || url.slice(0,60), url: url.slice(0,500)});
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onRemoveLink(id, linkId){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      t.links = t.links.filter(function(l){ return l.id !== linkId; });
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+
+  function onAddSubtask(id, text){
+    text = text.trim();
+    if(!text) return;
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      if(!Array.isArray(t.subtasks)) t.subtasks = [];
+      if(t.subtasks.length >= 40){ showToast("That quest already has plenty of subtasks."); return; }
+      t.subtasks.push({id: uid(), text: text.slice(0,200), done: false});
+      recomputeProgress(t);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onToggleSubtask(id, subtaskId){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var s = (t.subtasks || []).filter(function(x){ return x.id === subtaskId; })[0];
+      if(!s) return;
+      s.done = !s.done;
+      recomputeProgress(t);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+  function onRemoveSubtask(id, subtaskId){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      t.subtasks = (t.subtasks || []).filter(function(x){ return x.id !== subtaskId; });
+      recomputeProgress(t);
+      t.lastUpdatedAt = nowIso();
+    });
+  }
+
+  function onSetDueDate(id, dateStr){
+    dateStr = (dateStr || "").trim();
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      var ts = nowIso();
+      var next = dateStr || null;
+      if(next !== t.dueDate){
+        t.dueDate = next;
+        addSystemNote(t, next ? ("Due date set to " + fmtDateOnly(next) + ".") : "Due date cleared.", ts);
+        t.lastUpdatedAt = ts;
+      }
+    });
+  }
+  function onSetCadence(id, cadence){
+    if(CADENCE_ORDER.indexOf(cadence) === -1) cadence = "none";
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t) return;
+      if(!t.checkIn) t.checkIn = {cadence: "none", lastCheckIn: null};
+      if(t.checkIn.cadence === cadence) return;
+      var ts = nowIso();
+      t.checkIn.cadence = cadence;
+      if(cadence !== "none" && !t.checkIn.lastCheckIn) t.checkIn.lastCheckIn = ts;
+      addSystemNote(t, cadence === "none" ? "Check-in cadence turned off." : ("Check-in cadence set to " + CADENCE_LABELS[cadence] + "."), ts);
+      t.lastUpdatedAt = ts;
+    });
+  }
+  function onCheckInNow(id){
+    mutate(function(draft){
+      var t = findTask(draft, id);
+      if(!t || !t.checkIn || t.checkIn.cadence === "none") return;
+      var ts = nowIso();
+      t.checkIn.lastCheckIn = ts;
+      addSystemNote(t, "Checked in. Back on the board for now.", ts);
+      t.lastUpdatedAt = ts;
+    });
+  }
+
+  function scrollToTask(id){
+    var el = document.getElementById("quest-" + id);
+    if(el){
+      el.scrollIntoView({behavior:"smooth", block:"center"});
+      el.style.transition = "box-shadow 0.3s ease";
+      var prev = el.style.boxShadow;
+      el.style.boxShadow = "0 0 0 3px var(--glow), 0 10px 26px var(--shadow)";
+      setTimeout(function(){ el.style.boxShadow = prev; }, 1400);
+    }
+  }
+
+  document.addEventListener("click", function(e){
+    // Clicking the dimmed backdrop itself (not something inside the card)
+    // closes the report modal — handled before the data-action delegation
+    // below so a click inside the card never bubbles into this.
+    if(e.target.id === "report-modal-backdrop"){ closeWeeklyReport(); return; }
+    if(e.target.id === "settings-modal-backdrop"){ closeSettings(); return; }
+    var btn = e.target.closest("[data-action]");
+    if(!btn) return;
+    var action = btn.dataset.action;
+    var id = btn.dataset.id;
+    if(action === "toggle-new-quest"){ toggleNewQuestForm(); }
+    else if(action === "cancel-new-quest"){ closeNewQuestForm(); }
+    else if(action === "complete-task"){ onCompleteTask(id); }
+    else if(action === "reopen-task"){ onReopenTask(id); }
+    else if(action === "reactivate-now"){ onReactivateNow(id); }
+    else if(action === "toggle-repeat"){ onToggleRepeat(id); }
+    else if(action === "toggle-current"){ onToggleCurrent(id); }
+    else if(action === "delete-task"){
+      if(pendingDeleteId === id){
+        clearTimeout(pendingDeleteTimer);
+        pendingDeleteId = null;
+        onDeleteTask(id);
+      } else {
+        pendingDeleteId = id;
+        btn.textContent = "Click again to confirm";
+        btn.classList.add("is-confirming");
+        clearTimeout(pendingDeleteTimer);
+        pendingDeleteTimer = setTimeout(function(){
+          pendingDeleteId = null;
+          btn.textContent = "Delete quest";
+          btn.classList.remove("is-confirming");
+        }, 4000);
+      }
+    }
+    else if(action === "save-as-template"){ onSaveAsTemplate(id); }
+    else if(action === "remove-link"){ onRemoveLink(id, btn.dataset.linkId); }
+    else if(action === "remove-subtask"){ onRemoveSubtask(id, btn.dataset.subtaskId); }
+    else if(action === "clear-due-date"){ onSetDueDate(id, ""); }
+    else if(action === "checkin-now"){ onCheckInNow(id); }
+    else if(action === "copy-link"){
+      var url = btn.dataset.url;
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(function(){ showToast("Path copied."); }).catch(function(){ showToast(url); });
+      } else { showToast(url); }
+    }
+    else if(action === "bump-progress"){
+      var delta = parseInt(btn.dataset.delta, 10) || 0;
+      var t = findTask(state, id);
+      if(t) onSetProgress(id, clamp(t.progress + delta, 0, 100));
+    }
+    else if(action === "set-progress"){
+      onSetProgress(id, parseInt(btn.dataset.value, 10) || 0);
+    }
+    else if(action === "scroll-to-task"){ scrollToTask(id); }
+    else if(action === "open-weekly-report"){ openWeeklyReport(); }
+    else if(action === "close-weekly-report"){ closeWeeklyReport(); }
+    else if(action === "open-settings"){ openSettings(); }
+    else if(action === "close-settings"){ closeSettings(); }
+    else if(action === "disconnect-github"){ onDisconnectGithub(); }
+    else if(action === "print-weekly-report"){ openPrintableReport(); }
+    else if(action === "copy-weekly-report"){
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(currentReportText)
+          .then(function(){ showToast("Report copied — paste it into an email or doc."); })
+          .catch(function(){ showToast("Couldn't copy — try selecting the text manually."); });
+      } else {
+        showToast("Clipboard not available — try selecting the text manually.");
+      }
+    }
+    else if(action === "switch-person"){ onSwitchPerson(id); }
+    else if(action === "toggle-manage-people"){
+      managePeopleOpen = !managePeopleOpen;
+      renderPersonTabs();
+    }
+    else if(action === "remove-person"){
+      if(pendingDeletePersonId === id){
+        clearTimeout(pendingDeletePersonTimer);
+        pendingDeletePersonId = null;
+        onRemovePerson(id);
+      } else {
+        pendingDeletePersonId = id;
+        clearTimeout(pendingDeletePersonTimer);
+        pendingDeletePersonTimer = setTimeout(function(){
+          pendingDeletePersonId = null;
+          renderPersonTabs();
+        }, 4000);
+        renderPersonTabs();
+      }
+    }
+    else if(action === "toggle-manage-templates"){
+      manageTemplatesOpen = !manageTemplatesOpen;
+      renderToolbarActions();
+      renderTemplatesPanelContainer();
+    }
+    else if(action === "toggle-template-tier"){ onToggleTemplateTier(id); }
+    else if(action === "toggle-template-repeat"){ onToggleTemplateRepeat(id); }
+    else if(action === "delete-template"){
+      if(pendingDeleteTemplateId === id){
+        clearTimeout(pendingDeleteTemplateTimer);
+        pendingDeleteTemplateId = null;
+        onDeleteTemplate(id);
+      } else {
+        pendingDeleteTemplateId = id;
+        clearTimeout(pendingDeleteTemplateTimer);
+        pendingDeleteTemplateTimer = setTimeout(function(){
+          pendingDeleteTemplateId = null;
+          renderTemplatesPanelContainer();
+        }, 4000);
+        renderTemplatesPanelContainer();
+      }
+    }
+  });
+
+  document.addEventListener("change", function(e){
+    if(e.target.matches('[data-action="slide-progress"]')){
+      onSetProgress(e.target.dataset.id, parseInt(e.target.value, 10) || 0);
+    } else if(e.target.matches('[data-action="toggle-subtask"]')){
+      onToggleSubtask(e.target.dataset.id, e.target.dataset.subtaskId);
+    } else if(e.target.matches('[data-action="change-sort"]')){
+      sortMode = e.target.value;
+      saveSortMode(sortMode);
+      renderQuestLists();
+    } else if(e.target.matches('[data-action="apply-template"]')){
+      var tplId = e.target.value;
+      var nqForm = e.target.closest("form");
+      if(!nqForm || !tplId) return;
+      var tpl = findTemplate(state, tplId);
+      if(!tpl) return;
+      var titleInput = nqForm.querySelector('[name="title"]');
+      if(titleInput) titleInput.value = tpl.title;
+      var descInput = nqForm.querySelector('[name="description"]');
+      if(descInput) descInput.value = tpl.description || "";
+      var tierRadio = nqForm.querySelector('[name="tier"][value="' + tpl.tier + '"]');
+      if(tierRadio) tierRadio.checked = true;
+      var repeatBox = nqForm.querySelector('[name="repeat"]');
+      if(repeatBox) repeatBox.checked = !!tpl.repeat;
+      var reminderInput = nqForm.querySelector('[name="reminder"]');
+      if(reminderInput) reminderInput.value = tpl.reminder || "";
+      var cadenceSelect = nqForm.querySelector('[name="cadence"]');
+      if(cadenceSelect) cadenceSelect.value = tpl.cadence || "none";
+    }
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      var backdrop = document.getElementById("report-modal-backdrop");
+      if(backdrop && !backdrop.hidden) closeWeeklyReport();
+    }
+  });
+
+  document.addEventListener("submit", function(e){
+    var form = e.target.closest("form[data-action]");
+    if(!form) return;
+    e.preventDefault();
+    var action = form.dataset.action;
+    var id = form.dataset.id;
+    if(action === "new-quest"){ onSubmitNewQuest(form); }
+    else if(action === "save-settings"){ onSaveSettingsForm(form); }
+    else if(action === "edit-task-details"){
+      var editTitleVal = form.querySelector('[name="title"]').value;
+      var editDescVal = form.querySelector('[name="description"]').value;
+      onEditTaskDetails(id, editTitleVal, editDescVal);
+    }
+    else if(action === "move-task-person"){
+      var movePersonVal = form.querySelector('[name="personId"]').value;
+      onMoveTaskPerson(id, movePersonVal);
+    }
+    else if(action === "add-note"){
+      var noteVal = form.querySelector('[name="note"]').value;
+      // Reset before mutate()/render() runs, not after: render() preserves
+      // whatever's live in each field so a change elsewhere never clobbers
+      // something you're mid-typing — but that means resetting the OLD form
+      // node after render() has already rebuilt it (and restored this very
+      // value onto the new one) does nothing, leaving the stale text behind.
+      form.reset();
+      onAddNote(id, noteVal);
+    }
+    else if(action === "set-reminder"){
+      var remVal = form.querySelector('[name="reminder"]').value;
+      onSetReminder(id, remVal);
+    }
+    else if(action === "add-link"){
+      var label = form.querySelector('[name="label"]').value;
+      var url = form.querySelector('[name="url"]').value;
+      form.reset();
+      onAddLink(id, label, url);
+    }
+    else if(action === "add-subtask"){
+      var subtaskVal = form.querySelector('[name="subtask"]').value;
+      form.reset();
+      onAddSubtask(id, subtaskVal);
+    }
+    else if(action === "set-due-date"){
+      var dueVal = form.querySelector('[name="dueDate"]').value;
+      onSetDueDate(id, dueVal);
+    }
+    else if(action === "set-cadence"){
+      var cadenceVal = form.querySelector('[name="cadence"]').value;
+      onSetCadence(id, cadenceVal);
+    }
+    else if(action === "add-person"){
+      var personNameVal = form.querySelector('[name="name"]').value;
+      form.reset();
+      onAddPerson(personNameVal);
+    }
+    else if(action === "rename-person"){
+      var renameVal = form.querySelector('[name="name"]').value;
+      onRenamePerson(id, renameVal);
+    }
+    else if(action === "rename-template"){
+      var tplNameVal = form.querySelector('[name="name"]').value;
+      onRenameTemplate(id, tplNameVal);
+    }
+    else if(action === "set-template-cadence"){
+      var tplCadenceVal = form.querySelector('[name="cadence"]').value;
+      onSetTemplateCadence(id, tplCadenceVal);
+    }
+    else if(action === "set-template-subtasks"){
+      var tplSubtasksVal = form.querySelector('[name="subtasks"]').value;
+      onSetTemplateSubtasks(id, tplSubtasksVal);
+    }
+  });
+
+  function initUi(){
+    loadActivePersonId();
+    loadSortMode();
+    var savedScrollY = null;
+    try{
+      var raw = sessionStorage.getItem(UI_STASH_KEY);
+      if(raw){
+        sessionStorage.removeItem(UI_STASH_KEY);
+        var saved = JSON.parse(raw);
+        if(saved && Array.isArray(saved.open)){
+          saved.open.forEach(function(id){ openManageIds.add(id); });
+        }
+        if(saved && saved.completedOpen){
+          var cd = document.getElementById("completed-details");
+          if(cd) cd.open = true;
+        }
+        if(saved && saved.managePeopleOpen) managePeopleOpen = true;
+        if(saved && saved.manageTemplatesOpen) manageTemplatesOpen = true;
+        if(saved && typeof saved.scrollY === "number") savedScrollY = saved.scrollY;
+      }
+    } catch(e){}
+    render();
+    if(savedScrollY !== null){
+      requestAnimationFrame(function(){ window.scrollTo(0, savedScrollY); });
+    }
+  }
+  // initUi() is invoked from the GitHub-config loading logic above, once
+  // (either immediately, if nothing's configured yet, or after the initial
+  // ghLoad() resolves) — not here, so the page doesn't render twice (once
+  // with empty placeholder state, once with the real data a moment later).
+})();
+</script>
+</body>
+</html>
