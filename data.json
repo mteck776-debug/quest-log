@@ -845,11 +845,11 @@
       "repeat": true,
       "person": "p-default",
       "status": "active",
-      "progress": 29,
+      "progress": 100,
       "cycles": 8,
       "createdAt": "2026-09-01T23:48:22.278Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-27T23:52:58.225Z",
+      "lastUpdatedAt": "2026-11-01T23:56:30.866Z",
       "reminder": "",
       "dueDate": "2026-10-26",
       "checkIn": {
@@ -872,27 +872,27 @@
         {
           "id": "586a5b97-ff12-4c72-93c9-82f094a71545",
           "text": "Wednesday",
-          "done": false
+          "done": true
         },
         {
           "id": "4830598e-dde4-4313-8b7a-76e82c0746ee",
           "text": "Thursday",
-          "done": false
+          "done": true
         },
         {
           "id": "6e4790c7-a2e8-4c15-a39a-d66ba7c98d97",
           "text": "Friday",
-          "done": false
+          "done": true
         },
         {
           "id": "ffc50ba8-0558-40a3-a695-493066663f58",
           "text": "Saturday",
-          "done": false
+          "done": true
         },
         {
           "id": "85dc92c5-2339-43c0-a0e3-adb4f2aae45f",
           "text": "Sunday",
-          "done": false
+          "done": true
         }
       ],
       "notes": [
