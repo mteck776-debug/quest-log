@@ -4501,6 +4501,38 @@
           "system": true
         }
       ]
+    },
+    {
+      "id": "aeddbf90-554f-4678-82dc-552a287e4a95",
+      "title": "Check weekending Cairns Regional Council - Processor - 2026-44 for adjustment completion",
+      "description": "I stuffed a few details that need amending, awaiting coex portal to be fixed",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-01T23:45:51.036Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-01T23:45:51.036Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "78ebbd91-6837-4f5e-8a44-176910c9697f",
+          "text": "Quest added to the log.",
+          "at": "2026-11-01T23:45:51.036Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
