@@ -4469,6 +4469,38 @@
           "system": true
         }
       ]
+    },
+    {
+      "id": "5420ee61-9994-4077-a9e1-a6179a584777",
+      "title": "Work Scheduling & Triage check",
+      "description": "Schedule Jason's work orders and check triage every Monday",
+      "tier": "major",
+      "repeat": true,
+      "person": "9f382b7b-1c57-46fd-9113-698c6051dff5",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-01T23:10:23.226Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-01T23:10:23.226Z",
+      "reminder": "",
+      "dueDate": "2026-11-09",
+      "checkIn": {
+        "cadence": "weekly",
+        "lastCheckIn": "2026-11-01T23:10:23.226Z"
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "4d70fc19-b22c-4fdc-8128-42b733e480d7",
+          "text": "Quest added to the log.",
+          "at": "2026-11-01T23:10:23.226Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
