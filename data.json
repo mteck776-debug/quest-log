@@ -1449,7 +1449,7 @@
       "cycles": 0,
       "createdAt": "2026-09-02T00:38:45.598Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-29T03:40:26.031Z",
+      "lastUpdatedAt": "2026-11-02T21:58:20.927Z",
       "reminder": "Mandalay does not seem to want to assist in creating. Up to me to make",
       "dueDate": "2026-11-09",
       "checkIn": {
@@ -1562,6 +1562,12 @@
           "text": "Due date set to 9 Nov 2026.",
           "at": "2026-10-29T03:40:26.031Z",
           "system": true
+        },
+        {
+          "id": "9c709c7b-63d7-4dec-b4a7-4591b603b6ac",
+          "text": "Waiting to see how things go with Lisa before procceding",
+          "at": "2026-11-02T21:58:20.927Z",
+          "system": false
         }
       ],
       "current": false
