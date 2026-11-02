@@ -1195,7 +1195,7 @@
       "cycles": 0,
       "createdAt": "2026-09-01T23:51:12.198Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-02T21:26:42.627Z",
+      "lastUpdatedAt": "2026-11-02T21:26:51.973Z",
       "reminder": "Waiting on Sam's response",
       "dueDate": "2026-11-04",
       "checkIn": {
@@ -1294,6 +1294,12 @@
           "id": "6894380d-ef10-4022-8599-49638040e5c0",
           "text": "Dan had a few changes, changes made and sent to Sam for approval",
           "at": "2026-10-28T03:20:30.781Z",
+          "system": false
+        },
+        {
+          "id": "28c442b2-1bb3-440a-96f9-a4105aa39d50",
+          "text": "Cards have been ordered",
+          "at": "2026-11-02T21:26:51.973Z",
           "system": false
         }
       ],
