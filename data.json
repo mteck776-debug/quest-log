@@ -3369,9 +3369,9 @@
       "cycles": 1,
       "createdAt": "2026-09-29T03:59:49.667Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-07T21:09:05.832Z",
+      "lastUpdatedAt": "2026-11-02T04:00:19.137Z",
       "reminder": "Take samples",
-      "dueDate": "2026-11-06",
+      "dueDate": "2026-11-01",
       "checkIn": {
         "cadence": "monthly",
         "lastCheckIn": "2026-11-05T14:00:00.000Z"
@@ -3414,6 +3414,12 @@
           "id": "0f2ae43b-59b1-43e4-a5cf-c9dcd6af937d",
           "text": "Cycle 1 complete — resting until 6 Nov 2026 (due date rolled forward to match).",
           "at": "2026-10-07T21:09:05.832Z",
+          "system": true
+        },
+        {
+          "id": "53f40aea-d660-4db3-9856-02b3e94e7a89",
+          "text": "Due date set to 1 Nov 2026.",
+          "at": "2026-11-02T04:00:19.137Z",
           "system": true
         }
       ]
