@@ -1191,11 +1191,11 @@
       "repeat": false,
       "person": "p-default",
       "status": "active",
-      "progress": 57,
+      "progress": 71,
       "cycles": 0,
       "createdAt": "2026-09-01T23:51:12.198Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-02T21:26:35.743Z",
+      "lastUpdatedAt": "2026-11-02T21:26:37.279Z",
       "reminder": "Waiting on Sam's response",
       "dueDate": "2026-11-04",
       "checkIn": {
@@ -1228,7 +1228,7 @@
         {
           "id": "a2b5fef0-c3ee-4ab8-aadf-4d1b5885c4b2",
           "text": "Proof of draft requested from council",
-          "done": false
+          "done": true
         },
         {
           "id": "70b3538f-903f-412d-8c89-d3bdbbb4709f",
