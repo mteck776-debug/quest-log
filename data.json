@@ -845,29 +845,29 @@
       "repeat": true,
       "person": "p-default",
       "status": "active",
-      "progress": 0,
-      "cycles": 9,
+      "progress": 29,
+      "cycles": 8,
       "createdAt": "2026-09-01T23:48:22.278Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-01T23:56:35.734Z",
+      "lastUpdatedAt": "2026-10-27T23:52:58.225Z",
       "reminder": "",
-      "dueDate": "2026-11-02",
+      "dueDate": "2026-10-26",
       "checkIn": {
         "cadence": "weekly",
-        "lastCheckIn": "2026-11-01T14:00:00.000Z"
+        "lastCheckIn": "2026-10-25T14:00:00.000Z"
       },
-      "restingUntil": "2026-11-01T14:00:00.000Z",
+      "restingUntil": "2026-10-25T14:00:00.000Z",
       "links": [],
       "subtasks": [
         {
           "id": "16eb126b-f86a-48c9-b4e8-6e916fc51450",
           "text": "Monday",
-          "done": false
+          "done": true
         },
         {
           "id": "25d8f0a8-61a6-4638-810d-089bd55326c0",
           "text": "Tuesday",
-          "done": false
+          "done": true
         },
         {
           "id": "586a5b97-ff12-4c72-93c9-82f094a71545",
@@ -978,12 +978,6 @@
           "id": "96636a0b-2ab8-4d1a-8ff2-1aef6e821e49",
           "text": "Cycle 8 complete — resting until 26 Oct 2026 (due date rolled forward to match).",
           "at": "2026-10-26T22:48:46.531Z",
-          "system": true
-        },
-        {
-          "id": "5d664e6c-2c5c-4e23-a9e8-a1c72c4e92fa",
-          "text": "Cycle 9 complete — resting until 2 Nov 2026 (due date rolled forward to match).",
-          "at": "2026-11-01T23:56:35.734Z",
           "system": true
         }
       ],
@@ -1197,11 +1191,11 @@
       "repeat": false,
       "person": "p-default",
       "status": "active",
-      "progress": 29,
+      "progress": 43,
       "cycles": 0,
       "createdAt": "2026-09-01T23:51:12.198Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-28T03:20:30.781Z",
+      "lastUpdatedAt": "2026-11-02T21:26:31.572Z",
       "reminder": "Waiting on Sam's response",
       "dueDate": "2026-11-04",
       "checkIn": {
@@ -1219,7 +1213,7 @@
         {
           "id": "bdb0d509-aae7-454a-846a-6a4fd7db7de6",
           "text": "Draft Approved by Sam",
-          "done": false
+          "done": true
         },
         {
           "id": "28f8e8c5-b4d4-4ef9-b7c9-df4464a6c59b",
@@ -3369,14 +3363,14 @@
       "cycles": 1,
       "createdAt": "2026-09-29T03:59:49.667Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-02T04:00:29.096Z",
+      "lastUpdatedAt": "2026-10-07T21:09:05.832Z",
       "reminder": "Take samples",
-      "dueDate": "2026-11-01",
+      "dueDate": "2026-11-06",
       "checkIn": {
         "cadence": "monthly",
         "lastCheckIn": "2026-11-05T14:00:00.000Z"
       },
-      "restingUntil": null,
+      "restingUntil": "2026-11-05T14:00:00.000Z",
       "links": [],
       "subtasks": [],
       "notes": [
@@ -3414,18 +3408,6 @@
           "id": "0f2ae43b-59b1-43e4-a5cf-c9dcd6af937d",
           "text": "Cycle 1 complete — resting until 6 Nov 2026 (due date rolled forward to match).",
           "at": "2026-10-07T21:09:05.832Z",
-          "system": true
-        },
-        {
-          "id": "53f40aea-d660-4db3-9856-02b3e94e7a89",
-          "text": "Due date set to 1 Nov 2026.",
-          "at": "2026-11-02T04:00:19.137Z",
-          "system": true
-        },
-        {
-          "id": "26ece358-0c5d-4d34-a346-3cf54fa9cc5b",
-          "text": "Reactivated early — back on the board.",
-          "at": "2026-11-02T04:00:29.096Z",
           "system": true
         }
       ]
@@ -4484,70 +4466,6 @@
           "id": "7fcba869-cb80-45d7-981c-b04b42751da7",
           "text": "Quest added to the log from the \"CAPEX Project - PROJECT# - PNAME- $xxxx\" template.",
           "at": "2026-10-29T22:06:48.573Z",
-          "system": true
-        }
-      ]
-    },
-    {
-      "id": "5420ee61-9994-4077-a9e1-a6179a584777",
-      "title": "Work Scheduling & Triage check",
-      "description": "Schedule Jason's work orders and check triage every Monday",
-      "tier": "major",
-      "repeat": true,
-      "person": "9f382b7b-1c57-46fd-9113-698c6051dff5",
-      "current": false,
-      "status": "active",
-      "progress": 0,
-      "cycles": 0,
-      "createdAt": "2026-11-01T23:10:23.226Z",
-      "completedAt": null,
-      "lastUpdatedAt": "2026-11-01T23:10:23.226Z",
-      "reminder": "",
-      "dueDate": "2026-11-09",
-      "checkIn": {
-        "cadence": "weekly",
-        "lastCheckIn": "2026-11-01T23:10:23.226Z"
-      },
-      "restingUntil": null,
-      "links": [],
-      "subtasks": [],
-      "notes": [
-        {
-          "id": "4d70fc19-b22c-4fdc-8128-42b733e480d7",
-          "text": "Quest added to the log.",
-          "at": "2026-11-01T23:10:23.226Z",
-          "system": true
-        }
-      ]
-    },
-    {
-      "id": "aeddbf90-554f-4678-82dc-552a287e4a95",
-      "title": "Check weekending Cairns Regional Council - Processor - 2026-44 for adjustment completion",
-      "description": "I stuffed a few details that need amending, awaiting coex portal to be fixed",
-      "tier": "major",
-      "repeat": false,
-      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
-      "current": false,
-      "status": "active",
-      "progress": 0,
-      "cycles": 0,
-      "createdAt": "2026-11-01T23:45:51.036Z",
-      "completedAt": null,
-      "lastUpdatedAt": "2026-11-01T23:45:51.036Z",
-      "reminder": "",
-      "dueDate": null,
-      "checkIn": {
-        "cadence": "none",
-        "lastCheckIn": null
-      },
-      "restingUntil": null,
-      "links": [],
-      "subtasks": [],
-      "notes": [
-        {
-          "id": "78ebbd91-6837-4f5e-8a44-176910c9697f",
-          "text": "Quest added to the log.",
-          "at": "2026-11-01T23:45:51.036Z",
           "system": true
         }
       ]
