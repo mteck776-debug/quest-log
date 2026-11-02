@@ -1195,9 +1195,9 @@
       "cycles": 0,
       "createdAt": "2026-09-01T23:51:12.198Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-02T21:26:59.450Z",
+      "lastUpdatedAt": "2026-11-02T21:27:06.193Z",
       "reminder": "Waiting on Sam's response",
-      "dueDate": "2026-11-04",
+      "dueDate": "2026-11-25",
       "checkIn": {
         "cadence": "fortnightly",
         "lastCheckIn": "2026-10-01T03:01:48.907Z"
@@ -1306,6 +1306,12 @@
           "text": "Cards have been ordered",
           "at": "2026-11-02T21:26:51.973Z",
           "system": false
+        },
+        {
+          "id": "86dd5413-bbd0-4aa6-bb7e-db138fc82ac1",
+          "text": "Due date set to 25 Nov 2026.",
+          "at": "2026-11-02T21:27:06.193Z",
+          "system": true
         }
       ],
       "current": false
