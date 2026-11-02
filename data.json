@@ -3369,14 +3369,14 @@
       "cycles": 1,
       "createdAt": "2026-09-29T03:59:49.667Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-02T04:00:19.137Z",
+      "lastUpdatedAt": "2026-11-02T04:00:29.096Z",
       "reminder": "Take samples",
       "dueDate": "2026-11-01",
       "checkIn": {
         "cadence": "monthly",
         "lastCheckIn": "2026-11-05T14:00:00.000Z"
       },
-      "restingUntil": "2026-11-05T14:00:00.000Z",
+      "restingUntil": null,
       "links": [],
       "subtasks": [],
       "notes": [
@@ -3420,6 +3420,12 @@
           "id": "53f40aea-d660-4db3-9856-02b3e94e7a89",
           "text": "Due date set to 1 Nov 2026.",
           "at": "2026-11-02T04:00:19.137Z",
+          "system": true
+        },
+        {
+          "id": "26ece358-0c5d-4d34-a346-3cf54fa9cc5b",
+          "text": "Reactivated early — back on the board.",
+          "at": "2026-11-02T04:00:29.096Z",
           "system": true
         }
       ]
