@@ -3757,11 +3757,11 @@
       "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
       "current": false,
       "status": "active",
-      "progress": 0,
+      "progress": 5,
       "cycles": 0,
       "createdAt": "2026-10-06T23:54:55.608Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-27T23:56:45.581Z",
+      "lastUpdatedAt": "2026-11-03T22:04:11.377Z",
       "reminder": "Assessment Complete - Follow up with sam on next steps",
       "dueDate": "2026-10-19",
       "checkIn": {
@@ -3780,7 +3780,7 @@
         {
           "id": "8ada9b58-790a-433f-bf4a-08c0b1d3b3d2",
           "text": "Initiate Project",
-          "done": false
+          "done": true
         },
         {
           "id": "72911892-f0cb-4079-a6c6-fe6d32e68a01",
