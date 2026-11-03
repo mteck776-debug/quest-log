@@ -3757,11 +3757,11 @@
       "person": "82439f4c-6c8a-4d10-ab31-600ee70a9a1b",
       "current": false,
       "status": "active",
-      "progress": 5,
+      "progress": 11,
       "cycles": 0,
       "createdAt": "2026-10-06T23:54:55.608Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-03T22:05:17.099Z",
+      "lastUpdatedAt": "2026-11-03T22:14:33.334Z",
       "reminder": "Assessment Complete - Follow up with sam on next steps",
       "dueDate": "2026-10-19",
       "checkIn": {
@@ -3790,7 +3790,7 @@
         {
           "id": "72911892-f0cb-4079-a6c6-fe6d32e68a01",
           "text": "Submitted Business Case for Sam's approval",
-          "done": false
+          "done": true
         },
         {
           "id": "880d21e9-8e3a-49b6-a113-615bbbea15cd",
