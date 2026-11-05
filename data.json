@@ -4497,6 +4497,38 @@
           "system": true
         }
       ]
+    },
+    {
+      "id": "748e16bb-ed93-4700-91c9-84384b201f6b",
+      "title": "Loader JSA",
+      "description": "",
+      "tier": "major",
+      "repeat": false,
+      "person": "p-default",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-05T03:04:52.654Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-05T03:04:52.654Z",
+      "reminder": "",
+      "dueDate": "2027-03-30",
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "b2011cf6-57d9-41a0-bc28-406a84e151df",
+          "text": "Quest added to the log.",
+          "at": "2026-11-05T03:04:52.654Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
