@@ -3395,17 +3395,17 @@
       "current": false,
       "status": "active",
       "progress": 0,
-      "cycles": 1,
+      "cycles": 2,
       "createdAt": "2026-09-29T03:59:49.667Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-07T21:09:05.832Z",
+      "lastUpdatedAt": "2026-11-12T22:13:49.205Z",
       "reminder": "Take samples",
-      "dueDate": "2026-11-06",
+      "dueDate": "2026-12-06",
       "checkIn": {
         "cadence": "monthly",
-        "lastCheckIn": "2026-11-05T14:00:00.000Z"
+        "lastCheckIn": "2026-12-05T14:00:00.000Z"
       },
-      "restingUntil": "2026-11-05T14:00:00.000Z",
+      "restingUntil": "2026-12-05T14:00:00.000Z",
       "links": [],
       "subtasks": [],
       "notes": [
@@ -3443,6 +3443,12 @@
           "id": "0f2ae43b-59b1-43e4-a5cf-c9dcd6af937d",
           "text": "Cycle 1 complete — resting until 6 Nov 2026 (due date rolled forward to match).",
           "at": "2026-10-07T21:09:05.832Z",
+          "system": true
+        },
+        {
+          "id": "e2c69408-5855-4681-b300-42a36cfb36ac",
+          "text": "Cycle 2 complete — resting until 6 Dec 2026 (due date rolled forward to match).",
+          "at": "2026-11-12T22:13:49.205Z",
           "system": true
         }
       ]
