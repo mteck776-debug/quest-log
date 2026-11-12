@@ -4157,12 +4157,12 @@
       "repeat": false,
       "person": "9f382b7b-1c57-46fd-9113-698c6051dff5",
       "current": false,
-      "status": "active",
-      "progress": 0,
+      "status": "completed",
+      "progress": 100,
       "cycles": 0,
       "createdAt": "2026-10-11T23:22:35.509Z",
-      "completedAt": null,
-      "lastUpdatedAt": "2026-10-14T21:45:05.219Z",
+      "completedAt": "2026-11-12T22:19:19.272Z",
+      "lastUpdatedAt": "2026-11-12T22:19:19.272Z",
       "reminder": "",
       "dueDate": null,
       "checkIn": {
@@ -4208,6 +4208,12 @@
           "text": "Sam says to keep as draft until after we know what is happening with meeting",
           "at": "2026-10-14T21:45:05.219Z",
           "system": false
+        },
+        {
+          "id": "71ce0980-894b-4ca9-91f2-14daca85fcdb",
+          "text": "Quest completed.",
+          "at": "2026-11-12T22:19:19.272Z",
+          "system": true
         }
       ]
     },
