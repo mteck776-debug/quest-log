@@ -539,17 +539,17 @@
       "person": "p-default",
       "status": "active",
       "progress": 0,
-      "cycles": 2,
+      "cycles": 3,
       "createdAt": "2026-09-01T23:44:09.554Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-10-26T22:48:34.238Z",
+      "lastUpdatedAt": "2026-11-16T23:02:55.298Z",
       "reminder": "",
-      "dueDate": "2026-10-30",
+      "dueDate": "2026-11-29",
       "checkIn": {
         "cadence": "monthly",
-        "lastCheckIn": "2026-10-21T14:00:00.000Z"
+        "lastCheckIn": "2026-11-28T14:00:00.000Z"
       },
-      "restingUntil": "2026-10-21T14:00:00.000Z",
+      "restingUntil": "2026-11-28T14:00:00.000Z",
       "links": [],
       "subtasks": [
         {
@@ -637,6 +637,12 @@
           "id": "b99c7e5c-8909-495f-9cd9-a93539841cff",
           "text": "Due date set to 30 Oct 2026.",
           "at": "2026-10-26T22:48:34.238Z",
+          "system": true
+        },
+        {
+          "id": "a4b175e5-955e-4b9f-bdb7-f93c7c0b7f81",
+          "text": "Cycle 3 complete — resting until 29 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-11-16T23:02:55.298Z",
           "system": true
         }
       ],
@@ -1841,7 +1847,7 @@
       "cycles": 0,
       "createdAt": "2026-09-06T22:53:10.971Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-16T22:03:30.719Z",
+      "lastUpdatedAt": "2026-10-30T04:50:22.153Z",
       "reminder": "Waiting for staff to sign and return to me",
       "dueDate": "2026-10-14",
       "checkIn": {
@@ -1948,12 +1954,6 @@
           "id": "c58e9c67-c255-4143-ab80-5fe7b54e3bf8",
           "text": "Follow up on 4/11 if not back by then",
           "at": "2026-10-27T23:54:19.226Z",
-          "system": false
-        },
-        {
-          "id": "5a410d9f-b2ce-4acd-b18b-7548deb7b811",
-          "text": "Dan is away so im going to be more aggressive to get this signed",
-          "at": "2026-11-16T22:03:30.719Z",
           "system": false
         }
       ]
@@ -4339,12 +4339,12 @@
       "repeat": false,
       "person": "f2afd713-a33d-45ea-bbc8-bdf74a92d78c",
       "current": false,
-      "status": "completed",
-      "progress": 100,
+      "status": "active",
+      "progress": 20,
       "cycles": 0,
       "createdAt": "2026-10-29T04:03:40.716Z",
-      "completedAt": "2026-11-16T22:06:14.118Z",
-      "lastUpdatedAt": "2026-11-16T22:06:14.118Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-10-29T04:13:31.013Z",
       "reminder": "",
       "dueDate": "2026-11-16",
       "checkIn": {
@@ -4398,12 +4398,6 @@
           "text": "Present i want a puzzle that locks in that we hang on the wall. Use gridfinity maybe?",
           "at": "2026-10-29T04:13:31.013Z",
           "system": false
-        },
-        {
-          "id": "f8d81ccc-d077-4351-a39b-6e931cf13379",
-          "text": "Quest completed.",
-          "at": "2026-11-16T22:06:14.118Z",
-          "system": true
         }
       ]
     },
