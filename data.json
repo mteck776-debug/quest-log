@@ -3797,7 +3797,7 @@
       "cycles": 0,
       "createdAt": "2026-10-06T23:54:55.608Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-03T22:14:34.586Z",
+      "lastUpdatedAt": "2026-11-19T00:03:27.094Z",
       "reminder": "Assessment Complete - Follow up with sam on next steps",
       "dueDate": "2026-10-19",
       "checkIn": {
@@ -3943,6 +3943,12 @@
           "id": "cc2f810d-25cd-48d2-9e92-a8043c43a9f6",
           "text": "Passed structural assessment - Followed up with Daniel to give me email to say it passed",
           "at": "2026-10-27T23:56:45.581Z",
+          "system": false
+        },
+        {
+          "id": "7a6c1bb3-028e-4876-a06f-849b7e526bed",
+          "text": "Brodie from Collins Construction attended site today to discuss the logistics and feasibility of extending the weighbridge roof to provide full coverage of the bridge.",
+          "at": "2026-11-19T00:03:27.094Z",
           "system": false
         }
       ]
