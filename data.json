@@ -4621,6 +4621,38 @@
           "system": false
         }
       ]
+    },
+    {
+      "id": "00711491-792f-4692-b910-b10e3e5b9882",
+      "title": "Illegal dumping",
+      "description": "Got an email from Leanne to investigate illegal dumping - 340003051",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-19T00:05:44.183Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-19T00:05:44.183Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "3ffe9c01-70cf-44d7-9032-7b4821ee2691",
+          "text": "Quest added to the log.",
+          "at": "2026-11-19T00:05:44.183Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
