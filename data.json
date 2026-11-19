@@ -3797,7 +3797,7 @@
       "cycles": 0,
       "createdAt": "2026-10-06T23:54:55.608Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-19T00:03:27.094Z",
+      "lastUpdatedAt": "2026-11-19T00:03:42.699Z",
       "reminder": "Assessment Complete - Follow up with sam on next steps",
       "dueDate": "2026-10-19",
       "checkIn": {
@@ -3949,6 +3949,12 @@
           "id": "7a6c1bb3-028e-4876-a06f-849b7e526bed",
           "text": "Brodie from Collins Construction attended site today to discuss the logistics and feasibility of extending the weighbridge roof to provide full coverage of the bridge.",
           "at": "2026-11-19T00:03:27.094Z",
+          "system": false
+        },
+        {
+          "id": "0cf2ad27-f3e7-455a-8eb1-821a7d1426f4",
+          "text": "He will need further documents and doesnt think it will fall in budget",
+          "at": "2026-11-19T00:03:42.699Z",
           "system": false
         }
       ]
