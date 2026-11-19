@@ -4653,6 +4653,38 @@
           "system": true
         }
       ]
+    },
+    {
+      "id": "c45652bf-1111-47cf-a5f0-3b5b1d3955a6",
+      "title": "Reporting Catch Up - Lisa",
+      "description": "Hi Mat\nI would like to put some time in to catch up with you re reporting both in and outside Naus. Your calendar is marked as busy or working elsewhere for the next few weeks- would you have the time sometime next week? Or are you tied up and prefer me to wait till early Dec.?",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-19T00:06:56.244Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-19T00:06:56.244Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "4da6362e-fc0a-4c0f-a359-c95281dd9acd",
+          "text": "Quest added to the log.",
+          "at": "2026-11-19T00:06:56.244Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
