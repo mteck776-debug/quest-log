@@ -4571,6 +4571,38 @@
           "system": true
         }
       ]
+    },
+    {
+      "id": "8430aac3-073c-4aea-824e-ac80b05113c1",
+      "title": "Remondis Issues",
+      "description": "STS having issues with Remindis Vehicles as someone has changed the set up when we took over from remondis. We are currently trying to determine if this was intentional or just someone not understanding the system",
+      "tier": "major",
+      "repeat": false,
+      "person": "d7fa4556-01d3-47b8-98d8-5e34de114c6f",
+      "current": false,
+      "status": "active",
+      "progress": 0,
+      "cycles": 0,
+      "createdAt": "2026-11-19T00:02:24.920Z",
+      "completedAt": null,
+      "lastUpdatedAt": "2026-11-19T00:02:24.920Z",
+      "reminder": "",
+      "dueDate": null,
+      "checkIn": {
+        "cadence": "none",
+        "lastCheckIn": null
+      },
+      "restingUntil": null,
+      "links": [],
+      "subtasks": [],
+      "notes": [
+        {
+          "id": "affba9d9-f2a6-4879-b9ce-05cfe91a2b90",
+          "text": "Quest added to the log.",
+          "at": "2026-11-19T00:02:24.920Z",
+          "system": true
+        }
+      ]
     }
   ],
   "people": [
