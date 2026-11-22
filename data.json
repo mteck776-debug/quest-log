@@ -4387,12 +4387,12 @@
       "repeat": false,
       "person": "f2afd713-a33d-45ea-bbc8-bdf74a92d78c",
       "current": false,
-      "status": "active",
-      "progress": 20,
+      "status": "completed",
+      "progress": 100,
       "cycles": 0,
       "createdAt": "2026-10-29T04:03:40.716Z",
-      "completedAt": null,
-      "lastUpdatedAt": "2026-10-29T04:13:31.013Z",
+      "completedAt": "2026-11-22T23:47:12.879Z",
+      "lastUpdatedAt": "2026-11-22T23:47:12.879Z",
       "reminder": "",
       "dueDate": "2026-11-16",
       "checkIn": {
@@ -4446,6 +4446,12 @@
           "text": "Present i want a puzzle that locks in that we hang on the wall. Use gridfinity maybe?",
           "at": "2026-10-29T04:13:31.013Z",
           "system": false
+        },
+        {
+          "id": "fc8a3a14-b4d0-4ca8-98e5-2079f2f19c56",
+          "text": "Quest completed.",
+          "at": "2026-11-22T23:47:12.879Z",
+          "system": true
         }
       ]
     },
