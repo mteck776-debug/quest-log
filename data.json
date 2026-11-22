@@ -852,17 +852,17 @@
       "person": "p-default",
       "status": "active",
       "progress": 0,
-      "cycles": 11,
+      "cycles": 12,
       "createdAt": "2026-09-01T23:48:22.278Z",
       "completedAt": null,
-      "lastUpdatedAt": "2026-11-22T23:46:24.953Z",
+      "lastUpdatedAt": "2026-11-22T23:46:30.788Z",
       "reminder": "",
-      "dueDate": "2026-11-16",
+      "dueDate": "2026-11-23",
       "checkIn": {
         "cadence": "weekly",
-        "lastCheckIn": "2026-11-15T14:00:00.000Z"
+        "lastCheckIn": "2026-11-22T14:00:00.000Z"
       },
-      "restingUntil": "2026-11-15T14:00:00.000Z",
+      "restingUntil": "2026-11-22T14:00:00.000Z",
       "links": [],
       "subtasks": [
         {
@@ -1002,6 +1002,12 @@
           "id": "00e6c73d-7c03-4aae-8a40-df09bfdd331e",
           "text": "Cycle 11 complete — resting until 16 Nov 2026 (due date rolled forward to match).",
           "at": "2026-11-22T23:46:24.953Z",
+          "system": true
+        },
+        {
+          "id": "381a8498-d7bf-49e5-b662-bde1d7fe719a",
+          "text": "Cycle 12 complete — resting until 23 Nov 2026 (due date rolled forward to match).",
+          "at": "2026-11-22T23:46:30.788Z",
           "system": true
         }
       ],
