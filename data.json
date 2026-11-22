@@ -3997,12 +3997,12 @@
       "repeat": false,
       "person": "p-default",
       "current": false,
-      "status": "active",
-      "progress": 0,
+      "status": "completed",
+      "progress": 100,
       "cycles": 0,
       "createdAt": "2026-10-06T23:58:33.186Z",
-      "completedAt": null,
-      "lastUpdatedAt": "2026-10-07T00:09:01.271Z",
+      "completedAt": "2026-11-22T23:46:40.104Z",
+      "lastUpdatedAt": "2026-11-22T23:46:40.104Z",
       "reminder": "",
       "dueDate": null,
       "checkIn": {
@@ -4036,6 +4036,12 @@
           "text": "x1 for dan",
           "at": "2026-10-07T00:09:01.271Z",
           "system": false
+        },
+        {
+          "id": "092b4e4c-ff29-436d-915e-948e01e18c31",
+          "text": "Quest completed.",
+          "at": "2026-11-22T23:46:40.104Z",
+          "system": true
         }
       ]
     },
